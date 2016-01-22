@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
+		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
+		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
 		4DE9DF5F1C4FEEF800FD9488 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9DF5E1C4FEEF800FD9488 /* main.m */; };
 		4DE9DF621C4FEEF800FD9488 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9DF611C4FEEF800FD9488 /* AppDelegate.m */; };
 		4DE9DF651C4FEEF800FD9488 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9DF641C4FEEF800FD9488 /* ViewController.m */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4DD5E3321C528616009350F4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4DE9DF5A1C4FEEF800FD9488 /* AutoScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE9DF5E1C4FEEF800FD9488 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DE9DF601C4FEEF800FD9488 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DD5E3291C527A84009350F4 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DD5E32D1C528077009350F4 /* reveal-icon.png */,
+				4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */,
+				4DD5E3311C528616009350F4 /* SWRevealViewController.h */,
+				4DD5E3321C528616009350F4 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		4DE9DF511C4FEEF700FD9488 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +138,7 @@
 		4DE9DF5D1C4FEEF800FD9488 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4DD5E3291C527A84009350F4 /* SWRevealViewController */,
 				4DE9DF5E1C4FEEF800FD9488 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -247,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE9DF701C4FEEF800FD9488 /* LaunchScreen.storyboard in Resources */,
+				4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */,
 				4DE9DF6D1C4FEEF800FD9488 /* Assets.xcassets in Resources */,
 				4DE9DF681C4FEEF800FD9488 /* Main.storyboard in Resources */,
+				4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +296,7 @@
 			files = (
 				4DE9DF651C4FEEF800FD9488 /* ViewController.m in Sources */,
 				4DE9DF621C4FEEF800FD9488 /* AppDelegate.m in Sources */,
+				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,
 				4DE9DF6B1C4FEEF800FD9488 /* AutoScheduler.xcdatamodeld in Sources */,
 				4DE9DF5F1C4FEEF800FD9488 /* main.m in Sources */,
 			);
@@ -500,6 +522,7 @@
 				4DE9DF8C1C4FEEF800FD9488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DE9DF8D1C4FEEF800FD9488 /* Build configuration list for PBXNativeTarget "AutoSchedulerTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +531,7 @@
 				4DE9DF8F1C4FEEF800FD9488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DE9DF901C4FEEF800FD9488 /* Build configuration list for PBXNativeTarget "AutoSchedulerUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +540,7 @@
 				4DE9DF921C4FEEF800FD9488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
