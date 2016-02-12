@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */; };
+		4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */; };
+		4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */; };
+		4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2121C6D61D100B34FD5 /* HomeViewController.m */; };
+		4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -39,6 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D29C2061C6D2EE800B34FD5 /* ASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLoginViewController.h; sourceTree = "<group>"; };
+		4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
+		4D29C20B1C6D2FD800B34FD5 /* ASUserSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUserSingleton.h; sourceTree = "<group>"; };
+		4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASUserSingleton.m; sourceTree = "<group>"; };
+		4D29C20E1C6D4D8900B34FD5 /* ASRESTAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRESTAPI.h; sourceTree = "<group>"; };
+		4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRESTAPI.m; sourceTree = "<group>"; };
+		4D29C2111C6D61D100B34FD5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4D29C2121C6D61D100B34FD5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4D29C2171C6D62DE00B34FD5 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -87,6 +102,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D29C2091C6D2EFE00B34FD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DE9DF631C4FEEF800FD9488 /* ViewController.h */,
+				4DE9DF641C4FEEF800FD9488 /* ViewController.m */,
+				4D29C2061C6D2EE800B34FD5 /* ASLoginViewController.h */,
+				4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */,
+				4D29C2111C6D61D100B34FD5 /* HomeViewController.h */,
+				4D29C2121C6D61D100B34FD5 /* HomeViewController.m */,
+				4D29C2171C6D62DE00B34FD5 /* MenuTableViewCell.h */,
+				4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */,
+				4D29C20A1C6D2F2200B34FD5 /* Model */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4D29C20A1C6D2F2200B34FD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D29C20B1C6D2FD800B34FD5 /* ASUserSingleton.h */,
+				4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */,
+				4D29C20E1C6D4D8900B34FD5 /* ASRESTAPI.h */,
+				4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4DD5E3291C527A84009350F4 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +165,7 @@
 			children = (
 				4DE9DF601C4FEEF800FD9488 /* AppDelegate.h */,
 				4DE9DF611C4FEEF800FD9488 /* AppDelegate.m */,
-				4DE9DF631C4FEEF800FD9488 /* ViewController.h */,
-				4DE9DF641C4FEEF800FD9488 /* ViewController.m */,
+				4D29C2091C6D2EFE00B34FD5 /* Views */,
 				4DE9DF661C4FEEF800FD9488 /* Main.storyboard */,
 				4DE9DF6C1C4FEEF800FD9488 /* Assets.xcassets */,
 				4DE9DF6E1C4FEEF800FD9488 /* LaunchScreen.storyboard */,
@@ -296,8 +337,13 @@
 			files = (
 				4DE9DF651C4FEEF800FD9488 /* ViewController.m in Sources */,
 				4DE9DF621C4FEEF800FD9488 /* AppDelegate.m in Sources */,
+				4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */,
+				4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */,
 				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,
+				4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */,
+				4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */,
 				4DE9DF6B1C4FEEF800FD9488 /* AutoScheduler.xcdatamodeld in Sources */,
+				4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */,
 				4DE9DF5F1C4FEEF800FD9488 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
