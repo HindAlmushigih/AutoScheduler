@@ -50,6 +50,7 @@ static ASRESTAPI *sharedInstance = nil;
                                       
                                       if (error) {
                                           // Handle error...
+                                          NSLog(@"something wrong");
                                           return;
                                       }
                                       
