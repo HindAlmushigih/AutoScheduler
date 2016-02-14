@@ -60,6 +60,20 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+   // [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    
+    SWRevealViewController *revealViewController;
+    [revealViewController initWithRearViewController: [self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableViewCell"]frontViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"]];
+    //self.revealViewController;
+//    if ( revealViewController )
+//    {
+//        [self.revealButtonItem setTarget: revealViewController];
+//        [self.revealButtonItem setAction: @selector( revealToggle: )];
+//        [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+//    }
+
+    
+    
 //    if ([[segue identifier] isEqualToString:@"GoToHome"])
 //    {
 //        
@@ -72,7 +86,7 @@
 //        
 //        // Get reference to the destination view controller
 //        HomeViewController *vc = [segue destinationViewController];
-    [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];//@"HomeViewController"];
         // Pass any objects to the view controller here, like...
         //[vc setMyObjectHere:object];
     }
