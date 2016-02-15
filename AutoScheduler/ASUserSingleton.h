@@ -13,7 +13,7 @@
 @property NSString *userName;
 @property NSString *password;
 @property NSString *redmineURL;
-
+@property BOOL iSUserSignedIn;
 +(ASUserSingleton*)sharedInstance;
 
 @end

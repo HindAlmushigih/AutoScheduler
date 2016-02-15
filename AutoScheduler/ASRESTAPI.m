@@ -9,8 +9,9 @@
 #import "ASRESTAPI.h"
 
 NSString* USER_DEFUALTS_REDMINE = @"USER_DEFUALTS_REDMINE_HOME_URL";
-
+BOOL logging;
 @implementation ASRESTAPI
+
 
 static ASRESTAPI *sharedInstance = nil;
 
@@ -25,6 +26,14 @@ static ASRESTAPI *sharedInstance = nil;
 
     return sharedInstance;
 }
+
++ (BOOL)logging {
+    return logging;
+}
++ (void)setLogging:(BOOL)newValue {
+    logging = newValue;
+}
+
 
 +(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password
 {
@@ -58,6 +67,8 @@ static ASRESTAPI *sharedInstance = nil;
                                           NSLog(@"Response HTTP Status code: %ld\n", (long)[(NSHTTPURLResponse *)response statusCode]);
                                           NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
                                       }
+                                      
+                                      [self setLogging:true];
                                       
                                       NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                       NSLog(@"Response Body:\n%@\n", body);

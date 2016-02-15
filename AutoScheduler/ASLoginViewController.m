@@ -13,6 +13,8 @@
 
 @end
 
+NSString* UserSignedInNotification = @"UserSignedInNotification";
+
 @implementation ASLoginViewController
 
 - (void)viewDidLoad {
@@ -49,11 +51,35 @@
         [[ASUserSingleton sharedInstance]setRedmineURL:@"http://172.16.231.19/redmine23/"];
         [ASRESTAPI sharedInstance];
         [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text];
-        [self prepareForSegue:@"GoToHome" sender:sender];
+       // if ([ASRESTAPI logging]) {
+            [[ASUserSingleton sharedInstance]setISUserSignedIn:true];
+            [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
+            [self showHomeScreen];
+       // }
+        
+//        [self prepareForSegue:@"GoToHome" sender:sender];
         //[self performSegueWithIdentifier:@"MySegue" sender:sender];
     }
 }
 
+-(void)showHomeScreen
+{
+    //SWRevealViewController *revealViewController;
+//    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+//    
+//    [self.revealViewController setFrontViewController:navigation];
+//    [self.revealViewController setFrontViewPosition:FrontViewPositionLeft];
+//    
+    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    
+    // Swap out the Front view controller and display
+    [self.revealViewController setFrontViewController:vcNew];
+    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    
+    //HomeViewController *vc = [[HomeViewController alloc] init];
+    //[navigation pushViewController:vc animated:YES];
+    
+}
 
 #pragma mark - Navigation
 
@@ -62,8 +88,8 @@
     
    // [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     
-    SWRevealViewController *revealViewController;
-    [revealViewController initWithRearViewController: [self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableViewCell"]frontViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"]];
+//    SWRevealViewController *revealViewController;
+//    [revealViewController initWithRearViewController: [self.storyboard instantiateViewControllerWithIdentifier:@"MenuTableViewCell"]frontViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"]];
     //self.revealViewController;
 //    if ( revealViewController )
 //    {

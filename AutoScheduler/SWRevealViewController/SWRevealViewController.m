@@ -27,7 +27,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
-
+#import "HomeViewController.h"
 
 #pragma mark - StatusBar Helper Function
 
@@ -735,6 +735,70 @@ const int FrontViewPositionNone = 0xff;
     // now set the desired initial position
     [self _setFrontViewPosition:initialPosition withDuration:0.0];
 }
+
+
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignedInSuccessfully) name:kUserSignedInNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignOutSuccessfully) name:kUserSignedOutNotification object:nil];
+    
+    // this flag should be maintained in user defaults
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"USER_DEFUALTS_LOG_IN"]){
+        
+        //Show Home page if user is already signed in
+        [self showHomeScreen];
+    }
+    else
+    {
+        [self showLoginScreen];
+    }
+}
+
+#pragma mark - Show Home screen
+
+-(void)showHomeScreen
+{
+    
+    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    
+    // Swap out the Front view controller and display
+    [self.revealViewController setFrontViewController:vcNew];
+    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    //HomeViewController *vc = [[HomeViewController alloc] init];
+    //[navigation pushViewController:vc animated:YES];
+}
+
+-(void)showLoginScreen{
+    
+    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"Login"];
+    
+    // Swap out the Front view controller and display
+    [self.revealViewController setFrontViewController:vcNew];
+    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    
+}
+//-(void)showHomeScreen
+//{
+//    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+//    
+//    [self setFrontViewController:navigation];
+//    [self setFrontViewPosition:FrontViewPositionLeft];
+//    //HomeViewController *vc = [[HomeViewController alloc] init];
+//    //[navigation pushViewController:vc animated:YES];
+//}
+//
+//-(void)showLoginScreen{
+//    
+//    UINavigationController *navigation = (UINavigationController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+//    
+//    [self setFrontViewController:navigation];
+//    [self setFrontViewPosition:FrontViewPositionLeft];
+//    
+//}
+
 
 
 - (void)viewDidAppear:(BOOL)animated

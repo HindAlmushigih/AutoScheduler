@@ -11,6 +11,8 @@
 NSString* USER_DEFUALTS_REDMINE_HOME_URL = @"USER_DEFUALTS_REDMINE_HOME_URL";
 NSString* USER_DEFUALTS_REDMINE_USER_NAME = @"USER_DEFUALTS_REDMINE_USER_NAME";
 NSString* USER_DEFUALTS_REDMINE_PASSWORD = @"USER_DEFUALTS_REDMINE_PASSWORD";
+NSString * USER_DEFUALTS_LOG_IN = @"USER_DEFUALTS_LOG_IN";
+
 
 @implementation ASUserSingleton
 
@@ -67,6 +69,18 @@ static ASUserSingleton *sharedInstance = nil;
 {
     NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
     [userdefaults setObject:password forKey:USER_DEFUALTS_REDMINE_PASSWORD];
+    [userdefaults synchronize];
+}
+
+-(BOOL)iSUserSignedIn
+{
+    NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
+    return [userdefaults boolForKey:USER_DEFUALTS_LOG_IN];
+}
+-(void)setISUserSignedIn:(BOOL)SUserSignedIn
+{
+    NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
+    [userdefaults setBool:SUserSignedIn forKey:USER_DEFUALTS_LOG_IN];
     [userdefaults synchronize];
     
 }
