@@ -776,7 +776,7 @@ const int FrontViewPositionNone = 0xff;
     UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"Login"];
     
     // Swap out the Front view controller and display
-    [self.revealViewController setFrontViewController:vcNew];
+    [self.revealViewController setFrontViewController:vcNew.navigationController];
     [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
     
 }
@@ -784,7 +784,7 @@ const int FrontViewPositionNone = 0xff;
 //{
 //    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
 //    
-//    [self setFrontViewController:navigation];
+//    [self setFrontViewController:navigation.topViewController];
 //    [self setFrontViewPosition:FrontViewPositionLeft];
 //    //HomeViewController *vc = [[HomeViewController alloc] init];
 //    //[navigation pushViewController:vc animated:YES];
@@ -794,7 +794,7 @@ const int FrontViewPositionNone = 0xff;
 //    
 //    UINavigationController *navigation = (UINavigationController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
 //    
-//    [self setFrontViewController:navigation];
+//    [self setFrontViewController:navigation.topViewController];
 //    [self setFrontViewPosition:FrontViewPositionLeft];
 //    
 //}

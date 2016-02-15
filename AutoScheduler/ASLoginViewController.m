@@ -64,20 +64,20 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
 
 -(void)showHomeScreen
 {
-    //SWRevealViewController *revealViewController;
-//    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
-//    
-//    [self.revealViewController setFrontViewController:navigation];
-//    [self.revealViewController setFrontViewPosition:FrontViewPositionLeft];
-//    
-    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"HomeViewController"];
+  //  SWRevealViewController *revealViewController;
+    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
     
-    // Swap out the Front view controller and display
-    [self.revealViewController setFrontViewController:vcNew];
-    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    [self.revealViewController setFrontViewController:navigation];
+    [self.revealViewController setFrontViewPosition:FrontViewPositionLeft];
+//
+//    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"HomeViewController"];
+//    
+//    // Swap out the Front view controller and display
+//    [self.revealViewController setFrontViewController:vcNew];
+//    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
     
-    //HomeViewController *vc = [[HomeViewController alloc] init];
-    //[navigation pushViewController:vc animated:YES];
+//    HomeViewController *vc = [[HomeViewController alloc] init];
+//    [navigation pushViewController:vc animated:YES];
     
 }
 
