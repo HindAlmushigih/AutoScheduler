@@ -16,19 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self customSetup];
+    //[self customSetup];
     // Do any additional setup after loading the view.
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+   // UIBarButtonItem *
+    _revealButtonItem = [[UIBarButtonItem alloc]
+                                         initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style: UIBarButtonItemStylePlain  target:revealController action:@selector(revealToggle:)];
+                                         //initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
+    
+    //self.navigationItem.leftBarButtonItem = revealButtonItem;
     
 }
 - (void)customSetup
 {
-//    SWRevealViewController *revealViewController = self.revealViewController;
-//    if ( revealViewController )
-//    {
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
         [self.revealButtonItem setTarget: self.revealViewController];
         [self.revealButtonItem setAction: @selector( revealToggle: )];
         [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
-    //}
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

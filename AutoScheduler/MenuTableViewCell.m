@@ -9,7 +9,15 @@
 #import "MenuTableViewCell.h"
 
 @implementation MenuTableViewCell
+{
+    NSArray *menuItems;
+}
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    menuItems = @[@"Home", @"Projects", @"Issues", @"GanntChart", @"Calendar", @"Notification", @"Auto-Scheduler"];
+}
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     // configure the destination view controller:
@@ -36,46 +44,48 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return menuItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    switch ( indexPath.row )
-    {
-        case 0:
-            CellIdentifier = @"Home";
-            break;
-            
-        case 1:
-            CellIdentifier = @"Projects";
-            break;
-            
-        case 2:
-            CellIdentifier = @"Issues";
-            break;
-        case 3:
-            CellIdentifier = @"GanntChart";
-            break;
-        case 4:
-            CellIdentifier = @"Calendar";
-            break;
-        case 5:
-            CellIdentifier = @"Issues";
-            break;
-        case 6:
-            CellIdentifier = @"Notification";
-            break;
-        case 7:
-            CellIdentifier = @"Auto-Scheduler";
-            break;
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
+    NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    switch ( indexPath.row )
+//    {
+//        case 0:
+//            CellIdentifier = @"Home";
+//            break;
+//            
+//        case 1:
+//            CellIdentifier = @"Projects";
+//            break;
+//            
+//        case 2:
+//            CellIdentifier = @"Issues";
+//            break;
+//        case 3:
+//            CellIdentifier = @"GanntChart";
+//            break;
+//        case 4:
+//            CellIdentifier = @"Calendar";
+//            break;
+//        case 5:
+//            CellIdentifier  = @"Notification";
+//            break;
+//        case 6:
+//            CellIdentifier = @"Auto-Scheduler";
+//            break;
+//
+//    }
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
+//    
+//    return cell;
 }
 
 #pragma mark state preservation / restoration
