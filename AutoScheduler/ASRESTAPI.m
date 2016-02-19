@@ -80,4 +80,59 @@ static ASRESTAPI *sharedInstance = nil;
 
 }
 
++(void)currentUsername:(NSString*)username andPassword:(NSString*)password
+{
+    //NSString *authStr = [NSString stringWithFormat:@"username=%@&password=%@",username, password];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    //NSData *plainData = [plainString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String = [authData base64EncodedStringWithOptions:0];
+    //NSLog(@"%@", base64String);
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
+    
+    __block NSDictionary *currentUserdictionary = nil;
+    NSDictionary *headers = @{ @"authorization": authValue,
+                               @"accept": @"application/json",
+                               @"cache-control": @"no-cache",
+                               @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d" };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/users/current.json"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        NSError *JSONError = nil;
+                                                        currentUserdictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                options:0
+                                                                                                                  error:&JSONError];
+                                                        
+                                                        NSArray* curentuser = [currentUserdictionary objectForKey:@"user"];
+                                                        NSLog(@"printing the array here: %@", curentuser);
+                                                        NSNumber *number = currentUserdictionary[@"user"][@"id"];
+                                                        NSLog(@"printing the id here: %@", number);
+                                                        NSString *fn = currentUserdictionary[@"user"][@"firstname"];
+                                                        NSLog(@"printing the id here: %@", fn);
+                                                        if (JSONError)
+                                                        {
+                                                            NSLog(@"Serialization error: %@", JSONError.localizedDescription);
+                                                        }
+                                                        else
+                                                        {
+                                                            NSLog(@"Response: %@", currentUserdictionary);
+                                                        }
+                                                    }
+                                                }];
+    [dataTask resume];
+    NSLog(@"Dictionary: %@", [currentUserdictionary description]);
+}
+
 @end

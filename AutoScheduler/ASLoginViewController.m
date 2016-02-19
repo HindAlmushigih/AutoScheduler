@@ -52,7 +52,7 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
         [ASRESTAPI sharedInstance];
         [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text];
        // if ([ASRESTAPI logging]) {
-            [[ASUserSingleton sharedInstance]setISUserSignedIn:true];
+            [[ASUserSingleton sharedInstance]setISUserSignedIn:YES];
             [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
             [self showHomeScreen];
        // }
