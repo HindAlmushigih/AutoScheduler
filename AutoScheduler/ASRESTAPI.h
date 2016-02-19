@@ -18,5 +18,7 @@
 +(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password;
 + (BOOL)logging ;
 + (void)setLogging:(BOOL)newValue;
-
++ (NSDictionary*)currentuserDictionary;
++ (void)setCurrentuserDictionary:(NSDictionary*)newValue;
++(void)currentUsername:(NSString*)username andPassword:(NSString*)password;
 @end

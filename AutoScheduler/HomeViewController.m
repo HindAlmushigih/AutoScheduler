@@ -10,10 +10,30 @@
 #import "SWRevealViewController.h"
 #import "ASUserSingleton.h"
 #import "ASLoginViewController.h"
+#import "ASRESTAPI.h"
+#import "ASUserSingleton.h"
 @interface HomeViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *signOutButton;
+@property (weak, nonatomic) IBOutlet UILabel *UserName;
+@property (weak, nonatomic) IBOutlet UILabel *userEmail;
+@property (weak, nonatomic) IBOutlet UILabel *userLastLoginOn;
 @end
+
+/**
+ user =     {
+ "api_key" = 705a4e355244cebc57bace2cf8ab9449ff8df947;
+ "created_on" = "2016-02-02T01:02:04Z";
+ firstname = Redmine;
+ id = 1;
+ "last_login_on" = "2016-02-19T15:17:24Z";
+ lastname = Admin;
+ login = admin;
+ mail = "autoschedulerapp@gmail.com";
+ };
+ }
+ **/
+
 
 NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
 
@@ -32,6 +52,8 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
                                          //initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     
     //self.navigationItem.leftBarButtonItem = revealButtonItem;
+    [self getThecurrentUser];
+    [self setupUserLabel];
     
 }
 - (void)customSetup
@@ -48,6 +70,32 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)getThecurrentUser
+{
+    NSString* username = [[ASUserSingleton sharedInstance]userName];
+    NSString* password = [[ASUserSingleton sharedInstance]password];
+    _curentUser = nil;
+    [ASRESTAPI currentUsername:username andPassword:password];
+    
+    _curentUser = [ASRESTAPI currentuserDictionary];
+}
+
+-(void)setupUserLabel
+{
+    NSString *fn = _curentUser[@"user"][@"firstname"];
+    NSString *ln = _curentUser[@"user"][@"lastname"];
+//   // NSString* fullName = [NSString stringWithFormat:@"Welcom: %@ %@",fn,ln];
+    [self.UserName setText:[NSString stringWithFormat:@"Welcom: %@ %@",fn,ln]];
+     //@"Welcom: ",fn,ln];
+   NSString *mail = _curentUser[@"user"][@"mail"];
+    
+    [self.userEmail setText:[NSString stringWithFormat:@"Email: %@",mail]];
+     NSString *last_login_on = _curentUser[@"user"][@"last_login_on"];
+    
+    [self.userLastLoginOn setText:[NSString stringWithFormat:@"Last connection: %@",last_login_on]];
+}
+
 - (IBAction)ASSignOut:(id)sender {
     
     [[ASUserSingleton sharedInstance]setISUserSignedIn:NO];

@@ -10,6 +10,7 @@
 
 NSString* USER_DEFUALTS_REDMINE = @"USER_DEFUALTS_REDMINE_HOME_URL";
 BOOL logging;
+NSDictionary* currentuserDictionary;
 @implementation ASRESTAPI
 
 
@@ -32,6 +33,16 @@ static ASRESTAPI *sharedInstance = nil;
 }
 + (void)setLogging:(BOOL)newValue {
     logging = newValue;
+}
+
+
++ (NSDictionary*)currentuserDictionary
+{
+    return currentuserDictionary;
+}
++ (void)setCurrentuserDictionary:(NSDictionary*)newValue
+{
+    currentuserDictionary = newValue;
 }
 
 
@@ -90,7 +101,7 @@ static ASRESTAPI *sharedInstance = nil;
     //NSLog(@"%@", base64String);
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
     
-    __block NSDictionary *currentUserdictionary = nil;
+    __block NSDictionary *currentUserdictionarytest = nil;
     NSDictionary *headers = @{ @"authorization": authValue,
                                @"accept": @"application/json",
                                @"cache-control": @"no-cache",
@@ -111,15 +122,15 @@ static ASRESTAPI *sharedInstance = nil;
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                         NSError *JSONError = nil;
-                                                        currentUserdictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                        currentUserdictionarytest = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:0
                                                                                                                   error:&JSONError];
-                                                        
-                                                        NSArray* curentuser = [currentUserdictionary objectForKey:@"user"];
+                                                        [self setCurrentuserDictionary:currentUserdictionarytest];
+                                                        NSArray* curentuser = [currentUserdictionarytest objectForKey:@"user"];
                                                         NSLog(@"printing the array here: %@", curentuser);
-                                                        NSNumber *number = currentUserdictionary[@"user"][@"id"];
+                                                        NSNumber *number = currentUserdictionarytest[@"user"][@"id"];
                                                         NSLog(@"printing the id here: %@", number);
-                                                        NSString *fn = currentUserdictionary[@"user"][@"firstname"];
+                                                        NSString *fn = currentUserdictionarytest[@"user"][@"firstname"];
                                                         NSLog(@"printing the id here: %@", fn);
                                                         if (JSONError)
                                                         {
@@ -127,12 +138,12 @@ static ASRESTAPI *sharedInstance = nil;
                                                         }
                                                         else
                                                         {
-                                                            NSLog(@"Response: %@", currentUserdictionary);
+                                                            NSLog(@"Response: %@", currentUserdictionarytest);
                                                         }
                                                     }
                                                 }];
     [dataTask resume];
-    NSLog(@"Dictionary: %@", [currentUserdictionary description]);
+   // NSLog(@"Dictionary: %@", [currentUserdictionary description]);
 }
 
 @end
