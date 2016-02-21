@@ -13,12 +13,15 @@
 
 @property NSURL* redmineServer;
 @property NSMutableURLRequest *request;
-//@property BOOL logging;
+
 +(ASRESTAPI*)sharedInstance;
-+(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password;
+
 + (BOOL)logging ;
 + (void)setLogging:(BOOL)newValue;
-+ (NSDictionary*)currentuserDictionary;
-+ (void)setCurrentuserDictionary:(NSDictionary*)newValue;
-+(void)currentUsername:(NSString*)username andPassword:(NSString*)password;
+
++(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password;
+
++(void)currentUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response))completion;
+
+
 @end

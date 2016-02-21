@@ -12,6 +12,7 @@
 #import "ASLoginViewController.h"
 #import "ASRESTAPI.h"
 #import "ASUserSingleton.h"
+
 @interface HomeViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *signOutButton;
@@ -22,7 +23,7 @@
 
 /**
  user =     {
- "api_key" = 705a4e355244cebc57bace2cf8ab9449ff8df947;
+ "api_key" = //;
  "created_on" = "2016-02-02T01:02:04Z";
  firstname = Redmine;
  id = 1;
@@ -46,14 +47,12 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
-   // UIBarButtonItem *
+
     _revealButtonItem = [[UIBarButtonItem alloc]
                                          initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style: UIBarButtonItemStylePlain  target:revealController action:@selector(revealToggle:)];
-                                         //initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
-    
-    //self.navigationItem.leftBarButtonItem = revealButtonItem;
+
     [self getThecurrentUser];
-    [self setupUserLabel];
+
     
 }
 - (void)customSetup
@@ -71,28 +70,38 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     // Dispose of any resources that can be recreated.
 }
 
+// 1- So create a download method that takes a completion block,
+// 2- and call the completion block inside the URL task's completion block.
+// 3- Then call the download method and pass in a completion block that updates your label.
+// 4- must use dispatch_async(dispatch_get_main_queue() to call the method thats update the UI elements
+
+
+
 -(void)getThecurrentUser
 {
     NSString* username = [[ASUserSingleton sharedInstance]userName];
     NSString* password = [[ASUserSingleton sharedInstance]password];
     _curentUser = nil;
-    [ASRESTAPI currentUsername:username andPassword:password];
-    
-    _curentUser = [ASRESTAPI currentuserDictionary];
+
+    [ASRESTAPI currentUsername:username andPassword:password completionBlock:^(NSDictionary *response) {
+        _curentUser = response;
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self setupUserLabel];
+        });
+    }];
 }
 
 -(void)setupUserLabel
 {
     NSString *fn = _curentUser[@"user"][@"firstname"];
     NSString *ln = _curentUser[@"user"][@"lastname"];
-//   // NSString* fullName = [NSString stringWithFormat:@"Welcom: %@ %@",fn,ln];
     [self.UserName setText:[NSString stringWithFormat:@"Welcom: %@ %@",fn,ln]];
-     //@"Welcom: ",fn,ln];
-   NSString *mail = _curentUser[@"user"][@"mail"];
     
+    NSString *mail = _curentUser[@"user"][@"mail"];
     [self.userEmail setText:[NSString stringWithFormat:@"Email: %@",mail]];
-     NSString *last_login_on = _curentUser[@"user"][@"last_login_on"];
     
+    
+    NSString *last_login_on = _curentUser[@"user"][@"last_login_on"];
     [self.userLastLoginOn setText:[NSString stringWithFormat:@"Last connection: %@",last_login_on]];
 }
 
@@ -110,29 +119,6 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     
     [self presentViewController:loginViewController animated:NO completion:nil];
     
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
-//    ASLoginViewController *initView = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-//    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-//    [self presentViewController:initView animated:NO completion:nil];
-
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
-//        UIViewController *initView = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-//        [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-//        [self presentViewController:initView animated:NO completion:nil];
-    
-//    UIViewController *vcNew = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"Login"];
-    
-    // Swap out the Front view controller and display
-//    [self.revealViewController setFrontViewController:initView.navigationController];
-//    [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
-
-
-//    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
-//    
-//    [self.revealViewController setFrontViewController:navigation];
-//    [self.revealViewController setFrontViewPosition:FrontViewPositionLeft];
 
 }
 

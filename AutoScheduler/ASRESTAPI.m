@@ -10,7 +10,7 @@
 
 NSString* USER_DEFUALTS_REDMINE = @"USER_DEFUALTS_REDMINE_HOME_URL";
 BOOL logging;
-NSDictionary* currentuserDictionary;
+
 @implementation ASRESTAPI
 
 
@@ -36,24 +36,13 @@ static ASRESTAPI *sharedInstance = nil;
 }
 
 
-+ (NSDictionary*)currentuserDictionary
-{
-    return currentuserDictionary;
-}
-+ (void)setCurrentuserDictionary:(NSDictionary*)newValue
-{
-    currentuserDictionary = newValue;
-}
-
 
 +(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password
 {
     NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",username, password];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu" , (unsigned long)[postData length]];
- //   NSURL *url = [NSURL URLWithString:@"http://172.16.231.19/redmine23/login"];
-   // NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-  //  [request setURL:url];
+
     [sharedInstance.request setHTTPMethod:@"POST"];
     [sharedInstance.request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [sharedInstance.request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -85,20 +74,17 @@ static ASRESTAPI *sharedInstance = nil;
                                       NSLog(@"Response Body:\n%@\n", body);
                                   }];
     [task resume];
-//    UIWebView* webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-//    [self.view addSubview:webView];
-//    [webView loadRequest:request];
 
 }
 
-+(void)currentUsername:(NSString*)username andPassword:(NSString*)password
++(void)currentUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response))completion
 {
-    //NSString *authStr = [NSString stringWithFormat:@"username=%@&password=%@",username, password];
+
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    //NSData *plainData = [plainString dataUsingEncoding:NSUTF8StringEncoding];
+
     NSString *base64String = [authData base64EncodedStringWithOptions:0];
-    //NSLog(@"%@", base64String);
+
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
     
     __block NSDictionary *currentUserdictionarytest = nil;
@@ -118,6 +104,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
                                                         NSLog(@"%@", error);
+                                                        
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
@@ -125,25 +112,27 @@ static ASRESTAPI *sharedInstance = nil;
                                                         currentUserdictionarytest = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:0
                                                                                                                   error:&JSONError];
-                                                        [self setCurrentuserDictionary:currentUserdictionarytest];
-                                                        NSArray* curentuser = [currentUserdictionarytest objectForKey:@"user"];
-                                                        NSLog(@"printing the array here: %@", curentuser);
-                                                        NSNumber *number = currentUserdictionarytest[@"user"][@"id"];
-                                                        NSLog(@"printing the id here: %@", number);
-                                                        NSString *fn = currentUserdictionarytest[@"user"][@"firstname"];
-                                                        NSLog(@"printing the id here: %@", fn);
+                                                       
+//                                                        NSArray* curentuser = [currentUserdictionarytest objectForKey:@"user"];
+//                                                        NSLog(@"printing the array here: %@", curentuser);
+//                                                        NSNumber *number = currentUserdictionarytest[@"user"][@"id"];
+//                                                        NSLog(@"printing the id here: %@", number);
+//                                                        NSString *fn = currentUserdictionarytest[@"user"][@"firstname"];
+//                                                        NSLog(@"printing the id here: %@", fn);
+                                                        
                                                         if (JSONError)
                                                         {
                                                             NSLog(@"Serialization error: %@", JSONError.localizedDescription);
                                                         }
                                                         else
                                                         {
+                                                            completion(currentUserdictionarytest);
                                                             NSLog(@"Response: %@", currentUserdictionarytest);
                                                         }
                                                     }
+                                                
                                                 }];
     [dataTask resume];
-   // NSLog(@"Dictionary: %@", [currentUserdictionary description]);
 }
 
 @end
