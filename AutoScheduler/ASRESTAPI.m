@@ -192,4 +192,56 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
++(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response, NSArray* projectArray))completion
+{
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *base64String = [authData base64EncodedStringWithOptions:0];
+    
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
+    
+    __block NSDictionary *issuesDic = nil;
+    NSDictionary *headers = @{ @"authorization": authValue,
+                               @"accept": @"application/json"
+                               };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/issues.json"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                        
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        NSError *JSONError = nil;
+                                                        issuesDic = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                      options:0
+                                                                                                        error:&JSONError];
+                                                        
+                                                        NSArray* issuesArr = [issuesDic objectForKey:@"issues"];
+                                                        completion(issuesDic, issuesArr);
+                                                 
+                                                        
+                                                        if (JSONError)
+                                                        {
+                                                            NSLog(@"Serialization error: %@", JSONError.localizedDescription);
+                                                        }
+                                                        else
+                                                        {
+                                                            
+                                                            NSLog(@"Response: %@", issuesDic);
+                                                        }
+                                                    }
+                                                    
+                                                }];    [dataTask resume];
+}
+
 @end
