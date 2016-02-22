@@ -14,6 +14,7 @@
 		4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */; };
 		4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */; };
 		4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B21C7A895D0024323C /* IssuesTableViewController.m */; };
+		4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -60,6 +61,8 @@
 		4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsTableViewController.m; sourceTree = "<group>"; };
 		4D9885B11C7A895D0024323C /* IssuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesTableViewController.h; sourceTree = "<group>"; };
 		4D9885B21C7A895D0024323C /* IssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesTableViewController.m; sourceTree = "<group>"; };
+		4D9885B41C7ADBAA0024323C /* ProjectDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailsViewController.h; sourceTree = "<group>"; };
+		4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsViewController.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */,
 				4D9885AE1C7A398E0024323C /* ProjectsTableViewController.h */,
 				4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */,
+				4D9885B41C7ADBAA0024323C /* ProjectDetailsViewController.h */,
+				4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */,
 				4D9885B11C7A895D0024323C /* IssuesTableViewController.h */,
 				4D9885B21C7A895D0024323C /* IssuesTableViewController.m */,
 				4D29C20A1C6D2F2200B34FD5 /* Model */,
@@ -352,6 +357,7 @@
 				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,
 				4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */,
 				4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */,
+				4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */,
 				4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */,
 				4DE9DF6B1C4FEEF800FD9488 /* AutoScheduler.xcdatamodeld in Sources */,
 				4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */,

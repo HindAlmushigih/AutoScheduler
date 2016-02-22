@@ -625,6 +625,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="YiB-xH-9bO" kind="show" action="showDetailViewController:sender:" id="8uT-uG-7ag"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -642,10 +645,10 @@
             </objects>
             <point key="canvasLocation" x="4185" y="-1419"/>
         </scene>
-        <!--View Controller-->
+        <!--Project Details View Controller-->
         <scene sceneID="wCa-t8-PHA">
             <objects>
-                <viewController id="YiB-xH-9bO" sceneMemberID="viewController">
+                <viewController id="YiB-xH-9bO" customClass="ProjectDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gpb-Ze-OUS"/>
                         <viewControllerLayoutGuide type="bottom" id="GIe-ur-zV7"/>
@@ -653,12 +656,54 @@
                     <view key="view" contentMode="scaleToFill" id="VHe-f0-FcC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzQ-dV-tDL">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-Ju-Aq9">
+                                <rect key="frame" x="20" y="113" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tx-Xh-yTu">
+                                <rect key="frame" x="20" y="151" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMu-X0-CbE">
+                                <rect key="frame" x="20" y="201" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcH-XB-uZ0">
+                                <rect key="frame" x="20" y="241" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="_createdontextLabel" destination="6Tx-Xh-yTu" id="Qhn-KZ-Mii"/>
+                        <outlet property="_updated_ontextLabel" destination="ZMu-X0-CbE" id="9aK-Ps-9Tc"/>
+                        <outlet property="createdontextLabel" destination="6Tx-Xh-yTu" id="fEI-zY-50p"/>
+                        <outlet property="descriptiontextLabel" destination="WcH-XB-uZ0" id="lWa-kd-Etc"/>
+                        <outlet property="identifiertextLabel" destination="0tS-Ju-Aq9" id="VJo-hw-lXU"/>
+                        <outlet property="nametextLabel" destination="OzQ-dV-tDL" id="ePj-9T-uqn"/>
+                        <outlet property="updated_ontextLabel" destination="ZMu-X0-CbE" id="Qo5-4z-qQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAf-OQ-oIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4703" y="-2236"/>
+            <point key="canvasLocation" x="4887" y="-2152"/>
         </scene>
         <!--New Project-->
         <scene sceneID="fwk-yl-8KH">
@@ -1017,7 +1062,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NK7-Mg-6As" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6443" y="-1098"/>
+            <point key="canvasLocation" x="6739" y="-1010"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V7o-FD-iFa">
