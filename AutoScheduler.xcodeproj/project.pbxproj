@@ -12,6 +12,7 @@
 		4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */; };
 		4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2121C6D61D100B34FD5 /* HomeViewController.m */; };
 		4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */; };
+		4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -54,6 +55,8 @@
 		4D29C2121C6D61D100B34FD5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4D29C2171C6D62DE00B34FD5 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
 		4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		4D9885AE1C7A398E0024323C /* ProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsTableViewController.h; sourceTree = "<group>"; };
+		4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsTableViewController.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				4D29C2121C6D61D100B34FD5 /* HomeViewController.m */,
 				4D29C2171C6D62DE00B34FD5 /* MenuTableViewCell.h */,
 				4D29C2181C6D62DE00B34FD5 /* MenuTableViewCell.m */,
+				4D9885AE1C7A398E0024323C /* ProjectsTableViewController.h */,
+				4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */,
 				4D29C20A1C6D2F2200B34FD5 /* Model */,
 			);
 			name = Views;
@@ -344,6 +349,7 @@
 				4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */,
 				4DE9DF6B1C4FEEF800FD9488 /* AutoScheduler.xcdatamodeld in Sources */,
 				4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */,
+				4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */,
 				4DE9DF5F1C4FEEF800FD9488 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
