@@ -16,6 +16,7 @@
 		4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B21C7A895D0024323C /* IssuesTableViewController.m */; };
 		4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */; };
 		4D9885B91C7BDC230024323C /* IssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */; };
+		4D9885C01C7C05E60024323C /* NewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885BF1C7C05E60024323C /* NewProjectViewController.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -66,6 +67,8 @@
 		4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailsViewController.m; sourceTree = "<group>"; };
 		4D9885B71C7BDC230024323C /* IssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailsViewController.h; sourceTree = "<group>"; };
 		4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailsViewController.m; sourceTree = "<group>"; };
+		4D9885BE1C7C05E60024323C /* NewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectViewController.h; sourceTree = "<group>"; };
+		4D9885BF1C7C05E60024323C /* NewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectViewController.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				4D9885B21C7A895D0024323C /* IssuesTableViewController.m */,
 				4D9885B71C7BDC230024323C /* IssueDetailsViewController.h */,
 				4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */,
+				4D9885BE1C7C05E60024323C /* NewProjectViewController.h */,
+				4D9885BF1C7C05E60024323C /* NewProjectViewController.m */,
 				4D29C20A1C6D2F2200B34FD5 /* Model */,
 			);
 			name = Views;
@@ -357,6 +362,7 @@
 			files = (
 				4DE9DF651C4FEEF800FD9488 /* ViewController.m in Sources */,
 				4DE9DF621C4FEEF800FD9488 /* AppDelegate.m in Sources */,
+				4D9885C01C7C05E60024323C /* NewProjectViewController.m in Sources */,
 				4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */,
 				4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */,
 				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,

@@ -244,4 +244,59 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
++(void)creatProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project
+{
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *base64String = [authData base64EncodedStringWithOptions:0];
+    
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
+    
+    
+    NSDictionary *headers = @{ @"authorization": authValue,
+                               @"content-type": @"application/json",
+                               @"content-type": @"http//172.16.230.102/redmine23/projects/new"
+                               };
+
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/projects"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    /*
+     Parameters:
+     project (required): a hash of the project attributes, including:
+     name (required): the project name
+     identifier (required): the project identifier
+     description
+     */
+//    {
+//        "project": {
+//            "name": "",
+//            "identifier": "example",
+//            "description": "",
+//        }
+//    }
+    
+   /** [request setHTTPBody:[
+    //dataUsingEncoding:NSUTF8StringEncoding]];**/
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+
 @end

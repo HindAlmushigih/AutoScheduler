@@ -71,7 +71,6 @@
     _estimated_hourstextLabel.text = [_issue objectForKey:@"estimated_hours"];
     _created_ontextLabel.text = [_issue objectForKey:@"created_on"];
     _updated_ontextLabel.text = [_issue objectForKey:@"updated_on"];
-    
 }
 /*
 #pragma mark - Navigation

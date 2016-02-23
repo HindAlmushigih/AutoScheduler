@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
 
-@interface SWUITableViewCell : UITableViewCell
-@property (nonatomic) IBOutlet UILabel *label;
-@end
-
 @interface MenuTableViewCell : UITableViewController
 
 @end
