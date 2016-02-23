@@ -9,7 +9,7 @@
 #import "IssuesTableViewController.h"
 #import "ASRESTAPI.h"
 #import "ASUserSingleton.h"
-
+#import "IssueDetailsViewController.h"
 /*
  {
  author =     {
@@ -146,14 +146,12 @@
  }
  */
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    IssueDetailsViewController *detailViewController = (IssueDetailsViewController *)segue.destinationViewController;
+    detailViewController.issue = [issuesItems objectAtIndex:indexPath.row];
+}
 
 @end
