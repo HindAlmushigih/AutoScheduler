@@ -1,15 +1,17 @@
 //
-//  HomeViewController.h
+//  CustomActivityIndicatorViewObj.h
 //  AutoScheduler
 //
-//  Created by Hind Almushigih on 11/2/16.
+//  Created by Hind Almushigih on 24/2/16.
 //  Copyright © 2016 Gannon University. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
- {
+@interface CustomActivityIndicatorViewObj : UIViewController
+
+{
     UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
@@ -19,5 +21,6 @@
 @property (nonatomic, retain) UIView *loadingView;
 @property (nonatomic, retain) UILabel *loadingLabel;
 
-@property NSDictionary* curentUser;
+-(void)setupLoadingIndicator;
+
 @end

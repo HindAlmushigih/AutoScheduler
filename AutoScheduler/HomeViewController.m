@@ -50,10 +50,8 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
 
     _revealButtonItem = [[UIBarButtonItem alloc]
                                          initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style: UIBarButtonItemStylePlain  target:revealController action:@selector(revealToggle:)];
-
+    [self setupLoadingIndicator];
     [self getThecurrentUser];
-
-    
 }
 - (void)customSetup
 {
@@ -86,12 +84,36 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     [ASRESTAPI currentUsername:username andPassword:password completionBlock:^(NSDictionary *response) {
         _curentUser = response;
         dispatch_async(dispatch_get_main_queue(), ^{
-        [self setupUserLabel];
+            [activityView stopAnimating];
+            [loadingView removeFromSuperview];
+            [self setupUserLabel];
         });
     }];
 }
 
--(void)setupUserLabel
+-(void)setupLoadingIndicator
+{
+    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
+    loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    loadingView.clipsToBounds = YES;
+    loadingView.layer.cornerRadius = 10.0;
+    
+    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.frame = CGRectMake(65, 40, activityView.bounds.size.width, activityView.bounds.size.height);
+    [loadingView addSubview:activityView];
+    
+    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
+    loadingLabel.backgroundColor = [UIColor clearColor];
+    loadingLabel.textColor = [UIColor whiteColor];
+    loadingLabel.adjustsFontSizeToFitWidth = YES;
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    loadingLabel.text = @"Loading...";
+    [loadingView addSubview:loadingLabel];
+    [self.view addSubview:loadingView];
+    [activityView startAnimating];
+}
+
+ -(void)setupUserLabel
 {
     NSString *fn = _curentUser[@"user"][@"firstname"];
     NSString *ln = _curentUser[@"user"][@"lastname"];
