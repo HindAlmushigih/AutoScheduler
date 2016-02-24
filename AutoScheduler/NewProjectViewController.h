@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewProjectViewController : UIViewController
+@property NSMutableDictionary* project;
+@property NSMutableDictionary* projectDetails;
 
 @end

@@ -132,12 +132,12 @@
 				4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */,
 				4D9885B41C7ADBAA0024323C /* ProjectDetailsViewController.h */,
 				4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */,
+				4D9885BE1C7C05E60024323C /* NewProjectViewController.h */,
+				4D9885BF1C7C05E60024323C /* NewProjectViewController.m */,
 				4D9885B11C7A895D0024323C /* IssuesTableViewController.h */,
 				4D9885B21C7A895D0024323C /* IssuesTableViewController.m */,
 				4D9885B71C7BDC230024323C /* IssueDetailsViewController.h */,
 				4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */,
-				4D9885BE1C7C05E60024323C /* NewProjectViewController.h */,
-				4D9885BF1C7C05E60024323C /* NewProjectViewController.m */,
 				4D29C20A1C6D2F2200B34FD5 /* Model */,
 			);
 			name = Views;

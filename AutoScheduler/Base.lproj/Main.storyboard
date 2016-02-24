@@ -626,7 +626,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YiB-xH-9bO" kind="show" id="7W3-Y2-vGK"/>
+                                    <segue destination="YiB-xH-9bO" kind="show" identifier="ShowSelectedProject" id="7W3-Y2-vGK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -639,7 +639,7 @@
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="Eb3-Ki-SIT"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="K6T-PO-EQ7">
                             <connections>
-                                <segue destination="UiT-aG-XmM" kind="presentation" modalPresentationStyle="fullScreen" id="Vtj-Zr-NLD"/>
+                                <segue destination="UiT-aG-XmM" kind="presentation" identifier="CreateNewProject" id="Vtj-Zr-NLD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -751,68 +751,50 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kug-aX-0EP">
                                 <rect key="frame" x="149" y="107" width="431" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-71-OHA">
-                                <rect key="frame" x="271" y="536" width="186" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="186" id="iL0-9p-ess"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="0.25098039220000001" green="0.19215686269999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Wdj-t6-AVv" firstAttribute="top" secondItem="k0b-Uw-zTu" secondAttribute="bottom" constant="8" symbolic="YES" id="3e3-vd-JQY"/>
-                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="trailing" secondItem="zH0-35-gkL" secondAttribute="trailingMargin" id="5JF-1R-oUu"/>
-                            <constraint firstItem="Wdj-t6-AVv" firstAttribute="leading" secondItem="k0b-Uw-zTu" secondAttribute="leading" id="FDw-hd-nzn"/>
-                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="centerX" secondItem="J0G-71-OHA" secondAttribute="centerX" id="O7q-rz-gi4"/>
-                            <constraint firstItem="kug-aX-0EP" firstAttribute="top" secondItem="5Jg-pW-uFO" secondAttribute="bottom" constant="8" symbolic="YES" id="OF1-B3-XC3"/>
-                            <constraint firstItem="k0b-Uw-zTu" firstAttribute="top" secondItem="Yaz-YC-glO" secondAttribute="bottom" constant="8" symbolic="YES" id="S5r-Z7-nlp"/>
-                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="leading" secondItem="kug-aX-0EP" secondAttribute="leading" id="XcE-xE-CER"/>
-                            <constraint firstItem="mjS-qO-VAb" firstAttribute="top" secondItem="J0G-71-OHA" secondAttribute="bottom" constant="136" id="gS7-On-5zB"/>
-                            <constraint firstItem="kug-aX-0EP" firstAttribute="trailing" secondItem="Ytq-JU-5UG" secondAttribute="trailing" id="iyC-8y-SiT"/>
-                            <constraint firstItem="J0G-71-OHA" firstAttribute="top" secondItem="Ytq-JU-5UG" secondAttribute="bottom" constant="41" id="k2k-iE-BFw"/>
-                            <constraint firstItem="nNv-8U-h31" firstAttribute="centerY" secondItem="Ytq-JU-5UG" secondAttribute="centerY" id="oQp-qF-kIO"/>
-                            <constraint firstItem="nNv-8U-h31" firstAttribute="leading" secondItem="Wdj-t6-AVv" secondAttribute="leading" id="rLn-MD-PRt"/>
-                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="leading" secondItem="kug-aX-0EP" secondAttribute="leading" id="tg4-Hh-gQS"/>
-                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="leading" secondItem="k0b-Uw-zTu" secondAttribute="trailing" constant="8" symbolic="YES" id="x2L-KI-vBr"/>
-                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="baseline" secondItem="k0b-Uw-zTu" secondAttribute="baseline" id="xF3-qU-iYw"/>
-                            <constraint firstItem="k0b-Uw-zTu" firstAttribute="leading" secondItem="zH0-35-gkL" secondAttribute="leadingMargin" id="ypk-zH-bjE"/>
-                            <constraint firstItem="kug-aX-0EP" firstAttribute="trailing" secondItem="5Jg-pW-uFO" secondAttribute="trailing" id="z5h-uH-dZe"/>
-                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="top" secondItem="kug-aX-0EP" secondAttribute="bottom" constant="8" symbolic="YES" id="zeX-lE-fkr"/>
+                            <constraint firstItem="kug-aX-0EP" firstAttribute="trailing" secondItem="Ytq-JU-5UG" secondAttribute="trailing" id="31o-Gp-QEs"/>
+                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="top" secondItem="kug-aX-0EP" secondAttribute="bottom" constant="8" symbolic="YES" id="3Ks-Q1-OfT"/>
+                            <constraint firstItem="kug-aX-0EP" firstAttribute="top" secondItem="5Jg-pW-uFO" secondAttribute="bottom" constant="8" symbolic="YES" id="5ny-xO-F9i"/>
+                            <constraint firstItem="nNv-8U-h31" firstAttribute="leading" secondItem="Wdj-t6-AVv" secondAttribute="leading" id="6N1-Wj-Yxv"/>
+                            <constraint firstItem="kug-aX-0EP" firstAttribute="leading" secondItem="5Jg-pW-uFO" secondAttribute="leading" id="84w-IA-7PA"/>
+                            <constraint firstItem="k0b-Uw-zTu" firstAttribute="top" secondItem="Yaz-YC-glO" secondAttribute="bottom" constant="8" symbolic="YES" id="B4g-RF-abs"/>
+                            <constraint firstItem="Ytq-JU-5UG" firstAttribute="leading" secondItem="kug-aX-0EP" secondAttribute="leading" id="G80-Gx-Jlu"/>
+                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="trailing" secondItem="kug-aX-0EP" secondAttribute="trailing" id="JS4-UE-tUh"/>
+                            <constraint firstItem="Wdj-t6-AVv" firstAttribute="top" secondItem="k0b-Uw-zTu" secondAttribute="bottom" constant="8" symbolic="YES" id="LB4-qH-eT2"/>
+                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="leading" secondItem="k0b-Uw-zTu" secondAttribute="trailing" constant="8" symbolic="YES" id="WKT-p5-PY6"/>
+                            <constraint firstItem="5Jg-pW-uFO" firstAttribute="baseline" secondItem="k0b-Uw-zTu" secondAttribute="baseline" id="aPY-Z3-rIn"/>
+                            <constraint firstItem="Wdj-t6-AVv" firstAttribute="leading" secondItem="zH0-35-gkL" secondAttribute="leadingMargin" id="dHa-hC-Wer"/>
+                            <constraint firstItem="mjS-qO-VAb" firstAttribute="top" secondItem="Ytq-JU-5UG" secondAttribute="bottom" constant="207" id="dIk-8c-0K1"/>
+                            <constraint firstItem="k0b-Uw-zTu" firstAttribute="leading" secondItem="Wdj-t6-AVv" secondAttribute="leading" id="jmM-Be-sce"/>
+                            <constraint firstItem="nNv-8U-h31" firstAttribute="centerY" secondItem="Ytq-JU-5UG" secondAttribute="centerY" id="sIJ-hf-GdJ"/>
+                            <constraint firstItem="kug-aX-0EP" firstAttribute="trailing" secondItem="zH0-35-gkL" secondAttribute="trailingMargin" id="wOZ-dg-RI0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NUy-iK-ahw">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oDt-Y8-I4H">
                             <connections>
-                                <action selector="cancel:" destination="whz-ff-qrV" id="tFN-oR-e7Z"/>
-                                <segue destination="5Pk-TW-Xao" kind="unwind" unwindAction="cancel:" id="Pu2-OP-smM"/>
+                                <action selector="cancel:" destination="whz-ff-qrV" id="6jh-zF-wu5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="lOj-mt-0aU">
                             <connections>
-                                <action selector="save:" destination="whz-ff-qrV" id="Ay4-82-RHE"/>
-                                <segue destination="5Pk-TW-Xao" kind="unwind" unwindAction="save:" id="22e-wG-UeX"/>
+                                <action selector="save:" destination="whz-ff-qrV" id="pgB-xo-XMv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="projectDescription" destination="kug-aX-0EP" id="4li-xf-Wqm"/>
+                        <outlet property="projectIdentifier" destination="Ytq-JU-5UG" id="Lfv-cZ-SgD"/>
+                        <outlet property="projectName" destination="5Jg-pW-uFO" id="1sx-eS-juB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPv-qZ-yZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5Pk-TW-Xao" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5782" y="-1442"/>
         </scene>

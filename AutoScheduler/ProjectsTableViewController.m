@@ -10,6 +10,7 @@
 #import "ASRESTAPI.h"
 #import "ASUserSingleton.h"
 #import "ProjectDetailsViewController.h"
+#import "NewProjectViewController.h"
 
 
 @interface ProjectsTableViewController ()
@@ -123,9 +124,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowSelectedProject"])
+    {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     ProjectDetailsViewController *detailViewController = (ProjectDetailsViewController *)segue.destinationViewController;
     detailViewController.project = [projectsItems objectAtIndex:indexPath.row];
+    } else if ([[segue identifier] isEqualToString:@"CreateNewProject"])
+    {
+        NewProjectViewController* nvc = (NewProjectViewController *)segue.destinationViewController;
+        
+    }
 
 }
 

@@ -272,28 +272,40 @@ static ASRESTAPI *sharedInstance = nil;
      name (required): the project name
      identifier (required): the project identifier
      description
-     */
-//    {
-//        "project": {
-//            "name": "",
-//            "identifier": "example",
-//            "description": "",
-//        }
-//    }
+    {
+        "project": {
+            "name": "",
+            "identifier": "example",
+            "description": "",
+        }
+    }
+    **/
+   
+    NSData *projectData = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil];
+    //NSString* jsonString = [[NSString alloc]initWithData: projectData                                              encoding: NSUTF8StringEncoding ];
+    
+//    [[NSString alloc]initWithData: [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil] encoding: NSUTF8StringEncoding ];
+    
     
    /** [request setHTTPBody:[
     //dataUsingEncoding:NSUTF8StringEncoding]];**/
-    
+    //NSData* anotherdataobj = jsonString;
+    [request setHTTPBody:projectData];//anotherdataobj];//[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
+                                                        // Handle error...
+                                                        NSLog(@"something wrong");
+                                                        return;
                                                     }
+                                                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                                        NSLog(@"Response HTTP Status code: %ld\n", (long)[(NSHTTPURLResponse *)response statusCode]);
+                                                        NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
+                                                    }
+                                                    NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                                    NSLog(@"Response Body:\n%@\n", body);
                                                 }];
     [dataTask resume];
 }
