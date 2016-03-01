@@ -35,7 +35,11 @@ static ASRESTAPI *sharedInstance = nil;
     logging = newValue;
 }
 
-
+/*!
+ * @discussion A login method for the registered user
+ * @param username NSString to be used.
+ * @param password The password the user account.
+ */
 
 +(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password
 {

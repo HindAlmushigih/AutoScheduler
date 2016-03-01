@@ -59,18 +59,26 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)setUptTheLabels
+
+//
+//_nametextLabel.text = [@"Project Name: " stringByAppendingString:[_project objectForKey:@"name"]];//[_project objectForKey:@"name"];
+//_identifiertextLabel.text = [@"Project Identifier: " stringByAppendingString:[_project objectForKey:@"identifier"]]; //[_project objectForKey:@"identifier"];
+//_createdontextLabel.text = [@"Created On: " stringByAppendingString:[_project objectForKey:@"created_on"]];  //[_project objectForKey:@"created_on"];
+//_updated_ontextLabel.text =  [@"Updated On: " stringByAppendingString:[_project objectForKey:@"updated_on"]]; //[_project objectForKey:@"updated_on"];
+//_descriptiontextLabel.text = [@"Description: " stringByAppendingString:[_project objectForKey:@"description"]]; //[_project objectForKey:@"Description"]];
+
 {
-    _projectNametextLabel.text = _issue[@"project"][@"name"];
-    _trackerNametextLabel.text = _issue[@"tracker"][@"name"];
-    _issueStatustextLabel.text = _issue[@"status"][@"name"];
-    _issuePrioritytextLabel.text = _issue[@"priority"][@"name"];
-    _subjecttextLabel.text = [_issue objectForKey:@"subject"];
-    _authorNametextLabel.text = _issue[@"author"][@"name"];
-    _start_datetextLabel.text = [_issue objectForKey:@"start_date"];
-    _due_datetextLabel.text = [_issue objectForKey:@"due_date"];
-    _estimated_hourstextLabel.text = [_issue objectForKey:@"estimated_hours"];
-    _created_ontextLabel.text = [_issue objectForKey:@"created_on"];
-    _updated_ontextLabel.text = [_issue objectForKey:@"updated_on"];
+    _projectNametextLabel.text = [@"Project Name: " stringByAppendingString: _issue[@"project"][@"name"]];
+    _trackerNametextLabel.text = [@"Tracker Name: " stringByAppendingString: _issue[@"tracker"][@"name"]];
+    _issueStatustextLabel.text = [@"Project Status: " stringByAppendingString: _issue[@"status"][@"name"]];
+    _issuePrioritytextLabel.text = [@"Priority Name: " stringByAppendingString:_issue[@"priority"][@"name"]];
+    _subjecttextLabel.text = [@"Subject: " stringByAppendingString: [_issue objectForKey:@"subject"]];
+    _authorNametextLabel.text = [@"Auther Name: " stringByAppendingString: _issue[@"author"][@"name"]];
+    _start_datetextLabel.text = [@"Start Date: " stringByAppendingString:[_issue objectForKey:@"start_date"]];
+    _due_datetextLabel.text = [@"Due Date: " stringByAppendingString:[_issue objectForKey:@"due_date"]];
+    _estimated_hourstextLabel.text = [@"Estimated hours: " stringByAppendingString:[_issue objectForKey:@"estimated_hours"]];
+    _created_ontextLabel.text = [@"Created On: " stringByAppendingString: [_issue objectForKey:@"created_on"]];
+    _updated_ontextLabel.text = [@"Updated On: " stringByAppendingString:[_issue objectForKey:@"updated_on"]];
 }
 /*
 #pragma mark - Navigation

@@ -16,6 +16,9 @@
 
 +(ASRESTAPI*)sharedInstance;
 
+
+
+
 + (BOOL)logging ;
 + (void)setLogging:(BOOL)newValue;
 
