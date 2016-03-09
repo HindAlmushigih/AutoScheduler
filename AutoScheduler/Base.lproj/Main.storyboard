@@ -350,6 +350,7 @@
                             <constraint firstItem="fhL-GX-ghG" firstAttribute="leading" secondItem="V5c-H1-1Gf" secondAttribute="leading" id="y0g-1j-U3v"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ol-Vw-bdg" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="-673" y="12"/>
         </scene>
-        <!--Menu Table View Cell-->
+        <!--Menu-->
         <scene sceneID="Ldp-45-eCR">
             <objects>
-                <tableViewController storyboardIdentifier="MenuTableViewCell" id="oTS-KG-xDv" customClass="MenuTableViewCell" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuTableViewCell" title="Menu" id="oTS-KG-xDv" customClass="MenuTableViewCell" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HQn-L5-OWi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -978,12 +979,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1N-xT-ulv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5915" y="-763"/>
+            <point key="canvasLocation" x="5782" y="-755"/>
         </scene>
         <!--GanntChart-->
         <scene sceneID="Hbh-E6-8Po">
             <objects>
-                <viewController title="GanntChart" id="9am-uB-K9t" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="GanntChart" id="9am-uB-K9t" customClass="GanttChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xMa-5V-BP6"/>
                         <viewControllerLayoutGuide type="bottom" id="Hrj-2f-iig"/>
@@ -1001,7 +1002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFd-8w-LO8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5005" y="-3"/>
+            <point key="canvasLocation" x="5005" y="53"/>
         </scene>
         <!--calendar-->
         <scene sceneID="jo0-LS-jXm">
@@ -1270,7 +1271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hM5-UZ-dMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7202" y="-70"/>
+            <point key="canvasLocation" x="7202" y="26"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="yGI-t7-MvS">
@@ -1306,7 +1307,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ge2-3t-zZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9091" y="-1196"/>
+            <point key="canvasLocation" x="8263" y="-1244"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="rOj-Ir-O8L">
@@ -1424,7 +1425,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41f-TY-Lmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6367" y="-75"/>
+            <point key="canvasLocation" x="6367" y="45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dg4-bb-bQ3">

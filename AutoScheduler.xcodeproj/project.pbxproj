@@ -17,6 +17,13 @@
 		4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */; };
 		4D9885B91C7BDC230024323C /* IssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */; };
 		4D9885C01C7C05E60024323C /* NewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885BF1C7C05E60024323C /* NewProjectViewController.m */; };
+		4DB7F0E11C8E817700C808D9 /* GanttChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0E01C8E817700C808D9 /* GanttChartViewController.m */; };
+		4DB7F0ED1C8E81E100C808D9 /* IQCalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0E41C8E81E100C808D9 /* IQCalendarDataSource.m */; };
+		4DB7F0EE1C8E81E100C808D9 /* IQCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0E61C8E81E100C808D9 /* IQCalendarHeaderView.m */; };
+		4DB7F0EF1C8E81E100C808D9 /* IQGanttView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0E81C8E81E100C808D9 /* IQGanttView.m */; };
+		4DB7F0F01C8E81E100C808D9 /* IQScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0EA1C8E81E100C808D9 /* IQScheduleView.m */; };
+		4DB7F0F11C8E81E100C808D9 /* IQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0EC1C8E81E100C808D9 /* IQScrollView.m */; };
+		4DB7F0F41C8E825C00C808D9 /* IssuesObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -69,6 +76,20 @@
 		4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailsViewController.m; sourceTree = "<group>"; };
 		4D9885BE1C7C05E60024323C /* NewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectViewController.h; sourceTree = "<group>"; };
 		4D9885BF1C7C05E60024323C /* NewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectViewController.m; sourceTree = "<group>"; };
+		4DB7F0DF1C8E817700C808D9 /* GanttChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GanttChartViewController.h; sourceTree = "<group>"; };
+		4DB7F0E01C8E817700C808D9 /* GanttChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GanttChartViewController.m; sourceTree = "<group>"; };
+		4DB7F0E31C8E81E100C808D9 /* IQCalendarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQCalendarDataSource.h; sourceTree = "<group>"; };
+		4DB7F0E41C8E81E100C808D9 /* IQCalendarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQCalendarDataSource.m; sourceTree = "<group>"; };
+		4DB7F0E51C8E81E100C808D9 /* IQCalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQCalendarHeaderView.h; sourceTree = "<group>"; };
+		4DB7F0E61C8E81E100C808D9 /* IQCalendarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQCalendarHeaderView.m; sourceTree = "<group>"; };
+		4DB7F0E71C8E81E100C808D9 /* IQGanttView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQGanttView.h; sourceTree = "<group>"; };
+		4DB7F0E81C8E81E100C808D9 /* IQGanttView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQGanttView.m; sourceTree = "<group>"; };
+		4DB7F0E91C8E81E100C808D9 /* IQScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQScheduleView.h; sourceTree = "<group>"; };
+		4DB7F0EA1C8E81E100C808D9 /* IQScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQScheduleView.m; sourceTree = "<group>"; };
+		4DB7F0EB1C8E81E100C808D9 /* IQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQScrollView.h; sourceTree = "<group>"; };
+		4DB7F0EC1C8E81E100C808D9 /* IQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQScrollView.m; sourceTree = "<group>"; };
+		4DB7F0F21C8E825C00C808D9 /* IssuesObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesObj.h; sourceTree = "<group>"; };
+		4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesObj.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -138,6 +159,9 @@
 				4D9885B21C7A895D0024323C /* IssuesTableViewController.m */,
 				4D9885B71C7BDC230024323C /* IssueDetailsViewController.h */,
 				4D9885B81C7BDC230024323C /* IssueDetailsViewController.m */,
+				4DB7F0DF1C8E817700C808D9 /* GanttChartViewController.h */,
+				4DB7F0E01C8E817700C808D9 /* GanttChartViewController.m */,
+				4DB7F0E21C8E818400C808D9 /* GanttChartView */,
 				4D29C20A1C6D2F2200B34FD5 /* Model */,
 			);
 			name = Views;
@@ -150,8 +174,27 @@
 				4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */,
 				4D29C20E1C6D4D8900B34FD5 /* ASRESTAPI.h */,
 				4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */,
+				4DB7F0F21C8E825C00C808D9 /* IssuesObj.h */,
+				4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		4DB7F0E21C8E818400C808D9 /* GanttChartView */ = {
+			isa = PBXGroup;
+			children = (
+				4DB7F0E31C8E81E100C808D9 /* IQCalendarDataSource.h */,
+				4DB7F0E41C8E81E100C808D9 /* IQCalendarDataSource.m */,
+				4DB7F0E51C8E81E100C808D9 /* IQCalendarHeaderView.h */,
+				4DB7F0E61C8E81E100C808D9 /* IQCalendarHeaderView.m */,
+				4DB7F0E71C8E81E100C808D9 /* IQGanttView.h */,
+				4DB7F0E81C8E81E100C808D9 /* IQGanttView.m */,
+				4DB7F0E91C8E81E100C808D9 /* IQScheduleView.h */,
+				4DB7F0EA1C8E81E100C808D9 /* IQScheduleView.m */,
+				4DB7F0EB1C8E81E100C808D9 /* IQScrollView.h */,
+				4DB7F0EC1C8E81E100C808D9 /* IQScrollView.m */,
+			);
+			name = GanttChartView;
 			sourceTree = "<group>";
 		};
 		4DD5E3291C527A84009350F4 /* SWRevealViewController */ = {
@@ -363,15 +406,22 @@
 				4DE9DF651C4FEEF800FD9488 /* ViewController.m in Sources */,
 				4DE9DF621C4FEEF800FD9488 /* AppDelegate.m in Sources */,
 				4D9885C01C7C05E60024323C /* NewProjectViewController.m in Sources */,
+				4DB7F0F41C8E825C00C808D9 /* IssuesObj.m in Sources */,
 				4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */,
+				4DB7F0E11C8E817700C808D9 /* GanttChartViewController.m in Sources */,
 				4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */,
+				4DB7F0EF1C8E81E100C808D9 /* IQGanttView.m in Sources */,
 				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,
 				4D9885B91C7BDC230024323C /* IssueDetailsViewController.m in Sources */,
+				4DB7F0F01C8E81E100C808D9 /* IQScheduleView.m in Sources */,
 				4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */,
 				4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */,
 				4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */,
 				4D29C2131C6D61D100B34FD5 /* HomeViewController.m in Sources */,
+				4DB7F0F11C8E81E100C808D9 /* IQScrollView.m in Sources */,
 				4DE9DF6B1C4FEEF800FD9488 /* AutoScheduler.xcdatamodeld in Sources */,
+				4DB7F0EE1C8E81E100C808D9 /* IQCalendarHeaderView.m in Sources */,
+				4DB7F0ED1C8E81E100C808D9 /* IQCalendarDataSource.m in Sources */,
 				4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */,
 				4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */,
 				4DE9DF5F1C4FEEF800FD9488 /* main.m in Sources */,

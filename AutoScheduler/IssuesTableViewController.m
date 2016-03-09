@@ -104,9 +104,9 @@
     NSString* username = [[ASUserSingleton sharedInstance]userName];
     NSString* password = [[ASUserSingleton sharedInstance]password];
     _issues = nil;
-    [ASRESTAPI issuesListUsername:username andPassword:password completionBlock:^(NSDictionary *response, NSArray *projectArray) {
+    [ASRESTAPI issuesListUsername:username andPassword:password completionBlock:^(NSDictionary *response, NSArray *issueArray) {
         _issues = response;
-        issuesItems = projectArray;
+        issuesItems = issueArray;
         [self.tableView reloadData];
 
     }];
