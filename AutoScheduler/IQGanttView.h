@@ -78,6 +78,8 @@ typedef struct _IQGanttViewTimeWindow {
 - (void)ganttView:(IQGanttView*)view didChangeCalendar:(NSCalendar*)calendar;
 - (void)ganttView:(IQGanttView*)view didScaleWindow:(IQGanttViewTimeWindow)win;
 - (void)ganttView:(IQGanttView*)view didMoveWindow:(IQGanttViewTimeWindow)win;
+- (CGFloat)ganttViewRowHeight;
+
 @end
 
 @interface IQGanttHeaderView : UIView <IQGanttHeaderDelegate> {
@@ -116,6 +118,7 @@ static IQGridDash IQMakeGridDash(CGFloat a, CGFloat b) {
     NSCalendarUnit primaryLineUnits;
     NSCalendarUnit secondaryLineUnits;
     NSCalendarUnit tertaryLineUnits;
+    NSMutableArray* rowViews;
 }
 
 @property (nonatomic, retain) id<IQCalendarDataSource> dataSource;
@@ -125,6 +128,7 @@ static IQGridDash IQMakeGridDash(CGFloat a, CGFloat b) {
 @property (nonatomic) IQGridDash primaryGridDash;
 @property (nonatomic) IQGridDash secondaryGridDash;
 @property (nonatomic) IQGridDash tertaryGridDash;
+@property (nonatomic) CGFloat height;
 
 // Overridable. Called to create and manage the subviews.
 - (void) layoutItems:(IQGanttView*)gantt;

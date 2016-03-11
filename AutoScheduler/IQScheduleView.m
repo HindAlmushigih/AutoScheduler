@@ -584,6 +584,7 @@ const CGFloat kDayViewPadding = 0.0;
 - (void) setText:(NSString *)text
 {
     textLabel.text = text;
+    NSLog(@"this is to see the value for the text: %@",text);
 }
 
 - (NSString*) text

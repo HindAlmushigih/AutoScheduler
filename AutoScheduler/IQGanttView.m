@@ -122,7 +122,8 @@
 
 - (void)layoutOnRowsChange
 {
-    int y = 0;
+    /*
+     int y = 0;
     if(columnHeaderView != nil) {
         y += columnHeaderView.frame.size.height;
     }
@@ -134,7 +135,24 @@
             height = rowHeight(self, view, data);
         view.frame = CGRectMake(0, y, self.contentSize.width, height);
         y += height;
+     */
+    int y = 0;
+    int heightContent = 0;
+    if(columnHeaderView != nil) {
+        y += columnHeaderView.frame.size.height;
     }
+    for(int i = 0; i < rows.count; i++) {
+        UIView<IQGanttRowDelegate>* view = rowViews[i];
+        id<IQCalendarDataSource> data = rows[i];
+        NSInteger height = defaultRowHeight;
+        if([view respondsToSelector:@selector(ganttViewRowHeight)]) {
+            height = [(id<IQGanttRowDelegate>)view ganttViewRowHeight];
+        }
+        view.frame = CGRectMake(0, y, self.contentSize.width, height);
+        y += height;
+        heightContent += height;
+    }
+    [self setContentSize:CGSizeMake(self.contentSize.width, heightContent)];
 }
 
 #pragma mark Properties
@@ -237,11 +255,14 @@
         rowViews = [NSMutableArray new];
     [rows addObject:row];
     [rowViews addObject:view];
+    if([view respondsToSelector:@selector(ganttView:didChangeCalendar:)]) {
+        [view ganttView:self didChangeCalendar:calendar];
+    }
     if([view respondsToSelector:@selector(ganttView:didChangeDataSource:)]) {
         [view ganttView:self didChangeDataSource:row];
     }
-    if([view respondsToSelector:@selector(ganttView:didChangeCalendar:)]) {
-        [view ganttView:self didChangeCalendar:calendar];
+    if([view respondsToSelector:@selector(ganttView:didScaleWindow:)]) {
+        [view ganttView:self didScaleWindow:scaleWindow];
     }
     [view setNeedsDisplay];
     [self layoutOnRowsChange];
@@ -271,6 +292,7 @@
 - (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text
 {
     IQScheduleBlockView* lbl = [[IQScheduleBlockView alloc] initWithFrame:frame];
+    lbl.text = text;
     lbl.contentMode = UIViewContentModeCenter;
     lbl.backgroundColor = [UIColor redColor];
     return lbl;
@@ -549,6 +571,7 @@
     NSTimeInterval t1 = scaleWindow.windowEnd;
     CGSize sz = self.bounds.size;
     CGFloat tscl = sz.width / (t1 - t0);
+    
     [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value) {
         CGRect frame = CGRectMake((startDate-t0)*tscl, 0, (endDate-startDate)*tscl, sz.height);
         
@@ -556,10 +579,12 @@
         if([value respondsToSelector:@selector(characterAtIndex:)]) {
             text = (NSString*)value;
         }
+        text = @"this is only to test";
         
         UIView* view = [gantt createViewForActivityWithFrame:frame text:text];
         [self addSubview:view];
-    } from:scaleWindow.windowStart to:scaleWindow.windowEnd];
+    }
+                                      from:scaleWindow.windowStart to:scaleWindow.windowEnd];
 }
 
 - (void)ganttView:(IQGanttView *)view didChangeDataSource:(id<IQCalendarDataSource>)ds
@@ -734,6 +759,11 @@
         [self layoutItems:view];
     }
     [self setNeedsDisplay];
+}
+
+- (CGFloat)ganttViewRowHeight
+{
+    return self.height * (rowViews.count + 1);
 }
 
 @end
