@@ -88,7 +88,8 @@ typedef NSTimeInterval (^IQCalendarDataSourceTimeExtractor)(id item);
 - (id) initWithArray:(NSArray*)items;
 
 // Key/value coding (uses blocks internally)
-- (void) setKeysForStartDate:(NSString*)startDateKey endDate:(NSString*)endDateKey;
+//- (void) setKeysForStartDate:(NSString*)startDateKey endDate:(NSString*)endDateKey;
+- (void) setKeysForStartDate:(SEL)startDateSel endDate:(SEL)endDateSel;
 // - (NSString*)textSelector:(id)item;
 - (void) setKeyForValue:(NSString*)valueKey;
 

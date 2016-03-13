@@ -11,6 +11,42 @@
 #import "ASUserSingleton.h"
 #import "IssuesObj.h"
 #import "IQGanttView.h"
+
+@interface CalendarEntry : NSObject <IQCalendarSimpleDataItem> {
+    NSDate* start, *end;
+    NSString* text;
+}
+
++ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)end;
+- (NSString*) text;
+- (NSDate*) startDate;
+- (NSDate*) endDate;
+@end
+
+@implementation CalendarEntry
++ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)e
+{
+    CalendarEntry* ent = [[CalendarEntry alloc] init];
+    if(ent == nil) return nil;
+    ent->start = s;
+    ent->end = e;
+    ent->text = text;
+    return ent;
+}
+- (NSString*) text {
+    return text;
+}
+- (NSDate*) startDate {
+    return start;
+}
+- (NSDate*) endDate {
+    return end;
+}
+- (UIColor*) color {
+    return [UIColor redColor];
+}
+@end
+
 @interface GanttChartViewController ()
 
 @end
@@ -18,13 +54,14 @@
 @implementation GanttChartViewController
 {
     NSArray *issuesItems;
+    CalendarEntry* ent;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     issuesItems = [[NSArray alloc] init];
     self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.ganttView];
-    [self setupLoadingIndicator];
+   // [self setupLoadingIndicator];
     // Do any additional setup after loading the
     [self gettheIssuesItems];
 }
@@ -67,6 +104,7 @@
         issuesItems = issueArray;
         
         NSMutableArray *issuesObjs = [NSMutableArray array];
+        NSMutableSet* items = [NSMutableSet set];
         int i;
         for (i =0; i < issuesItems.count;i++)
         {
@@ -76,16 +114,35 @@
                                                                  dueDate:issuesItems[i][@"due_date"]
                                                           estimatedhours:issuesItems[i][@"estimated_hours"]];
             //issuesItems[i] objectForKey:@"project"];
-            [issuesObjs addObject:issuesObj];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [activityView stopAnimating];
-            [loadingView removeFromSuperview];
-            for (IssuesObj* issuesObj in issuesObjs) {
-                [self.ganttView addRow:issuesObj];
-            }
             
-        });
+           // NSTimeInterval t = [issuesItems[i][@"start_date"] timeIntervalSinceReferenceDate];
+           // NSTimeInterval tt = [issuesItems[i][@"due_date"] timeIntervalSinceReferenceDate];
+            
+            [issuesObjs addObject:issuesObj];
+            [items addObject:[CalendarEntry
+                              entryWithText:issuesItems[i][@"project"][@"name"]
+                              start: issuesItems[i][@"start_date"] /*[NSDate dateWithTimeIntervalSinceReferenceDate:t]*/ end: issuesItems[i][@"due_date"]/*[NSDate dateWithTimeIntervalSinceReferenceDate:tt]]*/]];
+                              /*start:issuesItems[i][@"start_date"]/*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"start_date"]]*/
+                            //  end:issuesItems[i][@"due_date"] /*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"due_date"]*/]]**/;
+            [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
+        }
+        
+        
+//        [items addObject:[CalendarEntry entryWithText:@"Issue" start:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"start_date"]] end:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"due_date"]]]];
+//        [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
+        
+        /*dispatch_async(dispatch_get_main_queue(), ^{
+            [activityView stopAnimating];
+            for (loadingView in [self.ganttView subviews])
+            {
+                [loadingView removeFromSuperview];
+            }
+            //[loadingView removeFromSuperview];
+//            for (IssuesObj* issuesObj in issuesObjs) {
+//                [self.ganttView addRow:issuesObj];
+//            }
+            
+        });*/
         
     }];
 }

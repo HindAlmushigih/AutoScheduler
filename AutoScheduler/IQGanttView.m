@@ -122,7 +122,7 @@
 
 - (void)layoutOnRowsChange
 {
-    /*
+    
      int y = 0;
     if(columnHeaderView != nil) {
         y += columnHeaderView.frame.size.height;
@@ -135,8 +135,8 @@
             height = rowHeight(self, view, data);
         view.frame = CGRectMake(0, y, self.contentSize.width, height);
         y += height;
-     */
-    int y = 0;
+     
+/*    int y = 0;
     int heightContent = 0;
     if(columnHeaderView != nil) {
         y += columnHeaderView.frame.size.height;
@@ -153,6 +153,8 @@
         heightContent += height;
     }
     [self setContentSize:CGSizeMake(self.contentSize.width, heightContent)];
+*/
+    }
 }
 
 #pragma mark Properties
@@ -579,7 +581,7 @@
         if([value respondsToSelector:@selector(characterAtIndex:)]) {
             text = (NSString*)value;
         }
-        text = @"this is only to test";
+        //text = @"this is only to test";
         
         UIView* view = [gantt createViewForActivityWithFrame:frame text:text];
         [self addSubview:view];
