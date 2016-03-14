@@ -110,9 +110,9 @@
 
 - (void) enumerateEntriesUsing:(IQCalendarDataSourceEntryCallback)enumerator from:(NSTimeInterval)startTime to:(NSTimeInterval)endTime
 {
-   // if(startDateCallback == nil || endDateCallback == nil) {
-      //  [self setKeysForStartDate:@selector(startDate) endDate:@selector(endDate)];
-//        [self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
+    if(startDateCallback == nil || endDateCallback == nil) {
+        [self setKeysForStartDate:@selector(startDate) endDate:@selector(endDate)];
+        //[self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
         
         
         //startDateCallback = items.startDate.value;
@@ -120,7 +120,7 @@
         //[self setKeysForStartDate:startDate endDate:endDate];
         //[self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
         
-   // }
+    }
     IQCalendarDataSourceTimeExtractor start = startDateCallback;
     IQCalendarDataSourceTimeExtractor end = endDateCallback;
     IQCalendarDataSourceValueExtractor value = valueCallback;
@@ -135,7 +135,7 @@
         };
     }
     __block NSTimeInterval ttstart = 0.0;
-    if(start == NULL) {
+    if(!start) {
         start = ^(id item) {
             NSDate* date = [(id<IQCalendarSimpleDataItem>)item startDate];
             ttstart = [date timeIntervalSinceReferenceDate];
@@ -152,9 +152,9 @@
     }
     
     for(id item in (id<NSFastEnumeration>)data) {
-        NSTimeInterval tstart = ttstart; //startDateCallback(item);
+        NSTimeInterval tstart = startDateCallback(item); //ttstart; //startDateCallback(item);
         if(tstart < endTime) {
-            NSTimeInterval tend = ttend;//endDateCallback(item);
+            NSTimeInterval tend = endDateCallback(item); //ttend;//endDateCallback(item);
             if(tend > startTime) {
                 NSObject<IQCalendarActivity>* activityValue = nil;
                 if(value != nil) activityValue = value(item);

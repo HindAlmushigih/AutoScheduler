@@ -101,5 +101,16 @@
     
 }
 
+- (void)testTheGanttChart
+{
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.navigationBars[@"GanttChartView"].buttons[@"reveal icon"] tap];
+    [app.tables.staticTexts[@"GanntChart"] tap];
+
+    
+    
+}
+
 
 @end

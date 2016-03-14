@@ -119,9 +119,12 @@
            // NSTimeInterval tt = [issuesItems[i][@"due_date"] timeIntervalSinceReferenceDate];
             
             [issuesObjs addObject:issuesObj];
+            NSDate* start_date  = [self stringToDate:issuesItems[i][@"start_date"]];
+            NSDate* due_date  = [self stringToDate:issuesItems[i][@"due_date"]];
             [items addObject:[CalendarEntry
                               entryWithText:issuesItems[i][@"project"][@"name"]
-                              start: issuesItems[i][@"start_date"] /*[NSDate dateWithTimeIntervalSinceReferenceDate:t]*/ end: issuesItems[i][@"due_date"]/*[NSDate dateWithTimeIntervalSinceReferenceDate:tt]]*/]];
+                              start:start_date/*[NSDate dateWithTimeIntervalSinceReferenceDate:t]*/
+                              end: due_date]];/*[NSDate dateWithTimeIntervalSinceReferenceDate:tt]]*/
                               /*start:issuesItems[i][@"start_date"]/*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"start_date"]]*/
                             //  end:issuesItems[i][@"due_date"] /*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"due_date"]*/]]**/;
             [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
@@ -157,5 +160,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(NSDate*)stringToDate:(NSString*)dateStr{
+    if ([dateStr isKindOfClass:[NSDate class]]) {
+        return (NSDate*)dateStr;
+    }
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [dateFormat dateFromString:dateStr];
+    return date;
+}
 
 @end

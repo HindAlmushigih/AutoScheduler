@@ -22,4 +22,6 @@
 
 @property NSDictionary* issues;
 @property (strong, nonatomic) IQGanttView *ganttView;
+
+-(NSDate*)stringToDate:(NSString*)dateStr;
 @end
