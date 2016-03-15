@@ -296,7 +296,7 @@
     IQScheduleBlockView* lbl = [[IQScheduleBlockView alloc] initWithFrame:frame];
     lbl.text = text;
     lbl.contentMode = UIViewContentModeCenter;
-    lbl.backgroundColor = [UIColor redColor];
+    lbl.backgroundColor = [UIColor purpleColor];
     return lbl;
 }
 
@@ -581,7 +581,7 @@
         if([value respondsToSelector:@selector(characterAtIndex:)]) {
             text = (NSString*)value;
         }
-        //text = @"this is only to test";
+       // text = @"this is only to test";
         
         UIView* view = [gantt createViewForActivityWithFrame:frame text:text];
         [self addSubview:view];

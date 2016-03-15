@@ -98,10 +98,11 @@
 //    };
 }
 
-- (void) setKeyForValue:(NSString*)valueKey
+- (void) setKeyForValue:(SEL)valueKey
 {
     self.valueCallback = ^(id item) {
-        return [item valueForKey:valueKey];
+        return [item performSelector: valueKey withObject:item];
+         //[item valueForKey:valueKey];
     };
 }
 
@@ -110,8 +111,9 @@
 
 - (void) enumerateEntriesUsing:(IQCalendarDataSourceEntryCallback)enumerator from:(NSTimeInterval)startTime to:(NSTimeInterval)endTime
 {
-    if(startDateCallback == nil || endDateCallback == nil) {
+    if(startDateCallback == nil || endDateCallback == nil || valueCallback == nil) {
         [self setKeysForStartDate:@selector(startDate) endDate:@selector(endDate)];
+        [self setKeyForValue:@selector(value)];
         //[self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
         
         

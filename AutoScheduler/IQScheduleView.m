@@ -566,6 +566,7 @@ const CGFloat kDayViewPadding = 0.0;
         textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         textLabel.opaque = NO;
         textLabel.backgroundColor = [UIColor clearColor];
+        textLabel.textColor = [UIColor blackColor];
         textLabel.font = [UIFont systemFontOfSize:12];
         [self addSubview:textLabel];
     }

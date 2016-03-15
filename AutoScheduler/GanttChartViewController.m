@@ -18,9 +18,10 @@
 }
 
 + (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)end;
-- (NSString*) text;
+- (NSObject<IQCalendarActivity>*) value;
 - (NSDate*) startDate;
 - (NSDate*) endDate;
+
 @end
 
 @implementation CalendarEntry
@@ -33,8 +34,8 @@
     ent->text = text;
     return ent;
 }
-- (NSString*) text {
-    return text;
+- (NSObject<IQCalendarActivity>*) value {
+    return (NSObject<IQCalendarActivity>*)text;
 }
 - (NSDate*) startDate {
     return start;
@@ -106,32 +107,27 @@
         NSMutableArray *issuesObjs = [NSMutableArray array];
         NSMutableSet* items = [NSMutableSet set];
         int i;
-        for (i =0; i < issuesItems.count;i++)
+        for (i =1; i <= [issuesItems count];i++)
         {
             /*_issues[@"project"][@"name"]*/ // this is how to call the dictionary object from the array
-            IssuesObj* issuesObj = [[IssuesObj alloc]initWithProjectName:issuesItems[i][@"project"][@"name"]
-                                                               startDate:issuesItems[i][@"start_date"]
-                                                                 dueDate:issuesItems[i][@"due_date"]
-                                                          estimatedhours:issuesItems[i][@"estimated_hours"]];
-            //issuesItems[i] objectForKey:@"project"];
-            
-           // NSTimeInterval t = [issuesItems[i][@"start_date"] timeIntervalSinceReferenceDate];
-           // NSTimeInterval tt = [issuesItems[i][@"due_date"] timeIntervalSinceReferenceDate];
+            IssuesObj* issuesObj = [[IssuesObj alloc]initWithProjectName:issuesItems[i-1][@"subject"]//[@"project"][@"name"]
+                                                               startDate:issuesItems[i-1][@"start_date"]
+                                                                 dueDate:issuesItems[i-1][@"due_date"]
+                                                          estimatedhours:issuesItems[i-1][@"estimated_hours"]];
+
             
             [issuesObjs addObject:issuesObj];
-            NSDate* start_date  = [self stringToDate:issuesItems[i][@"start_date"]];
-            NSDate* due_date  = [self stringToDate:issuesItems[i][@"due_date"]];
+            NSDate* start_date  = [self stringToDate:issuesItems[i-1][@"start_date"]];
+            NSDate* due_date  = [self stringToDate:issuesItems[i-1][@"due_date"]];
             [items addObject:[CalendarEntry
-                              entryWithText:issuesItems[i][@"project"][@"name"]
-                              start:start_date/*[NSDate dateWithTimeIntervalSinceReferenceDate:t]*/
-                              end: due_date]];/*[NSDate dateWithTimeIntervalSinceReferenceDate:tt]]*/
-                              /*start:issuesItems[i][@"start_date"]/*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"start_date"]]*/
-                            //  end:issuesItems[i][@"due_date"] /*[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"due_date"]*/]]**/;
-            [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
+                              entryWithText:issuesItems[i-1][@"subject"]
+                              start:start_date
+                              end: due_date]];
         }
+                    [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
         
         
-//        [items addObject:[CalendarEntry entryWithText:@"Issue" start:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"start_date"]] end:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i][@"due_date"]]]];
+//        [items addObject:[CalendarEntry entryWithText:@"Issue" start:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i-1][@"start_date"]] end:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i-1][@"due_date"]]]];
 //        [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
         
         /*dispatch_async(dispatch_get_main_queue(), ^{

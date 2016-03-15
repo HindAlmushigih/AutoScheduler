@@ -91,8 +91,8 @@ typedef NSTimeInterval (^IQCalendarDataSourceTimeExtractor)(id item);
 //- (void) setKeysForStartDate:(NSString*)startDateKey endDate:(NSString*)endDateKey;
 - (void) setKeysForStartDate:(SEL)startDateSel endDate:(SEL)endDateSel;
 // - (NSString*)textSelector:(id)item;
-- (void) setKeyForValue:(NSString*)valueKey;
-
+//- (void) setKeyForValue:(NSString*)valueKey;
+- (void) setKeyForValue:(SEL)valueKey;
 @property (nonatomic, retain) NSString* labelText;
 @property (nonatomic, retain) NSString* themeClassName;
 
