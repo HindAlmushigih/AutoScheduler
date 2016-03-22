@@ -26,7 +26,7 @@
 - (void) setupGanttView;
 - (void) layoutOnRowsChange;
 - (void) layoutOnPropertyChange:(BOOL)didChangeZoom;
-//- (UIView*) blockViewForRow:(UIView*)rowView item:(id)item frame:(CGRect)frame;
+
 @end
 
 @implementation IQGanttView
@@ -268,6 +268,16 @@
     }
     [view setNeedsDisplay];
     [self layoutOnRowsChange];
+    NSArray *subviews = [self subviews];
+    
+    // Return if there are no subviews
+    //  if ([subviews count] == 0) return; // COUNT CHECK LINE
+    
+    for (UIView *subview in subviews) {
+        
+        // Do what you want to do with the subview
+        NSLog(@"%@", subview);
+    }
 }
 
 #pragma mark Default implementation of base methods
@@ -566,6 +576,17 @@
 
 - (void) layoutItems:(IQGanttView*)gantt
 {
+    NSArray *subviews = [self subviews];
+    
+    // Return if there are no subviews
+  //  if ([subviews count] == 0) return; // COUNT CHECK LINE
+    
+    for (UIView *subview in subviews) {
+        
+        // Do what you want to do with the subview
+        NSLog(@"%@", subview);
+    }
+        
     while(self.subviews.count > 0) {
         [[self.subviews lastObject] removeFromSuperview];
     }

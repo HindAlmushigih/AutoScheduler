@@ -14,6 +14,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *ASPasswordField;
 @property (weak, nonatomic) IBOutlet UIButton *ASLogin;
 
-//@property ASUserSingleton* ASUserSingletonObj;
-//@property ASRESTAPI* ASRESTAPIObj;
 @end

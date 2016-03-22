@@ -11,6 +11,7 @@
 #import "ASUserSingleton.h"
 #import "IssuesObj.h"
 #import "IQGanttView.h"
+#import "NewIssueViewController.h"
 
 @interface CalendarEntry : NSObject <IQCalendarSimpleDataItem> {
     NSDate* start, *end;
@@ -105,7 +106,7 @@
         issuesItems = issueArray;
         
         NSMutableArray *issuesObjs = [NSMutableArray array];
-        NSMutableSet* items = [NSMutableSet set];
+        NSMutableArray* items = [NSMutableArray array];
         int i;
         for (i =1; i <= [issuesItems count];i++)
         {
@@ -124,24 +125,16 @@
                               start:start_date
                               end: due_date]];
         }
-                    [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
+       // NSLog(@"nodeEventArray == %@", nodeEventArray);
+        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                            sortDescriptorWithKey:@"start"
+                                            ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+        NSArray *sortedEventArray = [items
+                                     sortedArrayUsingDescriptors:sortDescriptors];
+        NSLog(@"sortedEventArray == %@", sortedEventArray);
+                    [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithArray:sortedEventArray]];
         
-        
-//        [items addObject:[CalendarEntry entryWithText:@"Issue" start:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i-1][@"start_date"]] end:[NSDate dateWithTimeIntervalSinceReferenceDate:issuesItems[i-1][@"due_date"]]]];
-//        [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithSet:items]];
-        
-        /*dispatch_async(dispatch_get_main_queue(), ^{
-            [activityView stopAnimating];
-            for (loadingView in [self.ganttView subviews])
-            {
-                [loadingView removeFromSuperview];
-            }
-            //[loadingView removeFromSuperview];
-//            for (IssuesObj* issuesObj in issuesObjs) {
-//                [self.ganttView addRow:issuesObj];
-//            }
-            
-        });*/
         
     }];
 }
@@ -168,5 +161,18 @@
     NSDate *date = [dateFormat dateFromString:dateStr];
     return date;
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
+    {
+        NewIssueViewController* nvc = (NewIssueViewController *)segue.destinationViewController;
+        
+    }
+    
+}
+
 
 @end

@@ -60,13 +60,6 @@
 }
 -(void)setUptTheLabels
 
-//
-//_nametextLabel.text = [@"Project Name: " stringByAppendingString:[_project objectForKey:@"name"]];//[_project objectForKey:@"name"];
-//_identifiertextLabel.text = [@"Project Identifier: " stringByAppendingString:[_project objectForKey:@"identifier"]]; //[_project objectForKey:@"identifier"];
-//_createdontextLabel.text = [@"Created On: " stringByAppendingString:[_project objectForKey:@"created_on"]];  //[_project objectForKey:@"created_on"];
-//_updated_ontextLabel.text =  [@"Updated On: " stringByAppendingString:[_project objectForKey:@"updated_on"]]; //[_project objectForKey:@"updated_on"];
-//_descriptiontextLabel.text = [@"Description: " stringByAppendingString:[_project objectForKey:@"description"]]; //[_project objectForKey:@"Description"]];
-
 {
     _projectNametextLabel.text = [@"Project Name: " stringByAppendingString: _issue[@"project"][@"name"]];
     _trackerNametextLabel.text = [@"Tracker Name: " stringByAppendingString: _issue[@"tracker"][@"name"]];

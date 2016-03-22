@@ -8,7 +8,7 @@
 
 
 /**
- Parameters:
+ @Parameters:
  project (required): a hash of the project attributes, including:
  name (required): the project name
  identifier (required): the project identifier
@@ -88,15 +88,6 @@
     self.projectDetails[@"description"] = self.projectDescription.text;
     self.project[@"project"] = self.projectDetails;
     
-//    [self.projectDetails setValue:self.projectName.text forKey:@"name"];
-//    [self.projectDetails setValue:self.projectDescription.text forKey:@"description"];
-//    [self.projectDetails setValue:self.projectIdentifier.text forKey:@"identifier"];
-//    [self.project setValue:self.projectDetails forKey:@"project"];
-
-//    [self.project setObject:self.projectName.text forKey:@"name"];
-//    [self.project setObject:self.projectDescription.text forKey:@"description"];
-//    [self.project setObject:self.projectIdentifier.text forKey:@"identifier"];
-    //[self.project setValue:self.projectDetails forKey:@"project"];
 }
 
 /*

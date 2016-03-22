@@ -142,6 +142,7 @@
 {
     if(rowHeaderView != nil) {
         [rowHeaderView removeFromSuperview];
+        
     }
     rowHeaderView = rhv;
     if(rhv) {
@@ -165,6 +166,7 @@
 {
     if(columnHeaderView != nil) {
         [columnHeaderView removeFromSuperview];
+        NSLog(@"columnHeaderView value of the view%@",columnHeaderView );
     }
     columnHeaderView = chv;
     if(chv) {
@@ -188,6 +190,7 @@
 {
     if(cornerView != nil) {
         [cornerView removeFromSuperview];
+        NSLog(@"cornerView value of the view%@",cornerView );
     }
     cornerView = cv;
     if(cv) {

@@ -114,13 +114,6 @@
     if(startDateCallback == nil || endDateCallback == nil || valueCallback == nil) {
         [self setKeysForStartDate:@selector(startDate) endDate:@selector(endDate)];
         [self setKeyForValue:@selector(value)];
-        //[self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
-        
-        
-        //startDateCallback = items.startDate.value;
-        
-        //[self setKeysForStartDate:startDate endDate:endDate];
-        //[self setSelectorsForStartDate:@selector(startDate) endDate:@selector(endDate)];
         
     }
     IQCalendarDataSourceTimeExtractor start = startDateCallback;
@@ -149,14 +142,14 @@
         end = ^(id item) {
             NSDate* date = [(id<IQCalendarSimpleDataItem>)item endDate];
             ttend = [date timeIntervalSinceReferenceDate];
-            return ttend; //[date timeIntervalSinceReferenceDate];
+            return ttend;
         };
     }
     
     for(id item in (id<NSFastEnumeration>)data) {
-        NSTimeInterval tstart = startDateCallback(item); //ttstart; //startDateCallback(item);
+        NSTimeInterval tstart = startDateCallback(item);
         if(tstart < endTime) {
-            NSTimeInterval tend = endDateCallback(item); //ttend;//endDateCallback(item);
+            NSTimeInterval tend = endDateCallback(item);
             if(tend > startTime) {
                 NSObject<IQCalendarActivity>* activityValue = nil;
                 if(value != nil) activityValue = value(item);

@@ -475,6 +475,7 @@ const CGFloat kDayViewPadding = 0.0;
 {
     for(UIView* view in blocks) {
         [view removeFromSuperview];
+        NSLog(@"blocks view value of the view %@",view );
     }
     [blocks removeAllObjects];
     

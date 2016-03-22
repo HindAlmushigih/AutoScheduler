@@ -69,7 +69,7 @@ static ASRESTAPI *sharedInstance = nil;
                                       
                                       if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                                           NSLog(@"Response HTTP Status code: %ld\n", (long)[(NSHTTPURLResponse *)response statusCode]);
-                                          NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
+                                         // NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
                                       }
                                       
                                       [self setLogging:true];
