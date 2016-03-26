@@ -12,7 +12,6 @@
  Issue (required)
  Tracker *
  Subject *
- Description *
  Status *
  Priority *
  Start date *
@@ -32,7 +31,18 @@
 #import "ASRESTAPI.h"
 #import "ASUserSingleton.h"
 
+
 @interface NewIssueViewController ()
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tracker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *prioritySegmented;
+@property NSString *startDate;
+@property NSString *dueDate;
+@property NSString *trackerName;
+@property NSNumber *trackerID;
+@property NSString *priority;
+@property NSNumber *priorityID;
+@property (weak, nonatomic) IBOutlet UITextField *subject;
 
 @end
 
@@ -42,6 +52,8 @@
     [super viewDidLoad];
     self.issue = [[NSMutableDictionary alloc]init];
     self.issueDetails = [[NSMutableDictionary alloc]init];
+    [self setupRangeLabel];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -59,5 +71,139 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+-(IBAction) segmentedControlIndexChanged
+{
+    switch (self.tracker.selectedSegmentIndex)
+    {
+    case 0:
+    self.trackerName = @"Bug";
+    self.trackerID = @1;
+        break;
+        
+    case 1:
+        self.trackerName = @"Feature";
+        self.trackerID = @2;
+        break;
+        
+    case 2:
+        self.trackerName = @"Support";
+        self.trackerID = @3;
+            break;
+    }
+}
+
+// Low Normal High Urgent Immediate
+
+-(IBAction) prioritysegmentedControlIndexChanged
+{
+    switch (self.prioritySegmented.selectedSegmentIndex)
+    {
+        case 0:
+            self.priority = @"Low";
+            self.priorityID = @1;
+            break;
+            
+        case 1:
+            self.priority = @"Normal";
+            self.priorityID = @2;
+            break;
+            
+        case 2:
+            self.priority = @"High";
+            self.priorityID = @3;
+            break;
+        case 3:
+            self.priority = @"Urgent";
+            self.priorityID = @4;
+            break;
+        case 4:
+            self.priority = @"Immediate";
+            self.priorityID = @5;
+            break;
+    }
+}
+-(void)setupRangeLabel
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.startDate = [formatter stringFromDate:self.range.beginDate];
+   // NSString *startDate = self.range.beginDate;
+    [self.rangeStartDate setText:[NSString stringWithFormat:@"Start Date: %@",self.startDate]];
+    self.dueDate = [formatter stringFromDate:self.range.endDate];
+  //  NSString *dueDate = self.range.endDate;
+    [self.rangeDueDate setText:[NSString stringWithFormat:@"Due Date: %@",self.dueDate]];
+}
+
+- (IBAction)save:(id)sender
+{
+//    
+  NSString* errorMessage = @"";
+    if ([self.subject.text length] == 0) {
+     errorMessage = @"Check the empty field";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
+                                                                       message:errorMessage
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"OK"
+                                                              style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                  NSLog(@"You pressed OK");
+                                                              }];
+        [alert addAction:firstAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else {
+
+        NSString* username = [[ASUserSingleton sharedInstance]userName];
+        NSString* password = [[ASUserSingleton sharedInstance]password];
+        [ASRESTAPI creatIssueUsername:username andPassword:password andIssue:[self createIssueObj]];
+        [self.navigationController dismissViewControllerAnimated:NO
+                                                      completion:nil];
+    }
+}
+
+/**
+ Parameters:
+ issue - A hash of the issue attributes:
+ Issue (required)
+ Project_id
+ Tracker_id
+ Status_id
+ Priority_id
+ Tracker *
+ Subject *
+ Status *
+ Priority *
+ Start date *
+ Due date *
+ */
+
+-(NSMutableDictionary*)createIssueObj
+{
+    self.issueDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+              [NSNumber numberWithInt:1], @"Project_id",
+              self.trackerID, @"Tracker_id",
+              self.priorityID, @"Priority_id",
+              [NSNumber numberWithInt:1], @"Status_id",
+            self.subject.text, @"Subject",
+            self.startDate, @"start_date",
+                          self.dueDate, @"due_date",
+              nil];
+//    self.issueDetails[@"Project_id"] = @"1";
+//    self.issueDetails[@"Tracker_id"] = self.trackerID;
+//    self.issueDetails[@"Priority_id"] = self.priorityID;
+//    self.issueDetails[@"Status_id"] = @"1";
+//    self.issueDetails[@"Subject"] = self.subject.text;
+//    self.issueDetails[@"start_date"] = self.startDate;
+//    self.issueDetails[@"due_date"] = self.dueDate;
+    self.issue[@"issue"] = self.issueDetails;
+    return self.issue;
+}
+
+- (IBAction)cancel:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:NO
+                                                  completion:nil];
+}
 
 @end

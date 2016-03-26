@@ -196,6 +196,73 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
++(void)creatProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project
+{
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *base64String = [authData base64EncodedStringWithOptions:0];
+    
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
+    
+    
+    NSDictionary *headers = @{ @"authorization": authValue,
+                               @"content-type": @"application/json",
+                               @"content-type": @"http//172.16.230.102/redmine23/projects/new"
+                               };
+    
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/projects"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    /*
+     Parameters:
+     project (required): a hash of the project attributes, including:
+     name (required): the project name
+     identifier (required): the project identifier
+     description
+     {
+     "project": {
+     "name": "",
+     "identifier": "example",
+     "description": "",
+     }
+     }
+     **/
+    
+    NSData *projectData = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil];
+    //NSString* jsonString = [[NSString alloc]initWithData: projectData                                              encoding: NSUTF8StringEncoding ];
+    
+    //    [[NSString alloc]initWithData: [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil] encoding: NSUTF8StringEncoding ];
+    
+    
+    /** [request setHTTPBody:[
+     //dataUsingEncoding:NSUTF8StringEncoding]];**/
+    //NSData* anotherdataobj = jsonString;
+    [request setHTTPBody:projectData];//anotherdataobj];//[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        // Handle error...
+                                                        NSLog(@"something wrong");
+                                                        return;
+                                                    }
+                                                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                                        NSLog(@"Response HTTP Status code: %ld\n", (long)[(NSHTTPURLResponse *)response statusCode]);
+                                                        NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
+                                                    }
+                                                    NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                                    NSLog(@"Response Body:\n%@\n", body);
+                                                }];
+    [dataTask resume];
+}
+
+
 +(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response, NSArray* issueArray))completion
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
@@ -248,7 +315,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
-+(void)creatProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project
++(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password andIssue:(NSDictionary*)issue
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -256,45 +323,24 @@ static ASRESTAPI *sharedInstance = nil;
     NSString *base64String = [authData base64EncodedStringWithOptions:0];
     
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
-    
-    
-    NSDictionary *headers = @{ @"authorization": authValue,
-                               @"content-type": @"application/json",
-                               @"content-type": @"http//172.16.230.102/redmine23/projects/new"
-                               };
 
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/projects"]
+    NSDictionary *headers = @{ @"authorization": authValue,
+                               @"content-type": @"application/json"
+                             //  @"content-type": @"http//172.16.230.102/redmine23/projects/new"
+                               };
+    
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.231.19/redmine23/projects/auto-scheduler-ios-app/issues.json"]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setAllHTTPHeaderFields:headers];
+
     
-    /*
-     Parameters:
-     project (required): a hash of the project attributes, including:
-     name (required): the project name
-     identifier (required): the project identifier
-     description
-    {
-        "project": {
-            "name": "",
-            "identifier": "example",
-            "description": "",
-        }
-    }
-    **/
-   
-    NSData *projectData = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil];
-    //NSString* jsonString = [[NSString alloc]initWithData: projectData                                              encoding: NSUTF8StringEncoding ];
-    
-//    [[NSString alloc]initWithData: [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil] encoding: NSUTF8StringEncoding ];
-    
-    
-   /** [request setHTTPBody:[
-    //dataUsingEncoding:NSUTF8StringEncoding]];**/
-    //NSData* anotherdataobj = jsonString;
-    [request setHTTPBody:projectData];//anotherdataobj];//[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData *issueData = [NSJSONSerialization dataWithJSONObject:issue options:NSJSONWritingPrettyPrinted error:nil];
+    NSLog(@"Printing JSON Data%@", issueData);
+    [request setHTTPBody:issueData];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
@@ -313,6 +359,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];
     [dataTask resume];
 }
+
 
 
 @end

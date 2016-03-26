@@ -11,6 +11,7 @@
 #import "GLCalendarDateRange.h"
 #import "GLDateUtils.h"
 #import "GLCalendarDayCell.h"
+#import "NewIssueViewController.h"
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -86,6 +87,17 @@
     
     [self.navigationController dismissViewControllerAnimated:NO
                                                   completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"NewIssueWind"])
+    {
+        NewIssueViewController* nvc = (NewIssueViewController *)segue.destinationViewController;
+        nvc.range = self.range;
+    }
+    
 }
 
 @end

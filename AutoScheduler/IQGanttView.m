@@ -26,7 +26,7 @@
 - (void) setupGanttView;
 - (void) layoutOnRowsChange;
 - (void) layoutOnPropertyChange:(BOOL)didChangeZoom;
-
+//- (UIView*) blockViewForRow:(UIView*)rowView item:(id)item frame:(CGRect)frame;
 @end
 
 @implementation IQGanttView
@@ -58,7 +58,7 @@
     defaultRowHeight = 72;
     displayCalendarUnits = NSCalendarUnitDay | NSCalendarUnitWeekOfMonth | NSCalendarUnitMonth | NSCalendarUnitYear;
     NSDateComponents* cmpnts = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
-    cmpnts.day -= 3;
+    cmpnts.day = 1;
     scaleWindow.viewStart = [[[NSCalendar currentCalendar] dateFromComponents:cmpnts] timeIntervalSinceReferenceDate];
     cmpnts.day += 7;
     scaleWindow.viewSize = [[[NSCalendar currentCalendar] dateFromComponents:cmpnts] timeIntervalSinceReferenceDate] - scaleWindow.viewStart;

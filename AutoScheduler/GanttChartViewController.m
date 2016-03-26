@@ -11,7 +11,7 @@
 #import "ASUserSingleton.h"
 #import "IssuesObj.h"
 #import "IQGanttView.h"
-#import "NewIssueViewController.h"
+#import "GLCalendarViewController.h"
 
 @interface CalendarEntry : NSObject <IQCalendarSimpleDataItem> {
     NSDate* start, *end;
@@ -168,7 +168,7 @@
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
     {
-        NewIssueViewController* nvc = (NewIssueViewController *)segue.destinationViewController;
+        GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
         
     }
     
