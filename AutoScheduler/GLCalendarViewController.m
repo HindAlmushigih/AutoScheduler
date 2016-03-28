@@ -94,8 +94,11 @@
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"NewIssueWind"])
     {
-        NewIssueViewController* nvc = (NewIssueViewController *)segue.destinationViewController;
-        nvc.range = self.range;
+        UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
+
+        NewIssueViewController* nvc = [navController topViewController]; //(NewIssueViewController *)segue.destinationViewController;
+        
+        nvc.range = [GLCalendarDateRange rangeWithBeginDate:self.range.beginDate endDate:self.range.endDate];// self.range;
     }
     
 }

@@ -360,6 +360,4 @@ static ASRESTAPI *sharedInstance = nil;
     [dataTask resume];
 }
 
-
-
 @end

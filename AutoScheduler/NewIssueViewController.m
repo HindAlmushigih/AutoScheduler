@@ -182,11 +182,11 @@
 -(NSMutableDictionary*)createIssueObj
 {
     self.issueDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-              [NSNumber numberWithInt:1], @"Project_id",
-              self.trackerID, @"Tracker_id",
-              self.priorityID, @"Priority_id",
-              [NSNumber numberWithInt:1], @"Status_id",
-            self.subject.text, @"Subject",
+              [NSNumber numberWithInt:1], @"project_id",
+              self.trackerID, @"tracker_id",
+              self.priorityID, @"priority_id",
+              [NSNumber numberWithInt:1], @"status_id",
+            self.subject.text, @"subject",
             self.startDate, @"start_date",
                           self.dueDate, @"due_date",
               nil];

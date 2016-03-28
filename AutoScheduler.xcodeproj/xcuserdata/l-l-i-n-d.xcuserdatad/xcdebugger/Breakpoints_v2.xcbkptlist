@@ -106,7 +106,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "480663498.637971"
+                  timestampString = "480824233.489196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -121,7 +121,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "480663498.638269"
+                  timestampString = "480824233.4895"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -374,7 +374,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "480663498.654479"
+                  timestampString = "480824233.503494"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -389,7 +389,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "480663498.654655"
+                  timestampString = "480824233.503735"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -422,7 +422,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "480663498.655723"
+                  timestampString = "480824233.504809"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -437,7 +437,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "480663498.655901"
+                  timestampString = "480824233.50498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -582,11 +582,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/GLCalendarViewController.m"
-            timestampString = "480663318.91274"
+            timestampString = "480788783.415142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -619,6 +619,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
+            landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/GLCalendarViewController.m"
+            timestampString = "480788783.415142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
