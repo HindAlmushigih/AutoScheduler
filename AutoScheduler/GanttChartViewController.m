@@ -16,23 +16,26 @@
 @interface CalendarEntry : NSObject <IQCalendarSimpleDataItem> {
     NSDate* start, *end;
     NSString* text;
+    NSDictionary* issueID;
 }
 
-+ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)end;
++ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)e issueID:(NSDictionary*)issueID;
 - (NSObject<IQCalendarActivity>*) value;
 - (NSDate*) startDate;
 - (NSDate*) endDate;
+- (NSDictionary*) issueId;
 
 @end
 
 @implementation CalendarEntry
-+ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)e
++ (CalendarEntry*) entryWithText:(NSString*)text start:(NSDate*)s end:(NSDate*)e issueID:(NSDictionary*)issueID
 {
     CalendarEntry* ent = [[CalendarEntry alloc] init];
     if(ent == nil) return nil;
     ent->start = s;
     ent->end = e;
     ent->text = text;
+    ent->issueID = issueID;
     return ent;
 }
 - (NSObject<IQCalendarActivity>*) value {
@@ -47,6 +50,12 @@
 - (UIColor*) color {
     return [UIColor redColor];
 }
+
+- (NSDictionary*) issueId
+{
+    return issueID;
+}
+
 @end
 
 @interface GanttChartViewController ()
@@ -116,14 +125,14 @@
                                                                  dueDate:issuesItems[i-1][@"due_date"]
                                                           estimatedhours:issuesItems[i-1][@"estimated_hours"]];
 
-            
             [issuesObjs addObject:issuesObj];
             NSDate* start_date  = [self stringToDate:issuesItems[i-1][@"start_date"]];
             NSDate* due_date  = [self stringToDate:issuesItems[i-1][@"due_date"]];
             [items addObject:[CalendarEntry
                               entryWithText:issuesItems[i-1][@"subject"]
                               start:start_date
-                              end: due_date]];
+                              end: due_date
+                              issueID:issuesItems[i-1]]];
         }
        // NSLog(@"nodeEventArray == %@", nodeEventArray);
         NSSortDescriptor *dateDescriptor = [NSSortDescriptor

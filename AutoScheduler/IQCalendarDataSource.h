@@ -27,10 +27,10 @@
 // its start and end times.
 @end
 
-typedef void (^IQCalendarDataSourceEntryCallback)(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value);
+typedef void (^IQCalendarDataSourceEntryCallback)(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueid);
 typedef NSObject<IQCalendarActivity>* (^IQCalendarDataSourceValueExtractor)(id item);
 typedef NSTimeInterval (^IQCalendarDataSourceTimeExtractor)(id item);
-
+typedef NSDictionary* (^IQCalendarDataSourceIssueExtractor)(id item);
 @protocol IQCalendarDataSource <NSObject>
 @optional
 - (void) enumerateEntriesUsing:(IQCalendarDataSourceEntryCallback)enumerator from:(NSTimeInterval)startTime to:(NSTimeInterval)endTime;
@@ -99,4 +99,8 @@ typedef NSTimeInterval (^IQCalendarDataSourceTimeExtractor)(id item);
 @property (nonatomic, copy) IQCalendarDataSourceTimeExtractor startDateCallback;
 @property (nonatomic, copy) IQCalendarDataSourceTimeExtractor endDateCallback;
 @property (nonatomic, copy) IQCalendarDataSourceValueExtractor valueCallback;
+
+//typedef NSNumber* (^IQCalendarDataSourceIssueExtractor)(id item);
+@property (nonatomic, copy) IQCalendarDataSourceIssueExtractor issueIDCallback;
+
 @end

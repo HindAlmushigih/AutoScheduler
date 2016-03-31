@@ -60,7 +60,7 @@ typedef struct _IQGanttViewTimeWindow {
 - (UIView<IQGanttRowDelegate>*) viewForRow:(id<IQCalendarDataSource>)row withFrame:(CGRect)frame; // default implementation returns a IQGanttRowView
 
 // Override this method to define a custom view creation. Detfault is to create a themeable simple view.
-- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text;
+- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text forIssueID:(NSDictionary*)issueid;
 
 @end
 
@@ -120,6 +120,10 @@ static IQGridDash IQMakeGridDash(CGFloat a, CGFloat b) {
     NSCalendarUnit tertaryLineUnits;
     NSMutableArray* rowViews;
 }
+
+@property (weak, nonatomic) IBOutlet UIView *popUpView;
+
+- (void)showInView:(UIView *)aView animated:(BOOL)animated;
 
 @property (nonatomic, retain) id<IQCalendarDataSource> dataSource;
 @property (nonatomic, retain) UIColor* primaryGridColor;

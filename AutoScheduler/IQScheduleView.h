@@ -63,7 +63,7 @@
 + (Class) headerViewClass;
 
 // Override this method to define a custom view creation. Detfault is to create a themeable simple view.
-- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text;
+- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text forIssueID:(NSDictionary*)issueid;
 
 @end
 
@@ -82,4 +82,5 @@
 
 @property (nonatomic, readonly) UILabel* textLabel;
 @property (nonatomic, retain) NSString* text;
+@property (nonatomic, retain) NSDictionary* issueID;
 @end

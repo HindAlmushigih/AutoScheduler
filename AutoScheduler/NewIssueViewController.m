@@ -182,21 +182,14 @@
 -(NSMutableDictionary*)createIssueObj
 {
     self.issueDetails = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-              [NSNumber numberWithInt:1], @"project_id",
-              self.trackerID, @"tracker_id",
-              self.priorityID, @"priority_id",
-              [NSNumber numberWithInt:1], @"status_id",
-            self.subject.text, @"subject",
-            self.startDate, @"start_date",
-                          self.dueDate, @"due_date",
-              nil];
-//    self.issueDetails[@"Project_id"] = @"1";
-//    self.issueDetails[@"Tracker_id"] = self.trackerID;
-//    self.issueDetails[@"Priority_id"] = self.priorityID;
-//    self.issueDetails[@"Status_id"] = @"1";
-//    self.issueDetails[@"Subject"] = self.subject.text;
-//    self.issueDetails[@"start_date"] = self.startDate;
-//    self.issueDetails[@"due_date"] = self.dueDate;
+                         [NSNumber numberWithInt:1], @"project_id",
+                         self.trackerID, @"tracker_id",
+                         self.priorityID, @"priority_id",
+                         [NSNumber numberWithInt:1], @"status_id",
+                         self.subject.text, @"subject",
+                         self.startDate, @"start_date",
+                         self.dueDate, @"due_date",
+                         nil];
     self.issue[@"issue"] = self.issueDetails;
     return self.issue;
 }

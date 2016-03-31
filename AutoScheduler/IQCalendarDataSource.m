@@ -27,7 +27,7 @@
 
 @implementation IQCalendarSimpleDataSource
 @synthesize labelText, themeClassName;
-@synthesize startDateCallback, endDateCallback, valueCallback;
+@synthesize startDateCallback, endDateCallback, valueCallback , issueIDCallback;
 
 + (IQCalendarSimpleDataSource*) dataSourceWithLabel:(NSString*)label set:(NSSet*)items
 {
@@ -106,19 +106,27 @@
     };
 }
 
+- (void) setKeyForIssueID:(SEL)issueID
+{
+    self.issueIDCallback = ^(id item) {
+        return [item performSelector: issueID withObject:item];
+    };
+}
+
 
 #pragma mark IQCalendarDataSource implementation
 
 - (void) enumerateEntriesUsing:(IQCalendarDataSourceEntryCallback)enumerator from:(NSTimeInterval)startTime to:(NSTimeInterval)endTime
 {
-    if(startDateCallback == nil || endDateCallback == nil || valueCallback == nil) {
+    if(startDateCallback == nil || endDateCallback == nil || valueCallback == nil || issueIDCallback == nil) {
         [self setKeysForStartDate:@selector(startDate) endDate:@selector(endDate)];
         [self setKeyForValue:@selector(value)];
-        
+        [self setKeyForIssueID:@selector(issueId)];
     }
     IQCalendarDataSourceTimeExtractor start = startDateCallback;
     IQCalendarDataSourceTimeExtractor end = endDateCallback;
     IQCalendarDataSourceValueExtractor value = valueCallback;
+    IQCalendarDataSourceIssueExtractor issuEId = issueIDCallback;
     
     if(!value && (start || end)) {
         value = ^(id item) {
@@ -146,14 +154,20 @@
         };
     }
     
+    
     for(id item in (id<NSFastEnumeration>)data) {
         NSTimeInterval tstart = startDateCallback(item);
         if(tstart < endTime) {
             NSTimeInterval tend = endDateCallback(item);
             if(tend > startTime) {
                 NSObject<IQCalendarActivity>* activityValue = nil;
-                if(value != nil) activityValue = value(item);
-                enumerator(tstart, tend, activityValue);
+                if(value != nil)
+                    activityValue = value(item);
+                NSDictionary* issueid = nil;
+                if (issuEId!=nil) {
+                    issueid = issuEId(item);
+                }
+                enumerator(tstart, tend, activityValue,issueid);
             }
         }
     }

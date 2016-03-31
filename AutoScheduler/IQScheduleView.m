@@ -20,7 +20,7 @@
 #import "IQCalendarDataSource.h"
 #import "IQCalendarHeaderView.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "IssueDetailsViewController.h"
 const CGFloat kDayViewPadding = 0.0;
 
 
@@ -361,11 +361,12 @@ const CGFloat kDayViewPadding = 0.0;
 
 #pragma mark - Overridable methods
 
-- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text
+- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text forIssueID:(NSDictionary*)issueid
 {
     IQScheduleBlockView* view = [[IQScheduleBlockView alloc] initWithFrame:frame];
     if(text) {
         view.text = text;
+        view.issueID = issueid;
     }
     return view;
 }
@@ -482,7 +483,7 @@ const CGFloat kDayViewPadding = 0.0;
     if(dataSource == nil) return;
     CGRect bounds = contentView.bounds;
     CGFloat ht = bounds.size.height - 2 * kDayViewPadding;
-    [[dataSource dataSource] enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value) {
+    [[dataSource dataSource] enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueid) {
         CGFloat y1 = kDayViewPadding - 1 + bounds.origin.y + round(ht * (startDate - timeIndex) / dayLength);
         CGFloat y2 = kDayViewPadding + bounds.origin.y + round(ht * (endDate - timeIndex) / dayLength);
         CGRect frame = CGRectMake(bounds.origin.x, y1, bounds.size.width, y2 - y1);
@@ -492,7 +493,8 @@ const CGFloat kDayViewPadding = 0.0;
         if([value respondsToSelector:@selector(characterAtIndex:)]) {
             text = (NSString*)value;
         }
-        UIView* view = [dataSource createViewForActivityWithFrame:frame text:text];
+        NSDictionary* issue = issueid;
+        UIView* view = [dataSource createViewForActivityWithFrame:frame text:text forIssueID:issue];
         if(view != nil) {
             [blocks addObject:view];
             [contentView addSubview:view];
@@ -551,6 +553,8 @@ const CGFloat kDayViewPadding = 0.0;
 
 @implementation IQScheduleBlockView
 @synthesize textLabel;
+
+
 - (id) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -570,9 +574,22 @@ const CGFloat kDayViewPadding = 0.0;
         textLabel.textColor = [UIColor blackColor];
         textLabel.font = [UIFont systemFontOfSize:12];
         [self addSubview:textLabel];
+        textLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture =        [[UITapGestureRecognizer alloc]
+         initWithTarget:self action:@selector(didTapLabelWithGesture:)];
+        [textLabel addGestureRecognizer:tapGesture];
+       
     }
     return self;
 }
+
+- (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
+    NSLog(@"you have touched the label and this is on the IQScheduelView class");
+    NSDictionary* issue = [self issueID];
+    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
+    detailViewController.issue = issue;
+}
+
 
 - (void) setBackgroundColor:(UIColor *)backgroundColor
 {

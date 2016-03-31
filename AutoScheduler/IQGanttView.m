@@ -135,25 +135,6 @@
             height = rowHeight(self, view, data);
         view.frame = CGRectMake(0, y, self.contentSize.width, height);
         y += height;
-     
-/*    int y = 0;
-    int heightContent = 0;
-    if(columnHeaderView != nil) {
-        y += columnHeaderView.frame.size.height;
-    }
-    for(int i = 0; i < rows.count; i++) {
-        UIView<IQGanttRowDelegate>* view = rowViews[i];
-        id<IQCalendarDataSource> data = rows[i];
-        NSInteger height = defaultRowHeight;
-        if([view respondsToSelector:@selector(ganttViewRowHeight)]) {
-            height = [(id<IQGanttRowDelegate>)view ganttViewRowHeight];
-        }
-        view.frame = CGRectMake(0, y, self.contentSize.width, height);
-        y += height;
-        heightContent += height;
-    }
-    [self setContentSize:CGSizeMake(self.contentSize.width, heightContent)];
-*/
     }
 }
 
@@ -301,14 +282,34 @@
     return [[IQGanttRowView alloc] initWithFrame:frame];
 }
 
-- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text
+- (UIView*) createViewForActivityWithFrame:(CGRect)frame text:(NSString*)text forIssueID:(NSDictionary*)issueid
 {
     IQScheduleBlockView* lbl = [[IQScheduleBlockView alloc] initWithFrame:frame];
     lbl.text = text;
+    lbl.issueID = issueid;
     lbl.contentMode = UIViewContentModeCenter;
     lbl.backgroundColor = [UIColor purpleColor];
+    lbl.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture =        [[UITapGestureRecognizer alloc]
+                                                 initWithTarget:self action:@selector(didTapLabelWithGesture:)];
+    [lbl addGestureRecognizer:tapGesture];
     return lbl;
 }
+
+
+//- (void)didTapLabelWithGesture:(UITapGestureRecognizer*)tapGesture
+//{
+//    NSLog(@"you have touched the label");
+//    IQScheduleBlockView* lbl = tapGesture.view;
+//    
+//    //self.view
+//    NSLog(@"you have touched the labe%@", lbl.issueID);
+////    NSDictionary* issue = lbl.issueID; //tapGesture.view.issueID; //[self issueID];
+////    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
+////    detailViewController.issue = issue;
+//}
+
+
 
 @end
 
@@ -595,16 +596,16 @@
     CGSize sz = self.bounds.size;
     CGFloat tscl = sz.width / (t1 - t0);
     
-    [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value) {
+    [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueID) {
         CGRect frame = CGRectMake((startDate-t0)*tscl, 0, (endDate-startDate)*tscl, sz.height);
         
         NSString* text = nil;
         if([value respondsToSelector:@selector(characterAtIndex:)]) {
             text = (NSString*)value;
         }
-       // text = @"this is only to test";
-        
-        UIView* view = [gantt createViewForActivityWithFrame:frame text:text];
+
+        NSDictionary* issue = issueID;
+        UIView* view = [gantt createViewForActivityWithFrame:frame text:text forIssueID:issue];
         [self addSubview:view];
     }
                                       from:scaleWindow.windowStart to:scaleWindow.windowEnd];
