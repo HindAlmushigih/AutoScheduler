@@ -852,7 +852,7 @@
         <!--Issue Details-->
         <scene sceneID="dXz-n6-4H9">
             <objects>
-                <viewController title="Issue Details" id="qzM-ff-4A3" customClass="IssueDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IssueDetails" title="Issue Details" id="qzM-ff-4A3" customClass="IssueDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kKz-Fr-WTR"/>
                         <viewControllerLayoutGuide type="bottom" id="Yec-tR-UON"/>
@@ -930,6 +930,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="HNl-mv-UBC">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="fff-t6-hm7">
+                            <connections>
+                                <action selector="backToGantt:" destination="qzM-ff-4A3" id="tT1-Mc-1c1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorNametextLabel" destination="LBB-BY-krx" id="e1h-K3-5wH"/>
                         <outlet property="created_ontextLabel" destination="iv0-LC-kQg" id="tao-ig-faP"/>
@@ -946,7 +953,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1N-xT-ulv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5782" y="-755"/>
+            <point key="canvasLocation" x="5792" y="-749"/>
         </scene>
         <!--Chose Range For Issue-->
         <scene sceneID="v1i-fp-mxd">

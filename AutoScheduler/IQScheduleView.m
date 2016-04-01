@@ -586,8 +586,22 @@ const CGFloat kDayViewPadding = 0.0;
 - (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
     NSLog(@"you have touched the label and this is on the IQScheduelView class");
     NSDictionary* issue = [self issueID];
-    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
-    detailViewController.issue = issue;
+//    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
+//    detailViewController.issue = issue;
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+
+    
+    IssueDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"IssueDetails"];
+    
+    UINavigationController *navigationController =
+    [[UINavigationController alloc] initWithRootViewController:vc];
+
+    
+    vc.issue = issue;
+    //[vc setModalPresentationStyle:UIModalPresentationPopover];
+    [(UIViewController*)self.nextResponder.nextResponder.nextResponder.nextResponder.nextResponder presentViewController:navigationController animated:NO completion:NULL];
 }
 
 

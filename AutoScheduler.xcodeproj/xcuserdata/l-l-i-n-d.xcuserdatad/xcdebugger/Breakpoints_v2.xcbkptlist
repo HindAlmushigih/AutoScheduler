@@ -106,7 +106,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "481084718.960825"
+                  timestampString = "481216692.692863"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -121,7 +121,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "481084718.961217"
+                  timestampString = "481216692.693161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -358,7 +358,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "481084718.974083"
+                  timestampString = "481216692.709649"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -373,7 +373,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "481084718.974261"
+                  timestampString = "481216692.709989"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -406,7 +406,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "481084718.975597"
+                  timestampString = "481216692.714422"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -421,7 +421,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "481084718.975938"
+                  timestampString = "481216692.714714"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -652,6 +652,166 @@
             startingLineNumber = "586"
             endingLineNumber = "586"
             landmarkName = "-didTapLabelWithGesture:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQScheduleView.m"
+            timestampString = "481171575.54517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
+            landmarkName = "-didTapLabelWithGesture:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQScheduleView.m"
+            timestampString = "481171575.54517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
+            landmarkName = "-didTapLabelWithGesture:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQScheduleView.m"
+            timestampString = "481171575.54517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "604"
+            endingLineNumber = "604"
+            landmarkName = "-didTapLabelWithGesture:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IssueDetailsViewController.m"
+            timestampString = "481165672.179228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IssueDetailsViewController.m"
+            timestampString = "481165674.732375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-setUptTheLabels"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IssueDetailsViewController.h"
+            timestampString = "481165686.504909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "issue"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[IssueDetailsViewController issue]"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IssueDetailsViewController.h"
+                  timestampString = "481216692.731893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[IssueDetailsViewController setIssue:]"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IssueDetailsViewController.h"
+                  timestampString = "481216692.732077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IssueDetailsViewController.m"
+            timestampString = "481166036.517953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-setUptTheLabels"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IssueDetailsViewController.m"
+            timestampString = "481216691.618413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-backToGantt:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -69,7 +69,13 @@
     _authorNametextLabel.text = [@"Auther Name: " stringByAppendingString: _issue[@"author"][@"name"]];
     _start_datetextLabel.text = [@"Start Date: " stringByAppendingString:[_issue objectForKey:@"start_date"]];
     _due_datetextLabel.text = [@"Due Date: " stringByAppendingString:[_issue objectForKey:@"due_date"]];
-    _estimated_hourstextLabel.text = [@"Estimated hours: " stringByAppendingString:[_issue objectForKey:@"estimated_hours"]];
+//    if ([_issue[@"estimated_hours"] isKindOfClass:[NSNull class]]) {
+//        _estimated_hourstextLabel.text = @"Estimated hours: ";
+//    }
+//    else
+//    {
+//    _estimated_hourstextLabel.text = [@"Estimated hours: " stringByAppendingString:[_issue objectForKey:@"estimated_hours"]];
+//    }
     _created_ontextLabel.text = [@"Created On: " stringByAppendingString: [_issue objectForKey:@"created_on"]];
     _updated_ontextLabel.text = [@"Updated On: " stringByAppendingString:[_issue objectForKey:@"updated_on"]];
 }
@@ -82,5 +88,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)backToGantt:(id)sender {
+    NSLog(@"This is the view that presened this view", self.presentedViewController);
+      [self dismissViewControllerAnimated:YES completion:nil]; // or popToRoot... if required.
+}
+
 
 @end
