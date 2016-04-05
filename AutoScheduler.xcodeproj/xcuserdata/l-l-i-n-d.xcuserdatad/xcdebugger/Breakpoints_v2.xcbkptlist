@@ -106,7 +106,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "481216692.692863"
+                  timestampString = "481568762.246502"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -121,12 +121,12 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IQScrollView.h"
-                  timestampString = "481216692.693161"
+                  timestampString = "481568762.24667"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "19">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "38">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "+loginToASWithusername:andPassword:"
+            landmarkName = "+loginToASWithusername:andPassword:completionBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -287,7 +287,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "+loginToASWithusername:andPassword:"
+            landmarkName = "+loginToASWithusername:andPassword:completionBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -298,12 +298,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480308759.40441"
+            timestampString = "481253110.378166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "+loginToASWithusername:andPassword:"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "+loginToASWithusername:andPassword:completionBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -358,7 +358,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "481216692.709649"
+                  timestampString = "481568762.27086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -373,12 +373,12 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/NewIssueViewController.m"
-                  timestampString = "481216692.709989"
+                  timestampString = "481568762.271086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -406,7 +406,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "481216692.714422"
+                  timestampString = "481568762.272767"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
@@ -421,12 +421,12 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/GanttChartViewController.h"
-                  timestampString = "481216692.714714"
+                  timestampString = "481568762.273058"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480555607.155181"
+            timestampString = "481255768.955752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "+creatIssueUsername:andPassword:andIssue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,11 +502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480661634.110037"
+            timestampString = "481255768.955752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
             landmarkName = "+creatIssueUsername:andPassword:andIssue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480661634.110037"
+            timestampString = "481255768.955752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "+creatIssueUsername:andPassword:andIssue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -534,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480661634.110037"
+            timestampString = "481255768.955752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "365"
+            endingLineNumber = "365"
             landmarkName = "+creatIssueUsername:andPassword:andIssue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoScheduler/ASRESTAPI.m"
-            timestampString = "480661190.521842"
+            timestampString = "481255768.955752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "+creatIssueUsername:andPassword:andIssue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -758,7 +758,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IssueDetailsViewController.h"
-                  timestampString = "481216692.731893"
+                  timestampString = "481568762.290889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -773,7 +773,7 @@
                   moduleName = "AutoScheduler"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/IssueDetailsViewController.h"
-                  timestampString = "481216692.732077"
+                  timestampString = "481568762.292373"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -813,6 +813,214 @@
             endingLineNumber = "92"
             landmarkName = "-backToGantt:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQGanttView.m"
+            timestampString = "481244423.318054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-layoutOnRowsChange"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQGanttView.m"
+            timestampString = "481244445.832333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-rowHeaderViewWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQGanttView.m"
+            timestampString = "481244447.564353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "-timeHeaderViewWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/IQGanttView.m"
+            timestampString = "481244801.399986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-didMoveToWindow"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/ASLoginViewController.m"
+            timestampString = "481253573.246809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-ASLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/ASLoginViewController.m"
+            timestampString = "481253577.4367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-ASLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/ASLoginViewController.m"
+            timestampString = "481253614.913611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-ASLogin:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ASLoginViewController ASLogin:]"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/ASLoginViewController.m"
+                  timestampString = "481568762.303686"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1651">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[ASLoginViewController ASLogin:]_block_invoke_2"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/ASLoginViewController.m"
+                  timestampString = "481568762.303864"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/ASLoginViewController.m"
+            timestampString = "481567957.685501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-ASLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoScheduler/ASLoginViewController.m"
+            timestampString = "481567965.636014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-ASLogin:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[ASLoginViewController ASLogin:]_block_invoke_2"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/ASLoginViewController.m"
+                  timestampString = "481568762.30643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[ASLoginViewController ASLogin:]_block_invoke.54"
+                  moduleName = "AutoScheduler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/l-l-i-n-d/Desktop/AutoScheduler/AutoScheduler/ASLoginViewController.m"
+                  timestampString = "481568762.306605"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

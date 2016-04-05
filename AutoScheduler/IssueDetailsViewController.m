@@ -90,7 +90,7 @@
 */
 
 - (IBAction)backToGantt:(id)sender {
-    NSLog(@"This is the view that presened this view", self.presentedViewController);
+  //  NSLog(@"This is the view that presened this view", self.presentedViewController);
       [self dismissViewControllerAnimated:YES completion:nil]; // or popToRoot... if required.
 }
 

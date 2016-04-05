@@ -31,8 +31,8 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
 - (IBAction)ASLogin:(id)sender {
     
     
-    NSString* errorMessage = @"";
-    
+   __block NSString* errorMessage = @"";
+    __block BOOL userOrPass;
     if ([self.ASUsernameField.text length] == 0 || [self.ASPasswordField.text length] == 0) {
         errorMessage = @"Check the empty field";
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
@@ -48,14 +48,47 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
     else {
         [[ASUserSingleton sharedInstance]setUserName:self.ASUsernameField.text];
         [[ASUserSingleton sharedInstance]setPassword:self.ASPasswordField.text];
-        [[ASUserSingleton sharedInstance]setRedmineURL:@"http://172.16.231.19/redmine23/"];
+        [[ASUserSingleton sharedInstance]setRedmineURL:@"http://172.16.231.19/redmine23/login"];
         [ASRESTAPI sharedInstance];
-        [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text];
-            [[ASUserSingleton sharedInstance]setISUserSignedIn:YES];
-            [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
-            [self showHomeScreen];
+        [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text completionBlock:^(BOOL response) {
+            userOrPass = response;
+            
+            if (userOrPass == YES) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [[ASUserSingleton sharedInstance]setISUserSignedIn:YES];
+                                [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
+                                [self showHomeScreen];
+                            });
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                errorMessage = @"Invalid user or password";
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
+                                                                               message:errorMessage
+                                                                        preferredStyle:UIAlertControllerStyleActionSheet];
+                UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                      style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                          NSLog(@"You pressed OK");
+                                                                      }];
+                [alert addAction:firstAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                
+            
+                                });
+                }
+            
+        }];
+        
+        
+//        [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text];
+//            [[ASUserSingleton sharedInstance]setISUserSignedIn:YES];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
+//            [self showHomeScreen];
     }
 }
+
 
 -(void)showHomeScreen
 {

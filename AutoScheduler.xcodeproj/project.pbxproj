@@ -92,13 +92,13 @@
 		4D2E3A051CA1091300C727CC /* GLCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLCalendarDayCell.xib; sourceTree = "<group>"; };
 		4D2E3A061CA1091300C727CC /* GLCalendarDayCellBackgroundCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCalendarDayCellBackgroundCover.h; sourceTree = "<group>"; };
 		4D2E3A071CA1091300C727CC /* GLCalendarDayCellBackgroundCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCalendarDayCellBackgroundCover.m; sourceTree = "<group>"; };
-		4D2E3A081CA1091300C727CC /* GLCalendarMonthCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCalendarMonthCoverView.h; sourceTree = "<group>"; };
-		4D2E3A091CA1091300C727CC /* GLCalendarMonthCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCalendarMonthCoverView.m; sourceTree = "<group>"; };
-		4D2E3A0A1CA1091300C727CC /* GLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCalendarView.h; sourceTree = "<group>"; };
-		4D2E3A0B1CA1091300C727CC /* GLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCalendarView.m; sourceTree = "<group>"; };
-		4D2E3A0C1CA1091300C727CC /* GLCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLCalendarView.xib; sourceTree = "<group>"; };
-		4D2E3A0D1CA1091300C727CC /* GLDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDateUtils.h; sourceTree = "<group>"; };
-		4D2E3A0E1CA1091300C727CC /* GLDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDateUtils.m; sourceTree = "<group>"; };
+		4D2E3A081CA1091300C727CC /* GLCalendarMonthCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLCalendarMonthCoverView.h; path = ../GLCalendarMonthCoverView.h; sourceTree = "<group>"; };
+		4D2E3A091CA1091300C727CC /* GLCalendarMonthCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLCalendarMonthCoverView.m; path = ../GLCalendarMonthCoverView.m; sourceTree = "<group>"; };
+		4D2E3A0A1CA1091300C727CC /* GLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLCalendarView.h; path = ../GLCalendarView.h; sourceTree = "<group>"; };
+		4D2E3A0B1CA1091300C727CC /* GLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLCalendarView.m; path = ../GLCalendarView.m; sourceTree = "<group>"; };
+		4D2E3A0C1CA1091300C727CC /* GLCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GLCalendarView.xib; path = ../GLCalendarView.xib; sourceTree = "<group>"; };
+		4D2E3A0D1CA1091300C727CC /* GLDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDateUtils.h; path = ../GLDateUtils.h; sourceTree = "<group>"; };
+		4D2E3A0E1CA1091300C727CC /* GLDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLDateUtils.m; path = ../GLDateUtils.m; sourceTree = "<group>"; };
 		4D2E3A101CA1091300C727CC /* gl-calendar-magnify-glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gl-calendar-magnify-glass.png"; sourceTree = "<group>"; };
 		4D2E3A111CA1091300C727CC /* gl-calendar-magnify-glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gl-calendar-magnify-glass@2x.png"; sourceTree = "<group>"; };
 		4D2E3A121CA1091300C727CC /* gl-calendar-shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gl-calendar-shadow.png"; sourceTree = "<group>"; };
@@ -229,13 +229,6 @@
 				4D2E3A001CA1091300C727CC /* GLCalendarDateRange.h */,
 				4D2E3A011CA1091300C727CC /* GLCalendarDateRange.m */,
 				4D2E3A021CA1091300C727CC /* GLCalendarDayCell */,
-				4D2E3A081CA1091300C727CC /* GLCalendarMonthCoverView.h */,
-				4D2E3A091CA1091300C727CC /* GLCalendarMonthCoverView.m */,
-				4D2E3A0A1CA1091300C727CC /* GLCalendarView.h */,
-				4D2E3A0B1CA1091300C727CC /* GLCalendarView.m */,
-				4D2E3A0C1CA1091300C727CC /* GLCalendarView.xib */,
-				4D2E3A0D1CA1091300C727CC /* GLDateUtils.h */,
-				4D2E3A0E1CA1091300C727CC /* GLDateUtils.m */,
 				4D2E3A0F1CA1091300C727CC /* Images */,
 			);
 			path = GLCalendarSources;
@@ -249,6 +242,13 @@
 				4D2E3A051CA1091300C727CC /* GLCalendarDayCell.xib */,
 				4D2E3A061CA1091300C727CC /* GLCalendarDayCellBackgroundCover.h */,
 				4D2E3A071CA1091300C727CC /* GLCalendarDayCellBackgroundCover.m */,
+				4D2E3A081CA1091300C727CC /* GLCalendarMonthCoverView.h */,
+				4D2E3A091CA1091300C727CC /* GLCalendarMonthCoverView.m */,
+				4D2E3A0A1CA1091300C727CC /* GLCalendarView.h */,
+				4D2E3A0B1CA1091300C727CC /* GLCalendarView.m */,
+				4D2E3A0C1CA1091300C727CC /* GLCalendarView.xib */,
+				4D2E3A0D1CA1091300C727CC /* GLDateUtils.h */,
+				4D2E3A0E1CA1091300C727CC /* GLDateUtils.m */,
 			);
 			path = GLCalendarDayCell;
 			sourceTree = "<group>";

@@ -20,7 +20,7 @@
 
 + (void)setLogging:(BOOL)newValue;
 
-+(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password;
++(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(BOOL response))completion;
 
 +(void)currentUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response))completion;
 

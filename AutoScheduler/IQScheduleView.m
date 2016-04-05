@@ -617,7 +617,19 @@ const CGFloat kDayViewPadding = 0.0;
 - (void) setText:(NSString *)text
 {
     textLabel.text = text;
+//    float widthIs =
+//    [textLabel.text
+//     boundingRectWithSize:textLabel.frame.size
+//     options:NSStringDrawingUsesLineFragmentOrigin
+//     attributes:@{ NSFontAttributeName:textLabel.font }
+//     context:nil]
+//    .size.width;
+    // NSLog(@"the width of yourLabel is %f", widthIs);
     NSLog(@"this is to see the value for the text: %@",text);
+    
+//    CGSize expectedLabelSize = [text sizeWithFont:textLabel.font
+//                                constrainedToSize:maximumLabelSize
+//                                    lineBreakMode:textLabel.lineBreakMode];
 }
 
 - (NSString*) text

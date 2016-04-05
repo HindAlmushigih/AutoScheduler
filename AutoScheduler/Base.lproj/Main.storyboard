@@ -1000,7 +1000,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je4-PG-ir5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6472" y="53"/>
+            <point key="canvasLocation" x="6728" y="53"/>
         </scene>
         <!--GanntChart-->
         <scene sceneID="Hbh-E6-8Po">
@@ -1027,7 +1027,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFd-8w-LO8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5005" y="53"/>
+            <point key="canvasLocation" x="5169" y="53"/>
         </scene>
         <!--calendar-->
         <scene sceneID="jo0-LS-jXm">
@@ -1538,7 +1538,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-o9-Bly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5660" y="53"/>
+            <point key="canvasLocation" x="6068" y="53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v5i-0w-sXz">

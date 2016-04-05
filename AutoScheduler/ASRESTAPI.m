@@ -41,7 +41,7 @@ static ASRESTAPI *sharedInstance = nil;
  * @param password The password the user account.
  */
 
-+(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password
++(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(BOOL response))completion
 {
     NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",username, password];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -76,6 +76,14 @@ static ASRESTAPI *sharedInstance = nil;
                                       
                                       NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                       NSLog(@"Response Body:\n%@\n", body);
+                                      if ([body containsString:@"Invalid user or password"])
+                                      {
+                                          NSLog(@"Invalid user or password");
+                                          
+                                          completion(NO);
+                                      }
+                                      else
+                                          completion(YES);
                                   }];
     [task resume];
 
