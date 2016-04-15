@@ -24,4 +24,5 @@
 @property (strong, nonatomic) IQGanttView *ganttView;
 
 -(NSDate*)stringToDate:(NSString*)dateStr;
+-(CGRect)numOfItemToSetFrameSize:(NSArray*)item;
 @end

@@ -545,8 +545,6 @@ const CGFloat kDayViewPadding = 0.0;
     CGContextSetLineDash(ctx, 0, (CGFloat[]){1,1}, 2);
     CGContextStrokePath(ctx);
     CGContextRestoreGState(ctx);
-    //CGContextMoveToPoint(ctx, 0, 20);
-    //CGContextAddLineToPoint(ctx, 100, 20);
 }
 
 @end
@@ -578,6 +576,7 @@ const CGFloat kDayViewPadding = 0.0;
         UITapGestureRecognizer *tapGesture =        [[UITapGestureRecognizer alloc]
          initWithTarget:self action:@selector(didTapLabelWithGesture:)];
         [textLabel addGestureRecognizer:tapGesture];
+        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
        
     }
     return self;
@@ -586,12 +585,8 @@ const CGFloat kDayViewPadding = 0.0;
 - (void)didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture {
     NSLog(@"you have touched the label and this is on the IQScheduelView class");
     NSDictionary* issue = [self issueID];
-//    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
-//    detailViewController.issue = issue;
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-
     
     IssueDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"IssueDetails"];
     
@@ -600,7 +595,7 @@ const CGFloat kDayViewPadding = 0.0;
 
     
     vc.issue = issue;
-    //[vc setModalPresentationStyle:UIModalPresentationPopover];
+    
     [(UIViewController*)self.nextResponder.nextResponder.nextResponder.nextResponder.nextResponder presentViewController:navigationController animated:NO completion:NULL];
 }
 
@@ -617,19 +612,10 @@ const CGFloat kDayViewPadding = 0.0;
 - (void) setText:(NSString *)text
 {
     textLabel.text = text;
-//    float widthIs =
-//    [textLabel.text
-//     boundingRectWithSize:textLabel.frame.size
-//     options:NSStringDrawingUsesLineFragmentOrigin
-//     attributes:@{ NSFontAttributeName:textLabel.font }
-//     context:nil]
-//    .size.width;
-    // NSLog(@"the width of yourLabel is %f", widthIs);
+    textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    textLabel.numberOfLines = 2;
     NSLog(@"this is to see the value for the text: %@",text);
     
-//    CGSize expectedLabelSize = [text sizeWithFont:textLabel.font
-//                                constrainedToSize:maximumLabelSize
-//                                    lineBreakMode:textLabel.lineBreakMode];
 }
 
 - (NSString*) text

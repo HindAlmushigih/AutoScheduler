@@ -95,7 +95,6 @@
     
     cell.textLabel.text = tempDictionary[@"project"][@"name"]; // projectname;//[tempDictionary objectForKey:@"name"];
     cell.detailTextLabel.text = [tempDictionary objectForKey:@"subject"];;    // Configure the cell...
-    
     return cell;
 }
 
@@ -107,7 +106,9 @@
     [ASRESTAPI issuesListUsername:username andPassword:password completionBlock:^(NSDictionary *response, NSArray *issueArray) {
         _issues = response;
         issuesItems = issueArray;
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
 
     }];
 }

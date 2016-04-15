@@ -32,6 +32,7 @@
 @implementation IQGanttView
 @synthesize defaultRowHeight;
 
+
 #pragma mark Initialization
 
 - (id)initWithFrame:(CGRect)frame
@@ -76,6 +77,7 @@
 - (void) didMoveToWindow
 {
     UIView* colHead = [self timeHeaderViewWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
+    NSLog(@"this is the label of the date ");
     if(colHead != nil) {
         if([colHead respondsToSelector:@selector(ganttView:shouldDisplayCalendarUnits:)]) {
             [(id<IQGanttHeaderDelegate>)colHead ganttView:self shouldDisplayCalendarUnits:displayCalendarUnits];
@@ -87,9 +89,11 @@
         self.columnHeaderView = colHead;
     }
     UIView* rowHead = [self rowHeaderViewWithFrame:CGRectMake(0, 0, 100, self.bounds.size.height)];
-    if(rowHead != nil) self.rowHeaderView = rowHead;
+    if(rowHead != nil)
+        self.rowHeaderView = rowHead;
     UIView* corner = [self cornerViewWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
-    if(corner != nil) self.cornerView = corner;
+    if(corner != nil)
+        self.cornerView = corner;
     [self layoutOnPropertyChange:YES];
 }
 
@@ -297,20 +301,6 @@
 }
 
 
-//- (void)didTapLabelWithGesture:(UITapGestureRecognizer*)tapGesture
-//{
-//    NSLog(@"you have touched the label");
-//    IQScheduleBlockView* lbl = tapGesture.view;
-//    
-//    //self.view
-//    NSLog(@"you have touched the labe%@", lbl.issueID);
-////    NSDictionary* issue = lbl.issueID; //tapGesture.view.issueID; //[self issueID];
-////    IssueDetailsViewController *detailViewController;  //(IssueDetailsViewController *)segue.destinationViewController;
-////    detailViewController.issue = issue;
-//}
-
-
-
 @end
 
 @implementation IQGanttHeaderView
@@ -338,6 +328,7 @@
 }
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+    NSLog(@"This is to see if the drawLayer method is called from IQGanttHeaderView ");
     CGRect r = CGContextGetClipBoundingBox(ctx);
     CGSize size = self.bounds.size;
     CGContextSaveGState(ctx);
@@ -554,6 +545,8 @@
 @implementation IQGanttRowView
 @synthesize dataSource, primaryGridColor, secondaryGridColor, tertaryGridColor, primaryGridDash, secondaryGridDash, tertaryGridDash;
 
+int plusSize;
+
 - (id) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -596,8 +589,11 @@
     CGSize sz = self.bounds.size;
     CGFloat tscl = sz.width / (t1 - t0);
     
+    plusSize = 0;
+    
     [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueID) {
-        CGRect frame = CGRectMake((startDate-t0)*tscl, 0, (endDate-startDate)*tscl, sz.height);
+        CGRect frame = CGRectMake((startDate-t0)*tscl, plusSize, (endDate-startDate)*tscl, sz.height-100);
+        plusSize = plusSize +85;
         
         NSString* text = nil;
         if([value respondsToSelector:@selector(characterAtIndex:)]) {

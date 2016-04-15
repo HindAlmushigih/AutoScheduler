@@ -73,8 +73,6 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
 // 3- Then call the download method and pass in a completion block that updates your label.
 // 4- must use dispatch_async(dispatch_get_main_queue() to call the method thats update the UI elements
 
-
-
 -(void)getThecurrentUser
 {
     NSString* username = [[ASUserSingleton sharedInstance]userName];

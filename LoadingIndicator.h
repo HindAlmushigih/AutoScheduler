@@ -1,15 +1,14 @@
 //
-//  ASLoginViewController.h
+//  LoadingIndicator.h
 //  AutoScheduler
 //
-//  Created by Hind Almushigih on 11/2/16.
+//  Created by Hind Almushigih on 14/4/16.
 //  Copyright © 2016 Gannon University. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ASUserSingleton.h"
-#import "ASRESTAPI.h"
-@interface ASLoginViewController : UIViewController
+@interface LoadingIndicator : NSObject
 {
     UIActivityIndicatorView *activityView;
     UIView *loadingView;
@@ -20,8 +19,5 @@
 @property (nonatomic, retain) UIView *loadingView;
 @property (nonatomic, retain) UILabel *loadingLabel;
 
-@property (weak, nonatomic) IBOutlet UITextField *ASUsernameField;
-@property (weak, nonatomic) IBOutlet UITextField *ASPasswordField;
-@property (weak, nonatomic) IBOutlet UIButton *ASLogin;
 
 @end

@@ -37,18 +37,6 @@
 
 -(void)setUptTheLabels
 {
-//    [baseString stringByAppendingFormat:
-//     @" A number: %@, a dictionary: %@", number, dictionary];
-//    [baseString stringByAppendingFormat:
-//     @" Project Name: %@ ", [_project objectForKey:@"name"];
-//    [@"Project Name: " stringByAppendingString:[_project objectForKey:@"name"]];
-
-//    _nametextLabel.text =  [@"Project Name: " stringByAppendingString:[_project objectForKey:@"name"]]; //@"Project Name: %@" , [_project objectForKey:@"name"];//[_project objectForKey:@"name"];
-//    _identifiertextLabel.text = [_project objectForKey:@"identifier"];
-//    _createdontextLabel.text = [_project objectForKey:@"created_on"];
-//    _updated_ontextLabel.text = [_project objectForKey:@"updated_on"];
-//    _descriptiontextLabel.text = [_project objectForKey:@"description"];
-//    
     
     _nametextLabel.text = [@"Project Name: " stringByAppendingString:[_project objectForKey:@"name"]];//[_project objectForKey:@"name"];
     _identifiertextLabel.text = [@"Project Identifier: " stringByAppendingString:[_project objectForKey:@"identifier"]]; //[_project objectForKey:@"identifier"];

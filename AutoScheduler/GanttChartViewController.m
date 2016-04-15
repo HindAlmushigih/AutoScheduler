@@ -67,14 +67,17 @@
     NSArray *issuesItems;
     CalendarEntry* ent;
 }
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     issuesItems = [[NSArray alloc] init];
     self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.ganttView];
-   // [self setupLoadingIndicator];
     // Do any additional setup after loading the
-    [self gettheIssuesItems];
+    [self.view addSubview:self.ganttView];
+    [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
+        CGRect newrect = [self numOfItemToSetFrameSize:issueArray];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,9 +107,8 @@
     [activityView startAnimating];
 }
 
--(void)gettheIssuesItems
+-(void)gettheIssuesItemswithcompletionBlock:(void(^)(NSArray* issueArray))completion
 {
-    
     NSString* username = [[ASUserSingleton sharedInstance]userName];
     NSString* password = [[ASUserSingleton sharedInstance]password];
     _issues = nil;
@@ -143,9 +145,19 @@
                                      sortedArrayUsingDescriptors:sortDescriptors];
         NSLog(@"sortedEventArray == %@", sortedEventArray);
                     [self.ganttView addRow:[IQCalendarSimpleDataSource dataSourceWithArray:sortedEventArray]];
-        
-        
+        completion(sortedEventArray);
     }];
+}
+
+
+
+
+-(CGRect)numOfItemToSetFrameSize:(NSArray*)item
+{
+    CGFloat heightSize = (item.count * 134)+44;
+    CGRect currentbounds = self.view.bounds;
+    CGRect nextbounds = CGRectMake(currentbounds.origin.x,currentbounds.origin.y,currentbounds.size.width+120, heightSize*2);
+    return nextbounds;
 }
 
 
@@ -178,10 +190,42 @@
     if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
     {
         GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
-        
     }
     
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id)coordinator {
+    
+    NSLog(@"I have been called");
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    //The device has already rotated, that's why this method is being called.
+    
+    // before rotation
+    
+    [coordinator animateAlongsideTransition:^(id  _Nonnull context) {
+        
+        // during rotation: update our view's bounds and centre
 
+        NSLog(@"the view will be changed");
+        [self.ganttView removeFromSuperview];
+        // Do any additional setup after loading the
+
+        [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
+            
+
+            self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
+            // Do any additional setup after loading the
+            [self.view addSubview:self.ganttView];
+            [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
+                CGRect newrect = [self numOfItemToSetFrameSize:issueArray];
+            }];
+            
+        }];
+    } completion:^(id  _Nonnull context) {
+        
+        // after rotation
+        
+    }];
+}
 @end

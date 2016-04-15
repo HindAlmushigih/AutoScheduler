@@ -213,7 +213,8 @@
 
 - (CGPoint) contentOffset
 {
-    if(scrollView == nil) return CGPointMake(0, 0);
+    if(scrollView == nil)
+        return CGPointMake(0, 0);
     return scrollView.contentOffset;
 }
 
@@ -231,11 +232,14 @@
 - (void) setContentSize:(CGSize)csz
 {
     contentSize = csz;
-    if(scrollView == nil) [self performLayoutAnimated:NO];
-    CGSize innerSize = CGSizeMake(contentSize.width + headerSize.width, contentSize.height + headerSize.height);
+    if(scrollView == nil)
+        [self performLayoutAnimated:NO];
+    CGSize innerSize = CGSizeMake(contentSize.width + headerSize.width, (contentSize.height + headerSize.height)*10);
     CGSize bsize = self.bounds.size;
-    if(innerSize.width < bsize.width) innerSize.width = bsize.width;
-    if(innerSize.height < bsize.height) innerSize.height = bsize.height;
+    if(innerSize.width < bsize.width)
+        innerSize.width = bsize.width;
+    if(innerSize.height < bsize.height)
+        innerSize.height = bsize.height;
     scrollView.contentSize = innerSize;
 }
 
@@ -268,7 +272,8 @@
 
 - (void) performLayoutAnimated:(BOOL)animated
 {
-    if(animated) [UIView beginAnimations:nil context:nil];
+    if(animated)
+        [UIView beginAnimations:nil context:nil];
     if(scrollView == nil) {
         scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         scrollView.bounces = YES;
@@ -277,6 +282,7 @@
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         scrollView.delegate = self;
 //        scrollView.zooming = YES;
+        
         contentPanel = [[UIView alloc] initWithFrame:self.bounds];
         contentPanel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         contentPanel.layer.shadowOpacity = 0.9;
@@ -304,7 +310,8 @@
         rowHeaderView.frame = r;
     }
     [self scrollViewDidScroll:scrollView];
-    if(animated) [UIView commitAnimations];
+    if(animated)
+        [UIView commitAnimations];
 }
 
 - (void) layoutSubviews
@@ -409,6 +416,8 @@
             ssize = vsz;
             contentPanel.layer.shadowPath = [UIBezierPath bezierPathWithRect:contentPanel.bounds].CGPath;
         }
+
+        
         contentPanel.frame = contentPanelBounds;
     }
 }

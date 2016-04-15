@@ -123,7 +123,7 @@ static IQGridDash IQMakeGridDash(CGFloat a, CGFloat b) {
 
 @property (weak, nonatomic) IBOutlet UIView *popUpView;
 
-- (void)showInView:(UIView *)aView animated:(BOOL)animated;
+//- (void)showInView:(UIView *)aView animated:(BOOL)animated;
 
 @property (nonatomic, retain) id<IQCalendarDataSource> dataSource;
 @property (nonatomic, retain) UIColor* primaryGridColor;
