@@ -64,6 +64,7 @@
     cell.textLabel.text = [tempDictionary objectForKey:@"name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"View Project..."];
     // Configure the cell...
+    cell.detailTextLabel.frame = CGRectMake(20,241,560,21);
     
     return cell;
 }

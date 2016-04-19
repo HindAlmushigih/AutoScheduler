@@ -94,11 +94,28 @@
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"NewIssueWind"])
     {
+        if (self.range == nil)
+        {
+            NSString* errorMessage = @"";
+            errorMessage = @"Please choose a range";
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
+                                                                           message:errorMessage
+                                                                    preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                  style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                      NSLog(@"You pressed OK");
+                                                                  }];
+            [alert addAction:firstAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
         UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
 
         NewIssueViewController* nvc = [navController topViewController]; //(NewIssueViewController *)segue.destinationViewController;
         
         nvc.range = [GLCalendarDateRange rangeWithBeginDate:self.range.beginDate endDate:self.range.endDate];// self.range;
+        }
     }
     
 }

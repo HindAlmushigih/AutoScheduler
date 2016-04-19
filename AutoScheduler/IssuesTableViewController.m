@@ -96,6 +96,8 @@
     
     cell.textLabel.text = tempDictionary[@"project"][@"name"]; // projectname;//[tempDictionary objectForKey:@"name"];
     cell.detailTextLabel.text = [tempDictionary objectForKey:@"subject"];;    // Configure the cell...
+   // CGRect frame = CGRectMake(4.0f, 4.0f, size.width, size.height);
+    cell.detailTextLabel.frame = CGRectMake(20,241,560,21);
     return cell;
 }
 
@@ -151,10 +153,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showIssueDetails"])
+    {
+
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     IssueDetailsViewController *detailViewController = (IssueDetailsViewController *)segue.destinationViewController;
     detailViewController.issue = [issuesItems objectAtIndex:indexPath.row];
-
+    }
         if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
         {
             GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
