@@ -10,6 +10,7 @@
 #import "ASRESTAPI.h"
 #import "ASUserSingleton.h"
 #import "IssueDetailsViewController.h"
+#import "GLCalendarViewController.h"
 /*
  {
  author =     {
@@ -153,6 +154,12 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     IssueDetailsViewController *detailViewController = (IssueDetailsViewController *)segue.destinationViewController;
     detailViewController.issue = [issuesItems objectAtIndex:indexPath.row];
+
+        if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
+        {
+            GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
+        }
+    
 }
 
 @end
