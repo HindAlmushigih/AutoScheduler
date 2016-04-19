@@ -130,15 +130,18 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     [[ASUserSingleton sharedInstance]setISUserSignedIn:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:USER_DEFUALTS_LOG_OUT object:nil];
     
-    UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-    UIViewController *loginViewController = [loginStoryboard instantiateInitialViewController];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *loginViewController = [mainStoryboard instantiateInitialViewController];
     loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-     [self dismissViewControllerAnimated:NO completion:nil];
+    // [self dismissViewControllerAnimated:NO completion:nil];
     [[self presentedViewController] dismissViewControllerAnimated:NO completion:nil];
     
     [self presentViewController:loginViewController animated:NO completion:nil];
     
+    [self.navigationController dismissViewControllerAnimated:YES
+                                                  completion:nil];
 
 }
 

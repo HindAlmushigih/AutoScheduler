@@ -513,8 +513,8 @@
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="f7G-ne-aGg"/>
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="y7v-qD-Plz">
                             <connections>
-                                <action selector="ASSignOut:" destination="BFa-A7-vtA" id="3ql-dg-kNo"/>
-                                <segue destination="PsI-pP-n4s" kind="presentation" id="PpJ-ug-EjK"/>
+                                <action selector="ASSignOut:" destination="BFa-A7-vtA" id="gU7-k2-NxR"/>
+                                <segue destination="PsI-pP-n4s" kind="presentation" id="Fxf-3U-lAF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -528,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWW-lk-leQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4225" y="-2581"/>
+            <point key="canvasLocation" x="4473" y="-2581"/>
         </scene>
         <!--Projects-->
         <scene sceneID="DLZ-ME-OC3">
@@ -1344,7 +1344,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFS-Et-rJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897" y="-2531"/>
+            <point key="canvasLocation" x="3665" y="-2587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bb9-8G-uiv">
@@ -1441,7 +1441,7 @@
         <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PpJ-ug-EjK"/>
+        <segue reference="Fxf-3U-lAF"/>
         <segue reference="Bxg-pw-vRj"/>
     </inferredMetricsTieBreakers>
 </document>
