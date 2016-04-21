@@ -708,6 +708,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Issue Details" id="HNl-mv-UBC">
                         <barButtonItem key="backBarButtonItem" title="Back" id="sZF-D6-vAK"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="w71-ai-89A">
+                            <connections>
+                                <action selector="backToGantt:" destination="qzM-ff-4A3" id="GdV-3O-6GG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="authorNametextLabel" destination="LBB-BY-krx" id="e1h-K3-5wH"/>
