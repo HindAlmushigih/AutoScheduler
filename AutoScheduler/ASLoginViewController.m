@@ -42,6 +42,7 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                                                               }];
         [alert addAction:firstAction];
         [self presentViewController:alert animated:YES completion:nil];
+        
     }
     else {
         
@@ -78,7 +79,10 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                 
             
                                 });
-                }
+                [activityView stopAnimating];
+                [loadingView removeFromSuperview];
+                
+            }
             
         }];
         

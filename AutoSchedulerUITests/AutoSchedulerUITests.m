@@ -113,49 +113,5 @@
 
 
 
-- (void)testgantt {
-    
-    XCUIApplication *app = [[XCUIApplication alloc] init];
-    [app.textFields[@"UserName"] tap];
-    app.textFields[@"UserName"]
-    app.secureTextFields[@"Password"]
-    [app.secureTextFields[@"Password"] tap];
-    app.secureTextFields[@"Password"]
-    [app.buttons[@"Login"] tap];
-    [app.navigationBars[@"Home"].buttons[@"reveal icon"] tap];
-    [app.tables.staticTexts[@"GanntChart"] tap];
-    
-    XCUIElementQuery *scrollViewsQuery = app.scrollViews;
-    XCUIElement *april2016Element = [scrollViewsQuery.otherElements containingType:XCUIElementTypeStaticText identifier:@"April 2016"].element;
-    [april2016Element tap];
-    [april2016Element tap];
-    
-    XCUIElement *element = [[scrollViewsQuery childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:2];
-    [element tap];
-    [april2016Element tap];
-    [element tap];
-    [scrollViewsQuery.otherElements.staticTexts[@"March 2016"] tap];
-    
-    XCUIElement *march2016Element = [scrollViewsQuery.otherElements containingType:XCUIElementTypeStaticText identifier:@"March 2016"].element;
-    [march2016Element tap];
-    [march2016Element tap];
-    [march2016Element tap];
-    [march2016Element tap];
-    [march2016Element tap];
-    [element tap];
-    [element tap];
-    [element tap];
-    [element tap];
-    
-    XCUIElement *scrollView = [[[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:1] childrenMatchingType:XCUIElementTypeScrollView].element;
-    [scrollView tap];
-    [element tap];
-    [element tap];
-    [element tap];
-    [element tap];
-    [scrollView tap];
-    [scrollView tap];
-    
-}
 
 @end

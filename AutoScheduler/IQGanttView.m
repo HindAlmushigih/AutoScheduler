@@ -592,8 +592,8 @@ int plusSize;
     plusSize = 0;
     
     [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueID) {
-        CGRect frame = CGRectMake((startDate-t0)*tscl, plusSize, (endDate-startDate)*tscl, sz.height-100);
-        plusSize = plusSize +85;
+        CGRect frame = CGRectMake((startDate-t0)*tscl, 0, (endDate-startDate)*tscl, sz.height);
+        plusSize = plusSize +60;
         
         NSString* text = nil;
         if([value respondsToSelector:@selector(characterAtIndex:)]) {

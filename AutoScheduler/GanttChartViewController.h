@@ -19,10 +19,11 @@
 @property (nonatomic, retain) UIView *loadingView;
 @property (nonatomic, retain) UILabel *loadingLabel;
 
-
+@property NSDictionary* project;
 @property NSDictionary* issues;
+//@property (strong, nonatomic) IQGanttView *ganttView;
 @property (strong, nonatomic) IQGanttView *ganttView;
-
+//@property (strong, nonatomic) IBOutlet IQGanttView *ganttView;
 -(NSDate*)stringToDate:(NSString*)dateStr;
 -(CGRect)numOfItemToSetFrameSize:(NSArray*)item;
 @end

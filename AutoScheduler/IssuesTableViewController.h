@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface IssuesTableViewController  : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@property NSDictionary* project;
 @property NSDictionary* issues;
 
 

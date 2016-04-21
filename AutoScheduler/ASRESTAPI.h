@@ -28,7 +28,7 @@
 
 +(void)creatProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project;
 
-+(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response, NSArray* projectArray))completion;
++(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname completionBlock:(void(^)(NSDictionary* response, NSArray* issueArray))completion;
 
 +(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password andIssue:(NSDictionary*)issue;
 @end

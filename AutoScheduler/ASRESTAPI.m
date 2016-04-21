@@ -271,7 +271,7 @@ static ASRESTAPI *sharedInstance = nil;
 }
 
 
-+(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response, NSArray* issueArray))completion
++(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname completionBlock:(void(^)(NSDictionary* response, NSArray* issueArray))completion
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -285,7 +285,10 @@ static ASRESTAPI *sharedInstance = nil;
                                @"accept": @"application/json"
                                };
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/issues.json"]
+    NSString *url = @"http://172.16.231.19/redmine23/projects/";
+    NSString *fullURL = [url stringByAppendingString:projectname];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];

@@ -16,7 +16,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    menuItems = @[@"Home", @"Projects", @"Issues", @"GanntChart"];
+    menuItems = @[@"Home", @"Projects"];//, @"Issues", @"GanntChart"];
 }
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {

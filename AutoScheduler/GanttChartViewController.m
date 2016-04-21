@@ -72,12 +72,11 @@
     [super viewDidLoad];
     issuesItems = [[NSArray alloc] init];
     self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
-    // Do any additional setup after loading the
     [self.view addSubview:self.ganttView];
+   // Do any additional setup after loading the
     [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
         CGRect newrect = [self numOfItemToSetFrameSize:issueArray];
     }];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,7 +111,11 @@
     NSString* username = [[ASUserSingleton sharedInstance]userName];
     NSString* password = [[ASUserSingleton sharedInstance]password];
     _issues = nil;
-    [ASRESTAPI issuesListUsername:username andPassword:password completionBlock:^(NSDictionary *response, NSArray *issueArray) {
+    NSString* prpjectname = self.project[@"name"];
+    prpjectname = [prpjectname stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    NSString* jsonlink = @"/issues.json";
+    NSString*fullname = [[prpjectname stringByAppendingString:jsonlink]lowercaseString];
+    [ASRESTAPI issuesListUsername:username andPassword:password forProjectName:fullname completionBlock:^(NSDictionary *response, NSArray *issueArray) {
         _issues = response;
         issuesItems = issueArray;
         
