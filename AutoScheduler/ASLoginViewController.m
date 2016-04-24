@@ -49,7 +49,6 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
         [self setupLoadingIndicator];
         [[ASUserSingleton sharedInstance]setUserName:self.ASUsernameField.text];
         [[ASUserSingleton sharedInstance]setPassword:self.ASPasswordField.text];
-        [[ASUserSingleton sharedInstance]setRedmineURL:@"http://172.16.231.19/redmine23/login"];
         [ASRESTAPI sharedInstance];
         [ASRESTAPI loginToASWithusername:self.ASUsernameField.text andPassword:self.ASPasswordField.text completionBlock:^(BOOL response) {
             
@@ -135,6 +134,27 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
     [loadingView addSubview:loadingLabel];
     [self.view addSubview:loadingView];
     [activityView startAnimating];
+}
+
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id)coordinator {
+    
+    NSLog(@"I have been called");
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    //The device has already rotated, that's why this method is being called.
+    
+    // before rotation
+    
+    [coordinator animateAlongsideTransition:^(id  _Nonnull context) {
+        // during rotation: update our view's bounds and centre
+        NSLog(@"the view will be changed");
+        
+    } completion:^(id  _Nonnull context) {
+        
+        // after rotation
+        
+    }];
 }
 
 

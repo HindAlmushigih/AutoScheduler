@@ -157,7 +157,8 @@
 
         NSString* username = [[ASUserSingleton sharedInstance]userName];
         NSString* password = [[ASUserSingleton sharedInstance]password];
-        [ASRESTAPI creatIssueUsername:username andPassword:password andIssue:[self createIssueObj]];
+        [ASRESTAPI creatIssueUsername:username andPassword:password forProjectName:self.project andIssue:[self createIssueObj]];
+       // [ASRESTAPI creatIssueUsername:username andPassword:password andIssue:[self createIssueObj]];
         [self.navigationController dismissViewControllerAnimated:NO
                                                       completion:nil];
     }

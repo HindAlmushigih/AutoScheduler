@@ -423,7 +423,6 @@
     if(floatingLabels == nil) {
         floatingLabels = [[NSMutableArray alloc] initWithCapacity:10];
     }
-    
     while(index >= floatingLabels.count) {
         UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 16)];
         label.font = [UIFont boldSystemFontOfSize:12];
@@ -592,7 +591,7 @@ int plusSize;
     plusSize = 0;
     
     [self.dataSource enumerateEntriesUsing:^(NSTimeInterval startDate, NSTimeInterval endDate, NSObject<IQCalendarActivity>* value, NSDictionary* issueID) {
-        CGRect frame = CGRectMake((startDate-t0)*tscl, 0, (endDate-startDate)*tscl, sz.height);
+        CGRect frame = CGRectMake((startDate-t0)*tscl, plusSize, (endDate-startDate)*tscl, sz.height);
         plusSize = plusSize +60;
         
         NSString* text = nil;

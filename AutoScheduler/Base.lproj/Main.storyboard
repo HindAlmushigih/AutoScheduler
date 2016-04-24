@@ -28,7 +28,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-KU-YwC">
                                 <rect key="frame" x="207" y="215" width="186" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="186" id="LE0-49-9Dm"/>
+                                    <constraint firstAttribute="width" constant="186" id="A1d-3p-Mad"/>
+                                    <constraint firstAttribute="height" constant="30" id="jNF-Z4-sNs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -50,17 +51,34 @@
                                     <action selector="ASLogin:" destination="PsI-pP-n4s" eventType="touchUpInside" id="shk-eh-Ww7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmartGantt-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="GEH-db-e6E">
+                                <rect key="frame" x="180" y="54" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="EvY-kB-zzq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbN-nE-Gjq">
+                                <rect key="frame" x="546" y="490" width="22" height="22"/>
+                                <connections>
+                                    <segue destination="bxo-NF-vbn" kind="show" identifier="" id="ESb-nL-9PQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="trailing" secondItem="4I9-Wg-uW9" secondAttribute="trailing" id="1qj-TE-yE7"/>
-                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="trailing" secondItem="9ov-We-YGp" secondAttribute="trailing" id="M5k-LP-JFV"/>
-                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="leading" secondItem="9ov-We-YGp" secondAttribute="leading" id="NNE-1W-bmu"/>
-                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="leading" secondItem="4I9-Wg-uW9" secondAttribute="leading" id="QGA-bC-5UO"/>
-                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="centerX" secondItem="ejL-dI-HNc" secondAttribute="centerX" id="SU6-Xj-gUk"/>
-                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="top" secondItem="Bw1-KU-YwC" secondAttribute="bottom" constant="8" symbolic="YES" id="aF9-ns-uYa"/>
-                            <constraint firstItem="9ov-We-YGp" firstAttribute="top" secondItem="4I9-Wg-uW9" secondAttribute="bottom" constant="8" symbolic="YES" id="go2-Dv-UyV"/>
-                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="centerY" secondItem="ejL-dI-HNc" secondAttribute="centerY" id="jVk-LW-H2C"/>
+                            <constraint firstItem="GEH-db-e6E" firstAttribute="centerX" secondItem="Bw1-KU-YwC" secondAttribute="centerX" id="0g3-XW-0VH"/>
+                            <constraint firstItem="9ov-We-YGp" firstAttribute="top" secondItem="4I9-Wg-uW9" secondAttribute="bottom" constant="8" symbolic="YES" id="19f-V8-NQT"/>
+                            <constraint firstItem="GEH-db-e6E" firstAttribute="top" secondItem="4Ue-9X-7v1" secondAttribute="bottom" constant="54" id="7IF-6D-hi6"/>
+                            <constraint firstItem="GEH-db-e6E" firstAttribute="centerX" secondItem="ejL-dI-HNc" secondAttribute="centerX" id="IfA-tz-AOM"/>
+                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="top" secondItem="GEH-db-e6E" secondAttribute="bottom" constant="33" id="Wld-2c-Lxv"/>
+                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="leading" secondItem="9ov-We-YGp" secondAttribute="leading" id="crM-Ok-seN"/>
+                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="leading" secondItem="4I9-Wg-uW9" secondAttribute="leading" id="eHP-Kb-t2I"/>
+                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="top" secondItem="Bw1-KU-YwC" secondAttribute="bottom" constant="8" symbolic="YES" id="lVA-ha-fEw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MbN-nE-Gjq" secondAttribute="trailing" constant="12" id="o6G-Q1-BH3"/>
+                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="trailing" secondItem="9ov-We-YGp" secondAttribute="trailing" id="sbC-w7-PRh"/>
+                            <constraint firstItem="4I9-Wg-uW9" firstAttribute="centerY" secondItem="ejL-dI-HNc" secondAttribute="centerY" id="wsH-CH-TUo"/>
+                            <constraint firstItem="Bw1-KU-YwC" firstAttribute="trailing" secondItem="4I9-Wg-uW9" secondAttribute="trailing" id="xm6-mn-fSm"/>
+                            <constraint firstItem="ChC-5j-kUx" firstAttribute="top" secondItem="MbN-nE-Gjq" secondAttribute="bottom" constant="24" id="ymE-IN-Rbr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login View" id="PcY-1c-CmY"/>
@@ -73,7 +91,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTE-gJ-KYN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="1339"/>
+            <point key="canvasLocation" x="1663" y="1315"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="oPg-VI-lUI">
+            <objects>
+                <viewController id="TyV-T5-0Oh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vDH-Yc-PW7"/>
+                        <viewControllerLayoutGuide type="bottom" id="oz8-6l-NeO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ABa-Oo-z2a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnW-Sa-GWt">
+                                <rect key="frame" x="20" y="206" width="560" height="374"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <string key="text">The app is an extension of an existing project management tool named RedMine™.
+
+The is supporting some of RedMine™ functionality.
+
+Users can login and create project or add new issues to a project. 
+
+The app support a dynamic Gantt-Chart by allowing the users to add issues and view details of gantt chart elements.
+
+The app developer is Hind Almushigih, a graduate student at Gannon University.
+
+Always accept ideas at: autoschedulerapp@gmail.com</string>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmartGantt-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="bia-sv-i8a">
+                                <rect key="frame" x="180" y="79" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="vuj-7S-Jts"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bia-sv-i8a" firstAttribute="centerX" secondItem="mnW-Sa-GWt" secondAttribute="centerX" id="86j-pq-zyy"/>
+                            <constraint firstItem="oz8-6l-NeO" firstAttribute="top" secondItem="bia-sv-i8a" secondAttribute="bottom" constant="393" id="IKo-e8-fm9"/>
+                            <constraint firstItem="mnW-Sa-GWt" firstAttribute="trailing" secondItem="ABa-Oo-z2a" secondAttribute="trailingMargin" id="PCK-Nz-BjO"/>
+                            <constraint firstItem="bia-sv-i8a" firstAttribute="top" secondItem="vDH-Yc-PW7" secondAttribute="bottom" constant="15" id="QDf-fV-8NC"/>
+                            <constraint firstAttribute="bottom" secondItem="mnW-Sa-GWt" secondAttribute="bottom" constant="20" symbolic="YES" id="WLz-z2-ESs"/>
+                            <constraint firstItem="mnW-Sa-GWt" firstAttribute="leading" secondItem="ABa-Oo-z2a" secondAttribute="leadingMargin" id="dOY-yV-qo7"/>
+                            <constraint firstItem="mnW-Sa-GWt" firstAttribute="top" secondItem="vDH-Yc-PW7" secondAttribute="bottom" constant="142" id="kNh-Xb-jV3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="008-sk-yK0">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="x07-dx-U40"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9W-lb-lXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="3044"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="ye8-ep-pwp">
@@ -90,7 +168,7 @@
                     </view>
                     <connections>
                         <segue destination="oTS-KG-xDv" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="VYY-g7-wLZ"/>
-                        <segue destination="VK2-OL-H9I" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="2D5-xj-gg6"/>
+                        <segue destination="USc-hb-pLB" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="pth-bG-EUU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlL-1g-ruK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -799,7 +877,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFd-8w-LO8" sceneMemberID="firstResponder"/>
             </objects>
@@ -1135,7 +1212,64 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjQ-mq-9Zh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="491"/>
+            <point key="canvasLocation" x="827" y="1275"/>
+        </scene>
+        <!--Setup Redmine Link-->
+        <scene sceneID="62c-2y-ksn">
+            <objects>
+                <viewController id="h6a-xj-Wqu" customClass="RedmineServerLinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P6w-0Y-OIu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mam-H2-WDa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="isK-rv-X1e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Redmine Server Link." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tix-54-raX">
+                                <rect key="frame" x="207" y="266" width="186" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="JWM-vh-Ja9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-Zt-776">
+                                <rect key="frame" x="207" y="304" width="186" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.25098039220000001" green="0.19215686269999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="next:" destination="h6a-xj-Wqu" eventType="touchUpInside" id="Eta-7N-vLq"/>
+                                    <segue destination="VK2-OL-H9I" kind="show" id="PGQ-WS-2Qf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tix-54-raX" firstAttribute="top" secondItem="P6w-0Y-OIu" secondAttribute="bottom" constant="202" id="BdN-6W-JbS"/>
+                            <constraint firstItem="tix-54-raX" firstAttribute="trailing" secondItem="V5d-Zt-776" secondAttribute="trailing" id="Ni8-rV-MgM"/>
+                            <constraint firstItem="tix-54-raX" firstAttribute="centerX" secondItem="isK-rv-X1e" secondAttribute="centerX" id="jni-Zb-ruh"/>
+                            <constraint firstItem="tix-54-raX" firstAttribute="leading" secondItem="V5d-Zt-776" secondAttribute="leading" id="um9-lh-Swp"/>
+                            <constraint firstItem="V5d-Zt-776" firstAttribute="top" secondItem="tix-54-raX" secondAttribute="bottom" constant="8" symbolic="YES" id="xZt-Pw-MFj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setup Redmine Link" id="qcW-4w-vkj"/>
+                    <connections>
+                        <outlet property="serverlinkField" destination="tix-54-raX" id="6WO-1U-yAV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-FQ-ojo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="2152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="128-9H-UMl">
@@ -1209,8 +1343,45 @@
             </objects>
             <point key="canvasLocation" x="4400" y="107"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3ik-hV-5QT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bxo-NF-vbn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XRw-1v-pp2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TyV-T5-0Oh" kind="relationship" relationship="rootViewController" id="8Pf-qW-Ywq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcF-GO-5nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="2196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qk5-UR-E5c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="USc-hb-pLB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fm6-XN-jFw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h6a-xj-Wqu" kind="relationship" relationship="rootViewController" id="s61-7V-xEf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsu-TP-1gX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329" y="1304"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="SmartGantt-Logo.png" width="717" height="365"/>
         <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -175,6 +175,7 @@
         if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
         {
             GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
+            nvc.project = self.project;
         }
     
 }

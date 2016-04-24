@@ -12,7 +12,7 @@
 #import "GLDateUtils.h"
 #import "GLCalendarDayCell.h"
 @interface GLCalendarViewController : UIViewController <GLCalendarViewDelegate>
-
+@property NSDictionary* project;
 
 @end
 

@@ -115,6 +115,7 @@
         NewIssueViewController* nvc = [navController topViewController]; //(NewIssueViewController *)segue.destinationViewController;
         
         nvc.range = [GLCalendarDateRange rangeWithBeginDate:self.range.beginDate endDate:self.range.endDate];// self.range;
+            
         }
     }
     

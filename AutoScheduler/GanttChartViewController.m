@@ -207,24 +207,18 @@
     // before rotation
     
     [coordinator animateAlongsideTransition:^(id  _Nonnull context) {
-        
         // during rotation: update our view's bounds and centre
-
         NSLog(@"the view will be changed");
         [self.ganttView removeFromSuperview];
         // Do any additional setup after loading the
 
+        self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:self.ganttView];
+        // Do any additional setup after loading the
         [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
-            
-
-            self.ganttView = [[IQGanttView alloc] initWithFrame:self.view.bounds];
-            // Do any additional setup after loading the
-            [self.view addSubview:self.ganttView];
-            [self gettheIssuesItemswithcompletionBlock:^(NSArray *issueArray) {
-                CGRect newrect = [self numOfItemToSetFrameSize:issueArray];
-            }];
-            
+            CGRect newrect = [self numOfItemToSetFrameSize:issueArray];
         }];
+        
     } completion:^(id  _Nonnull context) {
         
         // after rotation

@@ -20,12 +20,21 @@ static ASRESTAPI *sharedInstance = nil;
 {
     if (sharedInstance == nil) {
         sharedInstance = [[ASRESTAPI alloc] init];
-        sharedInstance.redmineServer = [NSURL URLWithString:[[ASUserSingleton sharedInstance]redmineURL]];
-        sharedInstance.request = [[NSMutableURLRequest alloc] init];
-        [sharedInstance.request setURL:sharedInstance.redmineServer];
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     }
-
     return sharedInstance;
+}
+
+-(NSString*)redmineURL
+{
+    NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
+    return [userdefaults objectForKey:USER_DEFUALTS_REDMINE];
+}
+-(void)setRedmineURL:(NSString *)redmineURL
+{
+    NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
+    [userdefaults setObject:redmineURL forKey:USER_DEFUALTS_REDMINE];
+    [userdefaults synchronize];
 }
 
 + (BOOL)logging {
@@ -34,6 +43,8 @@ static ASRESTAPI *sharedInstance = nil;
 + (void)setLogging:(BOOL)newValue {
     logging = newValue;
 }
+
+// http://172.16.231.19/redmine23
 
 /*!
  * @discussion A login method for the registered user
@@ -46,17 +57,21 @@ static ASRESTAPI *sharedInstance = nil;
     NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",username, password];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu" , (unsigned long)[postData length]];
-
-    [sharedInstance.request setHTTPMethod:@"POST"];
-    [sharedInstance.request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [sharedInstance.request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [sharedInstance.request setValue:@"Basic YWRtaW46YWRtaW4=" forHTTPHeaderField:@"authorization"];
-    [sharedInstance.request setHTTPBody:postData];
     
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"login"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"Basic YWRtaW46YWRtaW4=" forHTTPHeaderField:@"authorization"];
+    [request setHTTPBody:postData];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:sharedInstance.request
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                   
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -64,12 +79,13 @@ static ASRESTAPI *sharedInstance = nil;
                                       if (error) {
                                           // Handle error...
                                           NSLog(@"something wrong");
+                                          NSLog(@"%@", error);
+                                          
                                           return;
                                       }
                                       
                                       if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                                           NSLog(@"Response HTTP Status code: %ld\n", (long)[(NSHTTPURLResponse *)response statusCode]);
-                                         // NSLog(@"Response HTTP Headers:\n%@\n", [(NSHTTPURLResponse *)response allHeaderFields]);
                                       }
                                       
                                       [self setLogging:true];
@@ -105,7 +121,8 @@ static ASRESTAPI *sharedInstance = nil;
                                @"cache-control": @"no-cache",
                                @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d" };
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/users/current.json"]
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"users/current.json"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
@@ -124,13 +141,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                         currentUserdictionarytest = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:0
                                                                                                                   error:&JSONError];
-                                                       
-//                                                        NSArray* curentuser = [currentUserdictionarytest objectForKey:@"user"];
-//                                                        NSLog(@"printing the array here: %@", curentuser);
-//                                                        NSNumber *number = currentUserdictionarytest[@"user"][@"id"];
-//                                                        NSLog(@"printing the id here: %@", number);
-//                                                        NSString *fn = currentUserdictionarytest[@"user"][@"firstname"];
-//                                                        NSLog(@"printing the id here: %@", fn);
+
                                                         
                                                         if (JSONError)
                                                         {
@@ -147,7 +158,6 @@ static ASRESTAPI *sharedInstance = nil;
     [dataTask resume];
 }
 
-
 +(void)projectsListUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response, NSArray* projectArray))completion
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
@@ -162,9 +172,11 @@ static ASRESTAPI *sharedInstance = nil;
                                @"accept": @"application/json"
                                };
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/projects.json"]
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"projects.json"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
+    
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
     
@@ -184,11 +196,6 @@ static ASRESTAPI *sharedInstance = nil;
                                                         
                                                                                                                NSArray* projectsArr = [projectsDic objectForKey:@"projects"];
                                                         completion(projectsDic, projectsArr);
-                                                        //                                                        NSLog(@"printing the array here: %@", curentuser);
-                                                        //                                                        NSNumber *number = currentUserdictionarytest[@"user"][@"id"];
-                                                        //                                                        NSLog(@"printing the id here: %@", number);
-                                                        //                                                        NSString *fn = currentUserdictionarytest[@"user"][@"firstname"];
-                                                        //                                                        NSLog(@"printing the id here: %@", fn);
                                                         
                                                         if (JSONError)
                                                         {
@@ -219,8 +226,8 @@ static ASRESTAPI *sharedInstance = nil;
                                @"content-type": @"http//172.16.230.102/redmine23/projects/new"
                                };
     
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.230.102/redmine23/projects"]
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"projects"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
@@ -242,15 +249,8 @@ static ASRESTAPI *sharedInstance = nil;
      **/
     
     NSData *projectData = [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil];
-    //NSString* jsonString = [[NSString alloc]initWithData: projectData                                              encoding: NSUTF8StringEncoding ];
-    
-    //    [[NSString alloc]initWithData: [NSJSONSerialization dataWithJSONObject:project options:NSJSONWritingPrettyPrinted error:nil] encoding: NSUTF8StringEncoding ];
-    
-    
-    /** [request setHTTPBody:[
-     //dataUsingEncoding:NSUTF8StringEncoding]];**/
-    //NSData* anotherdataobj = jsonString;
-    [request setHTTPBody:projectData];//anotherdataobj];//[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+
+    [request setHTTPBody:projectData];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
@@ -285,9 +285,10 @@ static ASRESTAPI *sharedInstance = nil;
                                @"accept": @"application/json"
                                };
     
-    NSString *url = @"http://172.16.231.19/redmine23/projects/";
-    NSString *fullURL = [url stringByAppendingString:projectname];
+    //http://172.16.231.19/redmine23/projects/auto-scheduler-ios-app/issues.json
     
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"projects/"];
+    NSString *fullURL = [url stringByAppendingString:projectname];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
@@ -326,7 +327,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
-+(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password andIssue:(NSDictionary*)issue
++(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname andIssue:(NSDictionary*)issue
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -338,11 +339,13 @@ static ASRESTAPI *sharedInstance = nil;
     
     NSDictionary *headers = @{ @"authorization": authValue,
                                @"content-type": @"application/json"
-                             //  @"content-type": @"http//172.16.230.102/redmine23/projects/new"
                                };
     
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://172.16.231.19/redmine23/projects/auto-scheduler-ios-app/issues.json"]
+    
+    NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"projects/"];
+    NSString *fullURL = [url stringByAppendingString:projectname];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];

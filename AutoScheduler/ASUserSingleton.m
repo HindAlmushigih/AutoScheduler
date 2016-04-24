@@ -21,11 +21,10 @@ static ASUserSingleton *sharedInstance = nil;
 +(ASUserSingleton*)sharedInstance
 {
     if (sharedInstance == nil) {
-        sharedInstance = [[ASUserSingleton alloc] init
-                          ];
+        sharedInstance = [[ASUserSingleton alloc] init];
         NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         NSDictionary* dic = [[NSDictionary alloc] initWithObjectsAndKeys:
-                             @"http://172.16.231.19/redmine23/login",USER_DEFUALTS_REDMINE_HOME_URL,
+                             @"",USER_DEFUALTS_REDMINE_HOME_URL,
                              @"",USER_DEFUALTS_REDMINE_USER_NAME,
                              @"",USER_DEFUALTS_REDMINE_PASSWORD,
                              nil];

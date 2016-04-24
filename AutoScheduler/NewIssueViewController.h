@@ -14,6 +14,7 @@
 @property NSMutableDictionary* issue;
 @property NSMutableDictionary* issueDetails;
 @property GLCalendarDateRange *range;
+@property NSDictionary* project;
 
 @property (weak, nonatomic) IBOutlet UILabel *rangeStartDate;
 @property (weak, nonatomic) IBOutlet UILabel *rangeDueDate;

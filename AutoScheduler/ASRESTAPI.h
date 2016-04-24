@@ -11,8 +11,8 @@
 
 @interface ASRESTAPI : NSObject
 
-@property NSURL* redmineServer;
-@property NSMutableURLRequest *request;
+@property NSString *redmineURL;
+//@property NSMutableURLRequest *request;
 
 +(ASRESTAPI*)sharedInstance;
 
@@ -30,5 +30,5 @@
 
 +(void)issuesListUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname completionBlock:(void(^)(NSDictionary* response, NSArray* issueArray))completion;
 
-+(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password andIssue:(NSDictionary*)issue;
++(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname andIssue:(NSDictionary*)issue;
 @end
