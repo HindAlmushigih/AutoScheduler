@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "IQGanttView.h"
+#import "LoadingView.h"
+
+/*!
+ * @discussion GanttChartViewController is UIViewController. The view will add IQGanttView as a subview.
+ */
+
 
 @interface GanttChartViewController : UIViewController
-{
-    UIActivityIndicatorView *activityView;
-    UIView *loadingView;
-    UILabel *loadingLabel;
-}
-@property (nonatomic, retain) UIActivityIndicatorView * activityView;
-@property (nonatomic, retain) UIView *loadingView;
-@property (nonatomic, retain) UILabel *loadingLabel;
+
+@property (nonatomic, retain) LoadingView *loadingView;
 
 @property NSDictionary* project;
 @property NSDictionary* issues;

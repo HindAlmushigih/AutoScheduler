@@ -157,7 +157,7 @@
 
         NSString* username = [[ASUserSingleton sharedInstance]userName];
         NSString* password = [[ASUserSingleton sharedInstance]password];
-        [ASRESTAPI creatIssueUsername:username andPassword:password forProjectName:self.project andIssue:[self createIssueObj]];
+        [ASRESTAPI createIssueUsername:username andPassword:password forProjectName:self.project andIssue:[self createIssueObj]];
        // [ASRESTAPI creatIssueUsername:username andPassword:password andIssue:[self createIssueObj]];
         [self.navigationController dismissViewControllerAnimated:NO
                                                       completion:nil];
@@ -198,6 +198,11 @@
 - (IBAction)cancel:(id)sender {
     [self.navigationController dismissViewControllerAnimated:NO
                                                   completion:nil];
+}
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

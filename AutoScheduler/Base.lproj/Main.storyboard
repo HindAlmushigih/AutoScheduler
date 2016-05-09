@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7xB-sN-UuH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7xB-sN-UuH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTE-gJ-KYN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="1315"/>
+            <point key="canvasLocation" x="1606" y="1635"/>
         </scene>
         <!--About-->
         <scene sceneID="oPg-VI-lUI">
@@ -151,7 +151,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9W-lb-lXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="3044"/>
+            <point key="canvasLocation" x="2271" y="2372"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="ye8-ep-pwp">
@@ -173,7 +173,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlL-1g-ruK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-673" y="12"/>
+            <point key="canvasLocation" x="-781" y="444"/>
         </scene>
         <!--Menu-->
         <scene sceneID="Ldp-45-eCR">
@@ -243,7 +243,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="284" y="-471"/>
+            <point key="canvasLocation" x="228" y="-23"/>
         </scene>
         <!--Project Modules-->
         <scene sceneID="xVR-7t-OWq">
@@ -324,7 +324,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5p-Gh-fHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2606" y="-923"/>
+            <point key="canvasLocation" x="2382" y="-459"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="aLW-BE-NmD">
@@ -388,7 +388,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWW-lk-leQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="-1909"/>
+            <point key="canvasLocation" x="1611" y="-827"/>
         </scene>
         <!--Projects-->
         <scene sceneID="DLZ-ME-OC3">
@@ -445,7 +445,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTu-0n-0tZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-923"/>
+            <point key="canvasLocation" x="1606" y="-23"/>
         </scene>
         <!--Project Details-->
         <scene sceneID="wCa-t8-PHA">
@@ -537,7 +537,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAf-OQ-oIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3479" y="-1664"/>
+            <point key="canvasLocation" x="3863" y="-1552"/>
         </scene>
         <!--New Project-->
         <scene sceneID="fwk-yl-8KH">
@@ -627,7 +627,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPv-qZ-yZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2650" y="582"/>
+            <point key="canvasLocation" x="3098" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V7o-FD-iFa">
@@ -645,7 +645,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg7-qc-axf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="-427"/>
+            <point key="canvasLocation" x="929" y="-23"/>
         </scene>
         <!--Issues-->
         <scene sceneID="wBp-V7-Jry">
@@ -701,7 +701,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3F-nB-Y92" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3461" y="-107"/>
+            <point key="canvasLocation" x="3863" y="-51"/>
         </scene>
         <!--Issue Details-->
         <scene sceneID="dXz-n6-4H9">
@@ -808,7 +808,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1N-xT-ulv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="107"/>
+            <point key="canvasLocation" x="5332" y="27"/>
         </scene>
         <!--Chose Range For Issue-->
         <scene sceneID="v1i-fp-mxd">
@@ -855,7 +855,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je4-PG-ir5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5120" y="-851"/>
+            <point key="canvasLocation" x="5320" y="-771"/>
         </scene>
         <!--Gantt-Chart-->
         <scene sceneID="Hbh-E6-8Po">
@@ -880,7 +880,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFd-8w-LO8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3495" y="-891"/>
+            <point key="canvasLocation" x="3863" y="-771"/>
         </scene>
         <!--New Issue-->
         <scene sceneID="L18-Dp-5g4">
@@ -1040,7 +1040,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hM5-UZ-dMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6562" y="-867"/>
+            <point key="canvasLocation" x="6794" y="-771"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="yGI-t7-MvS">
@@ -1076,7 +1076,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ge2-3t-zZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10607" y="-940"/>
+            <point key="canvasLocation" x="11223" y="-884"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="rOj-Ir-O8L">
@@ -1176,7 +1176,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxE-cv-XBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13043" y="234"/>
+            <point key="canvasLocation" x="13659" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dg4-bb-bQ3">
@@ -1194,7 +1194,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFS-Et-rJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="-1915"/>
+            <point key="canvasLocation" x="923" y="-835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bb9-8G-uiv">
@@ -1212,7 +1212,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjQ-mq-9Zh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827" y="1275"/>
+            <point key="canvasLocation" x="1611" y="888"/>
         </scene>
         <!--Setup Redmine Link-->
         <scene sceneID="62c-2y-ksn">
@@ -1249,7 +1249,6 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="next:" destination="h6a-xj-Wqu" eventType="touchUpInside" id="Eta-7N-vLq"/>
-                                    <segue destination="VK2-OL-H9I" kind="show" id="PGQ-WS-2Qf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1269,7 +1268,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-FQ-ojo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="2152"/>
+            <point key="canvasLocation" x="923" y="888"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="128-9H-UMl">
@@ -1287,7 +1286,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dok-DR-fRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="582"/>
+            <point key="canvasLocation" x="2382" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NWP-Nc-ukL">
@@ -1305,7 +1304,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-o9-Bly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="-867"/>
+            <point key="canvasLocation" x="4628" y="-771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v5i-0w-sXz">
@@ -1323,7 +1322,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zom-ic-hWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5910" y="-867"/>
+            <point key="canvasLocation" x="6078" y="-771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FEh-KI-gbF">
@@ -1341,7 +1340,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ea-05-uf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4400" y="107"/>
+            <point key="canvasLocation" x="4628" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ik-hV-5QT">
@@ -1359,12 +1358,12 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcF-GO-5nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="2196"/>
+            <point key="canvasLocation" x="1606" y="2372"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qk5-UR-E5c">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="USc-hb-pLB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RedmineServerLink" automaticallyAdjustsScrollViewInsets="NO" id="USc-hb-pLB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fm6-XN-jFw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1377,7 +1376,7 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsu-TP-1gX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329" y="1304"/>
+            <point key="canvasLocation" x="239" y="888"/>
         </scene>
     </scenes>
     <resources>
@@ -1385,6 +1384,6 @@ Always accept ideas at: autoschedulerapp@gmail.com</string>
         <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bxg-pw-vRj"/>
+        <segue reference="Znt-hO-7Mq"/>
     </inferredMetricsTieBreakers>
 </document>

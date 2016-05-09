@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadingView.h"
 
 @interface RedmineServerLinkViewController : UIViewController
+
+@property (nonatomic, retain) LoadingView *loadingView;
 
 @end

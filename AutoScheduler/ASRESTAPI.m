@@ -7,6 +7,7 @@
 //
 
 #import "ASRESTAPI.h"
+#import "ASUserSingleton.h"
 
 NSString* USER_DEFUALTS_REDMINE = @"USER_DEFUALTS_REDMINE_HOME_URL";
 BOOL logging;
@@ -20,16 +21,18 @@ static ASRESTAPI *sharedInstance = nil;
 {
     if (sharedInstance == nil) {
         sharedInstance = [[ASRESTAPI alloc] init];
-        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     }
     return sharedInstance;
 }
+
 
 -(NSString*)redmineURL
 {
     NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
     return [userdefaults objectForKey:USER_DEFUALTS_REDMINE];
 }
+
+
 -(void)setRedmineURL:(NSString *)redmineURL
 {
     NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
@@ -44,13 +47,6 @@ static ASRESTAPI *sharedInstance = nil;
     logging = newValue;
 }
 
-// http://172.16.231.19/redmine23
-
-/*!
- * @discussion A login method for the registered user
- * @param username NSString to be used.
- * @param password The password the user account.
- */
 
 +(void)loginToASWithusername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(BOOL response))completion
 {
@@ -78,10 +74,27 @@ static ASRESTAPI *sharedInstance = nil;
                                       
                                       if (error) {
                                           // Handle error...
-                                          NSLog(@"something wrong");
-                                          NSLog(@"%@", error);
+                                          NSString *errorMsg;
                                           
-                                          return;
+                                          if ([[error domain] isEqualToString:NSURLErrorDomain]) {
+                                              switch ([error code]) {
+                                                  case NSURLErrorCannotFindHost:
+                                                      errorMsg = NSLocalizedString(@"Cannot find specified host. Retype URL.", nil);
+                                                      break;
+                                                  case NSURLErrorCannotConnectToHost:
+                                                      errorMsg = NSLocalizedString(@"Cannot connect to specified host. Server may be down.", nil);
+                                                      break;
+                                                  case NSURLErrorNotConnectedToInternet:
+                                                      errorMsg = NSLocalizedString(@"Cannot connect to the internet. Service may not be available.", nil);
+                                                      break;
+                                                  default:
+                                                      errorMsg = [error localizedDescription];
+                                                      break;
+                                              }
+                                          } else {
+                                              errorMsg = [error localizedDescription];
+                                          }
+                                          
                                       }
                                       
                                       if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -105,6 +118,51 @@ static ASRESTAPI *sharedInstance = nil;
 
 }
 
+//- (void)URLSession:(NSURLSession *)session
+//didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+// completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition,
+//                             NSURLCredential *credential))completionHandler
+//{
+//    NSLog(@"did receive challenge method called with task");
+//    NSString* username = [[ASUserSingleton sharedInstance]userName];
+//    NSString* password = [[ASUserSingleton sharedInstance]password];
+//    if ([challenge previousFailureCount] == 0) {
+//        NSURLCredential *newCredential;
+//        newCredential = [NSURLCredential credentialWithUser:username
+//                                                   password:password
+//                                                persistence:NSURLCredentialPersistenceNone];
+//        [[challenge sender] useCredential:newCredential
+//               forAuthenticationChallenge:challenge];
+//    } else {
+//        [[challenge sender] cancelAuthenticationChallenge:challenge];
+//    }
+//
+//}
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
+{
+    NSLog(@"did receive challenge method called with task");
+    NSString* username = [[ASUserSingleton sharedInstance]userName];
+    NSString* password = [[ASUserSingleton sharedInstance]password];
+    if ([challenge previousFailureCount] == 0) {
+        
+        NSURLCredential *newCredential;
+        newCredential = [NSURLCredential credentialWithUser:username
+                                                   password:password
+                                                persistence:NSURLCredentialPersistenceNone];
+        [[challenge sender] useCredential:newCredential
+               forAuthenticationChallenge:challenge];
+        
+        completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
+        
+        
+        
+        
+        //completionHandler()
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+    }
+}
+
 +(void)currentUsername:(NSString*)username andPassword:(NSString*)password completionBlock:(void(^)(NSDictionary* response))completion
 {
 
@@ -115,11 +173,34 @@ static ASRESTAPI *sharedInstance = nil;
 
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
     
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:username
+                                                             password:password
+                                                          persistence:NSURLCredentialPersistencePermanent];
+//    http://demo.redmine.org/
+//    http://demo.redmine.org/
+    NSString *str=[[ASRESTAPI sharedInstance]redmineURL];
+    str = [str stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+    
+    NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc]
+                                             initWithHost:
+                                            str                                             port:80
+                                             protocol:@"http"
+                                             realm:@"Redmine API"
+                                             authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
+    
+    
+    [[NSURLCredentialStorage sharedCredentialStorage] setDefaultCredential:credential
+                                                        forProtectionSpace:protectionSpace];
+//    [protectionSpace release];
+    
     __block NSDictionary *currentUserdictionarytest = nil;
     NSDictionary *headers = @{ @"authorization": authValue,
                                @"accept": @"application/json",
+                               @"accept": @"text/html",
                                @"cache-control": @"no-cache",
-                               @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d" };
+                               @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d",
+                               @"www-authenticate": @"Basic realm=\"Redmine API\""};
+   // WWW-Authenticate: Basic realm="Redmine API"
     
     NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"users/current.json"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
@@ -128,7 +209,11 @@ static ASRESTAPI *sharedInstance = nil;
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
     
-    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    defaultConfigObject.URLCredentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue:nil]; //[NSOperationQueue mainQueue]]; //[NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
@@ -141,6 +226,9 @@ static ASRESTAPI *sharedInstance = nil;
                                                         currentUserdictionarytest = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                 options:0
                                                                                                                   error:&JSONError];
+                                                        NSLog(@"Printing current user data: %@", data);
+                                                        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                                         NSLog(@"Printing current user data string: %@", str);
 
                                                         
                                                         if (JSONError)
@@ -211,7 +299,8 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
-+(void)creatProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project
+
++(void)createProjectUsername:(NSString*)username andPassword:(NSString*)password andProject:(NSDictionary*)project
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -327,7 +416,7 @@ static ASRESTAPI *sharedInstance = nil;
                                                 }];    [dataTask resume];
 }
 
-+(void)creatIssueUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname andIssue:(NSDictionary*)issue
++(void)createIssueUsername:(NSString*)username andPassword:(NSString*)password forProjectName:(NSString*)projectname andIssue:(NSDictionary*)issue
 {
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];

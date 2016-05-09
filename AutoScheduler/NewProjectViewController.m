@@ -67,7 +67,7 @@
         [self setAllProjectDicObj];
         NSString* username = [[ASUserSingleton sharedInstance]userName];
         NSString* password = [[ASUserSingleton sharedInstance]password];
-        [ASRESTAPI creatProjectUsername:username andPassword:password andProject:self.project];
+        [ASRESTAPI createProjectUsername:username andPassword:password andProject:self.project];
         //[self dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController dismissViewControllerAnimated:NO
                                                completion:nil];
@@ -88,6 +88,12 @@
     self.projectDetails[@"description"] = self.projectDescription.text;
     self.project[@"project"] = self.projectDetails;
     
+}
+
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 /*

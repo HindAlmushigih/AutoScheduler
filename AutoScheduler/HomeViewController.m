@@ -50,7 +50,10 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
 
     _revealButtonItem = [[UIBarButtonItem alloc]
                                          initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style: UIBarButtonItemStylePlain  target:revealController action:@selector(revealToggle:)];
-    [self setupLoadingIndicator];
+    if(!([[[ASRESTAPI sharedInstance]redmineURL] isEqual: @"http://demo.redmine.org/"]))
+        {
+    [self addLoadingViewToView];
+        }
     [self getThecurrentUser];
 }
 - (void)customSetup
@@ -82,33 +85,13 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     [ASRESTAPI currentUsername:username andPassword:password completionBlock:^(NSDictionary *response) {
         _curentUser = response;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [activityView stopAnimating];
-            [loadingView removeFromSuperview];
+            if(!([[[ASRESTAPI sharedInstance]redmineURL] isEqual: @"http://demo.redmine.org/"]))
+            {
+                [self removeLoadingViewFromView];
+            }
             [self setupUserLabel];
         });
     }];
-}
-
--(void)setupLoadingIndicator
-{
-    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
-    loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    loadingView.clipsToBounds = YES;
-    loadingView.layer.cornerRadius = 10.0;
-    
-    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    activityView.frame = CGRectMake(65, 40, activityView.bounds.size.width, activityView.bounds.size.height);
-    [loadingView addSubview:activityView];
-    
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    loadingLabel.textColor = [UIColor whiteColor];
-    loadingLabel.adjustsFontSizeToFitWidth = YES;
-    loadingLabel.textAlignment = NSTextAlignmentCenter;
-    loadingLabel.text = @"Loading...";
-    [loadingView addSubview:loadingLabel];
-    [self.view addSubview:loadingView];
-    [activityView startAnimating];
 }
 
  -(void)setupUserLabel
@@ -129,8 +112,10 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     
     [[ASUserSingleton sharedInstance]setISUserSignedIn:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:USER_DEFUALTS_LOG_OUT object:nil];
-//    
-//    
+    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RedmineServerLink"];
+    [self.revealViewController setFrontViewController:navigation];
+//
+//
 //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    UIViewController *loginViewController = [mainStoryboard instantiateInitialViewController];
 //    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -145,6 +130,23 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+-(LoadingView*)creatLoadingView
+{
+    self.loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
+    return self.loadingView;
+}
+-(void)addLoadingViewToView
+{
+    self.loadingView = [self creatLoadingView];
+    [self.loadingView addView];
+    [self.view addSubview:self.loadingView];
+}
+-(void)removeLoadingViewFromView
+{
+    [self.loadingView removeView];
+    [self.loadingView removeFromSuperview];
 }
 
 /*

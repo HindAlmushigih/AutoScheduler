@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D090EF31CD820D200E20D3A /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF01CD820D200E20D3A /* LoadingView.m */; };
+		4D090EF41CD820D200E20D3A /* RedmineServerLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF21CD820D200E20D3A /* RedmineServerLinkViewController.m */; };
+		4D090EF71CD8215200E20D3A /* IssuesObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF61CD8215200E20D3A /* IssuesObj.m */; };
 		4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */; };
 		4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */; };
 		4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */; };
@@ -28,7 +31,6 @@
 		4D2E3A201CA1091300C727CC /* gl-calendar-shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2E3A131CA1091300C727CC /* gl-calendar-shadow@2x.png */; };
 		4D2E3A211CA1091300C727CC /* gl-calendar-shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2E3A141CA1091300C727CC /* gl-calendar-shadow@3x.png */; };
 		4D5596A41CC9D38F00CEE1C9 /* SmartGantt-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5596A31CC9D38F00CEE1C9 /* SmartGantt-Logo.png */; };
-		4D5597731CCA9B2900CEE1C9 /* RedmineServerLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5597721CCA9B2900CEE1C9 /* RedmineServerLinkViewController.m */; };
 		4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */; };
 		4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B21C7A895D0024323C /* IssuesTableViewController.m */; };
 		4D9885B61C7ADBAA0024323C /* ProjectDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9885B51C7ADBAA0024323C /* ProjectDetailsViewController.m */; };
@@ -41,7 +43,6 @@
 		4DB7F0EF1C8E81E100C808D9 /* IQGanttView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0E81C8E81E100C808D9 /* IQGanttView.m */; };
 		4DB7F0F01C8E81E100C808D9 /* IQScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0EA1C8E81E100C808D9 /* IQScheduleView.m */; };
 		4DB7F0F11C8E81E100C808D9 /* IQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0EC1C8E81E100C808D9 /* IQScrollView.m */; };
-		4DB7F0F41C8E825C00C808D9 /* IssuesObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */; };
 		4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32D1C528077009350F4 /* reveal-icon.png */; };
 		4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */; };
 		4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E3321C528616009350F4 /* SWRevealViewController.m */; };
@@ -74,6 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D090EEF1CD820D200E20D3A /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		4D090EF01CD820D200E20D3A /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		4D090EF11CD820D200E20D3A /* RedmineServerLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedmineServerLinkViewController.h; sourceTree = "<group>"; };
+		4D090EF21CD820D200E20D3A /* RedmineServerLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedmineServerLinkViewController.m; sourceTree = "<group>"; };
+		4D090EF51CD8215200E20D3A /* IssuesObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesObj.h; sourceTree = "<group>"; };
+		4D090EF61CD8215200E20D3A /* IssuesObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesObj.m; sourceTree = "<group>"; };
 		4D29C2061C6D2EE800B34FD5 /* ASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLoginViewController.h; sourceTree = "<group>"; };
 		4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
 		4D29C20B1C6D2FD800B34FD5 /* ASUserSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUserSingleton.h; sourceTree = "<group>"; };
@@ -108,8 +115,6 @@
 		4D2E3A131CA1091300C727CC /* gl-calendar-shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gl-calendar-shadow@2x.png"; sourceTree = "<group>"; };
 		4D2E3A141CA1091300C727CC /* gl-calendar-shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gl-calendar-shadow@3x.png"; sourceTree = "<group>"; };
 		4D5596A31CC9D38F00CEE1C9 /* SmartGantt-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SmartGantt-Logo.png"; sourceTree = "<group>"; };
-		4D5597711CCA9B2900CEE1C9 /* RedmineServerLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedmineServerLinkViewController.h; path = ../RedmineServerLinkViewController.h; sourceTree = "<group>"; };
-		4D5597721CCA9B2900CEE1C9 /* RedmineServerLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedmineServerLinkViewController.m; path = ../RedmineServerLinkViewController.m; sourceTree = "<group>"; };
 		4D9885AE1C7A398E0024323C /* ProjectsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsTableViewController.h; sourceTree = "<group>"; };
 		4D9885AF1C7A398E0024323C /* ProjectsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsTableViewController.m; sourceTree = "<group>"; };
 		4D9885B11C7A895D0024323C /* IssuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesTableViewController.h; sourceTree = "<group>"; };
@@ -134,8 +139,6 @@
 		4DB7F0EA1C8E81E100C808D9 /* IQScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQScheduleView.m; sourceTree = "<group>"; };
 		4DB7F0EB1C8E81E100C808D9 /* IQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQScrollView.h; sourceTree = "<group>"; };
 		4DB7F0EC1C8E81E100C808D9 /* IQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQScrollView.m; sourceTree = "<group>"; };
-		4DB7F0F21C8E825C00C808D9 /* IssuesObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesObj.h; sourceTree = "<group>"; };
-		4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesObj.m; sourceTree = "<group>"; };
 		4DD5E32D1C528077009350F4 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		4DD5E32E1C528077009350F4 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		4DD5E3311C528616009350F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -187,10 +190,12 @@
 		4D29C2091C6D2EFE00B34FD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D090EEF1CD820D200E20D3A /* LoadingView.h */,
+				4D090EF01CD820D200E20D3A /* LoadingView.m */,
+				4D090EF11CD820D200E20D3A /* RedmineServerLinkViewController.h */,
+				4D090EF21CD820D200E20D3A /* RedmineServerLinkViewController.m */,
 				4DE9DF631C4FEEF800FD9488 /* ViewController.h */,
 				4DE9DF641C4FEEF800FD9488 /* ViewController.m */,
-				4D5597711CCA9B2900CEE1C9 /* RedmineServerLinkViewController.h */,
-				4D5597721CCA9B2900CEE1C9 /* RedmineServerLinkViewController.m */,
 				4D29C2061C6D2EE800B34FD5 /* ASLoginViewController.h */,
 				4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */,
 				4D29C2111C6D61D100B34FD5 /* HomeViewController.h */,
@@ -229,8 +234,8 @@
 				4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */,
 				4D29C20E1C6D4D8900B34FD5 /* ASRESTAPI.h */,
 				4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */,
-				4DB7F0F21C8E825C00C808D9 /* IssuesObj.h */,
-				4DB7F0F31C8E825C00C808D9 /* IssuesObj.m */,
+				4D090EF51CD8215200E20D3A /* IssuesObj.h */,
+				4D090EF61CD8215200E20D3A /* IssuesObj.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -515,16 +520,16 @@
 				4D2E3A191CA1091300C727CC /* GLCalendarMonthCoverView.m in Sources */,
 				4D2E3A151CA1091300C727CC /* GLCalendarDateRange.m in Sources */,
 				4D9885C01C7C05E60024323C /* NewProjectViewController.m in Sources */,
-				4DB7F0F41C8E825C00C808D9 /* IssuesObj.m in Sources */,
 				4D29C2191C6D62DE00B34FD5 /* MenuTableViewCell.m in Sources */,
+				4D090EF41CD820D200E20D3A /* RedmineServerLinkViewController.m in Sources */,
 				4DB7F0E11C8E817700C808D9 /* GanttChartViewController.m in Sources */,
 				4D2E3A161CA1091300C727CC /* GLCalendarDayCell.m in Sources */,
 				4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */,
 				4DB7F0EF1C8E81E100C808D9 /* IQGanttView.m in Sources */,
 				4DD5E3331C528616009350F4 /* SWRevealViewController.m in Sources */,
-				4D5597731CCA9B2900CEE1C9 /* RedmineServerLinkViewController.m in Sources */,
 				4D9885B91C7BDC230024323C /* IssueDetailsViewController.m in Sources */,
 				4D2E3A181CA1091300C727CC /* GLCalendarDayCellBackgroundCover.m in Sources */,
+				4D090EF71CD8215200E20D3A /* IssuesObj.m in Sources */,
 				4D2E39FE1CA1081900C727CC /* GLCalendarViewController.m in Sources */,
 				4DB7F0F01C8E81E100C808D9 /* IQScheduleView.m in Sources */,
 				4D9885B31C7A895D0024323C /* IssuesTableViewController.m in Sources */,
@@ -538,6 +543,7 @@
 				4DB7F0EE1C8E81E100C808D9 /* IQCalendarHeaderView.m in Sources */,
 				4DB7F0ED1C8E81E100C808D9 /* IQCalendarDataSource.m in Sources */,
 				4D2E3A1A1CA1091300C727CC /* GLCalendarView.m in Sources */,
+				4D090EF31CD820D200E20D3A /* LoadingView.m in Sources */,
 				4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */,
 				4DA464361CC732C6004A2361 /* ProjectModulesTableViewController.m in Sources */,
 				4D9885B01C7A398E0024323C /* ProjectsTableViewController.m in Sources */,
@@ -607,6 +613,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -651,6 +658,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -682,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AutoScheduler/Info.plist;
@@ -697,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AutoScheduler/Info.plist;

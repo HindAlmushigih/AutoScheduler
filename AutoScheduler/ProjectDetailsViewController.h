@@ -18,9 +18,5 @@
 @interface ProjectDetailsViewController : UIViewController
 
 @property NSDictionary* project;
-//@property (nonatomic, weak) id <ProjectDetailsViewControllerDelegate> delegate;
-
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
 
 @end

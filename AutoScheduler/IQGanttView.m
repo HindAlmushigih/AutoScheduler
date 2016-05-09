@@ -231,6 +231,10 @@
     [self layoutOnRowsChange];
 }
 
+/*!
+ * @discussion A method that add IQCalendarDataSource as a raw on GanttChart View
+ */
+
 - (void)addRow:(id<IQCalendarDataSource>)row
 {
     UIView<IQGanttRowDelegate>* view = [self viewForRow:row withFrame:CGRectMake(0, 0, self.contentSize.width, self.bounds.size.height * 0.25)];

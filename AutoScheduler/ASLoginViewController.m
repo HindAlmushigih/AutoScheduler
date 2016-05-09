@@ -19,7 +19,6 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view.
     
 }
@@ -29,6 +28,7 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)ASLogin:(id)sender {
+    [self addLoadingViewToView];
    __block NSString* errorMessage = @"";
     __block BOOL userOrPass;
     if ([self.ASUsernameField.text length] == 0 || [self.ASPasswordField.text length] == 0) {
@@ -41,12 +41,10 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                                                                   NSLog(@"You pressed OK");
                                                               }];
         [alert addAction:firstAction];
+        [self removeLoadingViewFromView];
         [self presentViewController:alert animated:YES completion:nil];
-        
     }
     else {
-        
-        [self setupLoadingIndicator];
         [[ASUserSingleton sharedInstance]setUserName:self.ASUsernameField.text];
         [[ASUserSingleton sharedInstance]setPassword:self.ASPasswordField.text];
         [ASRESTAPI sharedInstance];
@@ -58,13 +56,13 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                                 
                                 [[ASUserSingleton sharedInstance]setISUserSignedIn:YES];
                                 [[NSNotificationCenter defaultCenter] postNotificationName:UserSignedInNotification object:nil];
+                                [self removeLoadingViewFromView];
                                 [self showHomeScreen];
                             });
             }
             else
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    
                 errorMessage = @"Invalid user or password";
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
                                                                                message:errorMessage
@@ -76,10 +74,9 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                 [alert addAction:firstAction];
                 [self presentViewController:alert animated:YES completion:nil];
                 
-            
+            [self removeLoadingViewFromView];
                                 });
-                [activityView stopAnimating];
-                [loadingView removeFromSuperview];
+               // [self removeLoadingViewFromView];
                 
             }
             
@@ -92,8 +89,7 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
 
 -(void)showHomeScreen
 {
-    [activityView stopAnimating];
-    [loadingView removeFromSuperview];
+    [self removeLoadingViewFromView];
     UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
     
     [self.revealViewController setFrontViewController:navigation];
@@ -112,28 +108,6 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
-}
-
--(void)setupLoadingIndicator
-{
-    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
-    loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    loadingView.clipsToBounds = YES;
-    loadingView.layer.cornerRadius = 10.0;
-    
-    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    activityView.frame = CGRectMake(65, 40, activityView.bounds.size.width, activityView.bounds.size.height);
-    [loadingView addSubview:activityView];
-    
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    loadingLabel.textColor = [UIColor whiteColor];
-    loadingLabel.adjustsFontSizeToFitWidth = YES;
-    loadingLabel.textAlignment = NSTextAlignmentCenter;
-    loadingLabel.text = @"Loading...";
-    [loadingView addSubview:loadingLabel];
-    [self.view addSubview:loadingView];
-    [activityView startAnimating];
 }
 
 
@@ -157,6 +131,21 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
     }];
 }
 
-
+-(LoadingView*)creatLoadingView
+{
+    self.loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
+    return self.loadingView;
+}
+-(void)addLoadingViewToView
+{
+    self.loadingView = [self creatLoadingView];
+    [self.loadingView addView];
+    [self.view addSubview:self.loadingView];
+}
+-(void)removeLoadingViewFromView
+{
+    [self.loadingView removeView];
+    [self.loadingView removeFromSuperview];
+}
 
 @end

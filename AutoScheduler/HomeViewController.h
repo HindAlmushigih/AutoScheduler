@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadingView.h"
 
 @interface HomeViewController : UIViewController
- {
-    UIActivityIndicatorView *activityView;
-    UIView *loadingView;
-    UILabel *loadingLabel;
-}
 
-@property (nonatomic, retain) UIActivityIndicatorView * activityView;
-@property (nonatomic, retain) UIView *loadingView;
-@property (nonatomic, retain) UILabel *loadingLabel;
+@property (nonatomic, retain) LoadingView *loadingView;
 
 @property NSDictionary* curentUser;
 @end

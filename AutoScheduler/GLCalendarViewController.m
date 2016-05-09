@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //[self.view addSubview:self.calendarView];
+
     self.calendarView.delegate = self;
     self.calendarView.showMagnifier = YES;
 }
