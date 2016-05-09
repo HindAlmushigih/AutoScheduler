@@ -62,7 +62,9 @@ static ASUserSingleton *sharedInstance = nil;
 -(NSString*)password
 {
     NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
-    return [userdefaults objectForKey:USER_DEFUALTS_REDMINE_USER_NAME];
+    return [
+            userdefaults objectForKey:USER_DEFUALTS_REDMINE_PASSWORD
+            ];
 }
 -(void)setPassword:(NSString*)password
 {

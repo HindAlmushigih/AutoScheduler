@@ -118,17 +118,46 @@ static ASRESTAPI *sharedInstance = nil;
 
 }
 
+//- (void)URLSession:(NSURLSession *)session
+//didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+// completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition,
+//                             NSURLCredential *credential))completionHandler
+//{
+//    NSLog(@"did receive challenge method called with task");
+//    NSString* username = [[ASUserSingleton sharedInstance]userName];
+//    NSString* password = [[ASUserSingleton sharedInstance]password];
+//    if ([challenge previousFailureCount] == 0) {
+//        NSURLCredential *newCredential;
+//        newCredential = [NSURLCredential credentialWithUser:username
+//                                                   password:password
+//                                                persistence:NSURLCredentialPersistenceNone];
+//        [[challenge sender] useCredential:newCredential
+//               forAuthenticationChallenge:challenge];
+//    } else {
+//        [[challenge sender] cancelAuthenticationChallenge:challenge];
+//    }
+//
+//}
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
 {
+    NSLog(@"did receive challenge method called with task");
     NSString* username = [[ASUserSingleton sharedInstance]userName];
     NSString* password = [[ASUserSingleton sharedInstance]password];
     if ([challenge previousFailureCount] == 0) {
+        
         NSURLCredential *newCredential;
         newCredential = [NSURLCredential credentialWithUser:username
                                                    password:password
                                                 persistence:NSURLCredentialPersistenceNone];
         [[challenge sender] useCredential:newCredential
                forAuthenticationChallenge:challenge];
+        
+        completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
+        
+        
+        
+        
+        //completionHandler()
     } else {
         [[challenge sender] cancelAuthenticationChallenge:challenge];
     }
@@ -144,12 +173,34 @@ static ASRESTAPI *sharedInstance = nil;
 
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", base64String];
     
+    NSURLCredential *credential = [NSURLCredential credentialWithUser:username
+                                                             password:password
+                                                          persistence:NSURLCredentialPersistencePermanent];
+//    http://demo.redmine.org/
+//    http://demo.redmine.org/
+    NSString *str=[[ASRESTAPI sharedInstance]redmineURL];
+    str = [str stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+    
+    NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc]
+                                             initWithHost:
+                                            str                                             port:80
+                                             protocol:@"http"
+                                             realm:@"Redmine API"
+                                             authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
+    
+    
+    [[NSURLCredentialStorage sharedCredentialStorage] setDefaultCredential:credential
+                                                        forProtectionSpace:protectionSpace];
+//    [protectionSpace release];
+    
     __block NSDictionary *currentUserdictionarytest = nil;
     NSDictionary *headers = @{ @"authorization": authValue,
                                @"accept": @"application/json",
                                @"accept": @"text/html",
                                @"cache-control": @"no-cache",
-                               @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d" };
+                               @"postman-token": @"0a47efb3-c559-c0f9-8276-87cbdbe76c9d",
+                               @"www-authenticate": @"Basic realm=\"Redmine API\""};
+   // WWW-Authenticate: Basic realm="Redmine API"
     
     NSString *url = [[[ASRESTAPI sharedInstance]redmineURL] stringByAppendingString:@"users/current.json"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
@@ -158,11 +209,11 @@ static ASRESTAPI *sharedInstance = nil;
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
     
-
     
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    defaultConfigObject.URLCredentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]]; //[NSURLSession sharedSession];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue:nil]; //[NSOperationQueue mainQueue]]; //[NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {

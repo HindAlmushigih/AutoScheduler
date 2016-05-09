@@ -74,9 +74,9 @@ NSString* UserSignedInNotification = @"UserSignedInNotification";
                 [alert addAction:firstAction];
                 [self presentViewController:alert animated:YES completion:nil];
                 
-            
+            [self removeLoadingViewFromView];
                                 });
-                [self removeLoadingViewFromView];
+               // [self removeLoadingViewFromView];
                 
             }
             

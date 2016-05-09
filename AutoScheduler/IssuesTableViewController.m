@@ -118,14 +118,7 @@
         });
     }];
     
-//    [ASRESTAPI issuesListUsername:username andPassword:password completionBlock:^(NSDictionary *response, NSArray *issueArray) {
-//        _issues = response;
-//        issuesItems = issueArray;
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.tableView reloadData];
-//        });
-//
-//    }];
+
 }
 
 /*
@@ -174,8 +167,10 @@
     }
         if ([[segue identifier] isEqualToString:@"CreateNewIssue"])
         {
-            GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
-            nvc.project = self.project;
+            GLCalendarViewController *glCalendarViewController = [(UINavigationController*)segue.destinationViewController topViewController];
+            glCalendarViewController.project = self.project;
+            //GLCalendarViewController* nvc = (GLCalendarViewController *)segue.destinationViewController;
+            //nvc.project = self.project;
         }
     
 }

@@ -50,7 +50,10 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
 
     _revealButtonItem = [[UIBarButtonItem alloc]
                                          initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style: UIBarButtonItemStylePlain  target:revealController action:@selector(revealToggle:)];
+    if(!([[[ASRESTAPI sharedInstance]redmineURL] isEqual: @"http://demo.redmine.org/"]))
+        {
     [self addLoadingViewToView];
+        }
     [self getThecurrentUser];
 }
 - (void)customSetup
@@ -82,7 +85,10 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     [ASRESTAPI currentUsername:username andPassword:password completionBlock:^(NSDictionary *response) {
         _curentUser = response;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self removeLoadingViewFromView];
+            if(!([[[ASRESTAPI sharedInstance]redmineURL] isEqual: @"http://demo.redmine.org/"]))
+            {
+                [self removeLoadingViewFromView];
+            }
             [self setupUserLabel];
         });
     }];
@@ -106,8 +112,10 @@ NSString * USER_DEFUALTS_LOG_OUT = @"USER_DEFUALTS_LOG_OUT";
     
     [[ASUserSingleton sharedInstance]setISUserSignedIn:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:USER_DEFUALTS_LOG_OUT object:nil];
-//    
-//    
+    UINavigationController *navigation = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RedmineServerLink"];
+    [self.revealViewController setFrontViewController:navigation];
+//
+//
 //    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    UIViewController *loginViewController = [mainStoryboard instantiateInitialViewController];
 //    loginViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
