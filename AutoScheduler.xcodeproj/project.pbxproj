@@ -10,6 +10,26 @@
 		4D090EF31CD820D200E20D3A /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF01CD820D200E20D3A /* LoadingView.m */; };
 		4D090EF41CD820D200E20D3A /* RedmineServerLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF21CD820D200E20D3A /* RedmineServerLinkViewController.m */; };
 		4D090EF71CD8215200E20D3A /* IssuesObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D090EF61CD8215200E20D3A /* IssuesObj.m */; };
+		4D19A9731CE0F0D900BEE786 /* Auto-Scheduler Backlog.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9171CE0F0D900BEE786 /* Auto-Scheduler Backlog.xlsx */; };
+		4D19A9741CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A91E1CE0F0D900BEE786 /* index.html */; };
+		4D19A9751CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A91F1CE0F0D900BEE786 /* toc.html */; };
+		4D19A9761CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9281CE0F0D900BEE786 /* index.html */; };
+		4D19A9771CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9291CE0F0D900BEE786 /* toc.html */; };
+		4D19A9781CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A92A1CE0F0D900BEE786 /* index.html */; };
+		4D19A9791CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A92B1CE0F0D900BEE786 /* toc.html */; };
+		4D19A97A1CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A92F1CE0F0D900BEE786 /* index.html */; };
+		4D19A97B1CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9301CE0F0D900BEE786 /* toc.html */; };
+		4D19A97C1CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9311CE0F0D900BEE786 /* index.html */; };
+		4D19A97D1CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9321CE0F0D900BEE786 /* toc.html */; };
+		4D19A97E1CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A94B1CE0F0D900BEE786 /* index.html */; };
+		4D19A97F1CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A94C1CE0F0D900BEE786 /* toc.html */; };
+		4D19A9801CE0F0D900BEE786 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A94D1CE0F0D900BEE786 /* index.html */; };
+		4D19A9811CE0F0D900BEE786 /* toc.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A94E1CE0F0D900BEE786 /* toc.html */; };
+		4D19A9821CE0F0D900BEE786 /* masterTOC.html in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A95C1CE0F0D900BEE786 /* masterTOC.html */; };
+		4D19A9831CE0F0D900BEE786 /* Defense Presentation - Hind Almushigih v2.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A96F1CE0F0D900BEE786 /* Defense Presentation - Hind Almushigih v2.pptx */; };
+		4D19A9841CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report - Final V.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9701CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report - Final V.pdf */; };
+		4D19A9851CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.docx in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9711CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.docx */; };
+		4D19A9861CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4D19A9721CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.pdf */; };
 		4D29C2081C6D2EE800B34FD5 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */; };
 		4D29C20D1C6D2FD800B34FD5 /* ASUserSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20C1C6D2FD800B34FD5 /* ASUserSingleton.m */; };
 		4D29C2101C6D4D8900B34FD5 /* ASRESTAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29C20F1C6D4D8900B34FD5 /* ASRESTAPI.m */; };
@@ -81,6 +101,26 @@
 		4D090EF21CD820D200E20D3A /* RedmineServerLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedmineServerLinkViewController.m; sourceTree = "<group>"; };
 		4D090EF51CD8215200E20D3A /* IssuesObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesObj.h; sourceTree = "<group>"; };
 		4D090EF61CD8215200E20D3A /* IssuesObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesObj.m; sourceTree = "<group>"; };
+		4D19A9171CE0F0D900BEE786 /* Auto-Scheduler Backlog.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Auto-Scheduler Backlog.xlsx"; sourceTree = "<group>"; };
+		4D19A91E1CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A91F1CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A9281CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A9291CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A92A1CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A92B1CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A92F1CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A9301CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A9311CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A9321CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A94B1CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A94C1CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A94D1CE0F0D900BEE786 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		4D19A94E1CE0F0D900BEE786 /* toc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = toc.html; sourceTree = "<group>"; };
+		4D19A95C1CE0F0D900BEE786 /* masterTOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = masterTOC.html; sourceTree = "<group>"; };
+		4D19A96F1CE0F0D900BEE786 /* Defense Presentation - Hind Almushigih v2.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Defense Presentation - Hind Almushigih v2.pptx"; sourceTree = "<group>"; };
+		4D19A9701CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report - Final V.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Hind Almushigih - SmartGantt report - Final V.pdf"; sourceTree = "<group>"; };
+		4D19A9711CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind Almushigih - SmartGantt report.docx"; sourceTree = "<group>"; };
+		4D19A9721CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Hind Almushigih - SmartGantt report.pdf"; sourceTree = "<group>"; };
 		4D29C2061C6D2EE800B34FD5 /* ASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLoginViewController.h; sourceTree = "<group>"; };
 		4D29C2071C6D2EE800B34FD5 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
 		4D29C20B1C6D2FD800B34FD5 /* ASUserSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUserSingleton.h; sourceTree = "<group>"; };
@@ -187,6 +227,609 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D19A9161CE0F0D900BEE786 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9171CE0F0D900BEE786 /* Auto-Scheduler Backlog.xlsx */,
+				4D19A9181CE0F0D900BEE786 /* Code documentation */,
+				4D19A96F1CE0F0D900BEE786 /* Defense Presentation - Hind Almushigih v2.pptx */,
+				4D19A9701CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report - Final V.pdf */,
+				4D19A9711CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.docx */,
+				4D19A9721CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.pdf */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		4D19A9181CE0F0D900BEE786 /* Code documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9191CE0F0D900BEE786 /* AppDelegate_h */,
+				4D19A91A1CE0F0D900BEE786 /* AppDelegate_m */,
+				4D19A91B1CE0F0D900BEE786 /* ASLoginViewController_h */,
+				4D19A91C1CE0F0D900BEE786 /* ASLoginViewController_m */,
+				4D19A91D1CE0F0D900BEE786 /* ASRESTAPI_h */,
+				4D19A9201CE0F0D900BEE786 /* ASRESTAPI_m */,
+				4D19A9211CE0F0D900BEE786 /* ASUserSingleton_h */,
+				4D19A9221CE0F0D900BEE786 /* ASUserSingleton_m */,
+				4D19A9231CE0F0D900BEE786 /* CustomActivityIndicatorViewObj_h */,
+				4D19A9241CE0F0D900BEE786 /* CustomActivityIndicatorViewObj_m */,
+				4D19A9251CE0F0D900BEE786 /* GanttChartViewController_h */,
+				4D19A92C1CE0F0D900BEE786 /* GanttChartViewController_m */,
+				4D19A9331CE0F0D900BEE786 /* GLCalendarDateRange_h */,
+				4D19A9341CE0F0D900BEE786 /* GLCalendarDateRange_m */,
+				4D19A9351CE0F0D900BEE786 /* GLCalendarDayCell_h */,
+				4D19A9361CE0F0D900BEE786 /* GLCalendarDayCell_m */,
+				4D19A9371CE0F0D900BEE786 /* GLCalendarDayCellBackgroundCover_h */,
+				4D19A9381CE0F0D900BEE786 /* GLCalendarDayCellBackgroundCover_m */,
+				4D19A9391CE0F0D900BEE786 /* GLCalendarMonthCoverView_h */,
+				4D19A93A1CE0F0D900BEE786 /* GLCalendarMonthCoverView_m */,
+				4D19A93B1CE0F0D900BEE786 /* GLCalendarView_h */,
+				4D19A93C1CE0F0D900BEE786 /* GLCalendarView_m */,
+				4D19A93D1CE0F0D900BEE786 /* GLCalendarViewController_h */,
+				4D19A93E1CE0F0D900BEE786 /* GLCalendarViewController_m */,
+				4D19A93F1CE0F0D900BEE786 /* GLDateUtils_h */,
+				4D19A9401CE0F0D900BEE786 /* GLDateUtils_m */,
+				4D19A9411CE0F0D900BEE786 /* HomeViewController_h */,
+				4D19A9421CE0F0D900BEE786 /* HomeViewController_m */,
+				4D19A9431CE0F0D900BEE786 /* IQCalendarDataSource_h */,
+				4D19A9441CE0F0D900BEE786 /* IQCalendarDataSource_m */,
+				4D19A9451CE0F0D900BEE786 /* IQCalendarHeaderView_h */,
+				4D19A9461CE0F0D900BEE786 /* IQCalendarHeaderView_m */,
+				4D19A9471CE0F0D900BEE786 /* IQGanttView_h */,
+				4D19A9481CE0F0D900BEE786 /* IQGanttView_m */,
+				4D19A94F1CE0F0D900BEE786 /* IQScheduleView_h */,
+				4D19A9501CE0F0D900BEE786 /* IQScheduleView_m */,
+				4D19A9511CE0F0D900BEE786 /* IQScrollView_h */,
+				4D19A9521CE0F0D900BEE786 /* IQScrollView_m */,
+				4D19A9531CE0F0D900BEE786 /* IssueDetailsViewController_h */,
+				4D19A9541CE0F0D900BEE786 /* IssueDetailsViewController_m */,
+				4D19A9551CE0F0D900BEE786 /* IssuesObj_h */,
+				4D19A9561CE0F0D900BEE786 /* IssuesObj_m */,
+				4D19A9571CE0F0D900BEE786 /* IssuesTableViewController_h */,
+				4D19A9581CE0F0D900BEE786 /* IssuesTableViewController_m */,
+				4D19A9591CE0F0D900BEE786 /* LoadingView_h */,
+				4D19A95A1CE0F0D900BEE786 /* LoadingView_m */,
+				4D19A95B1CE0F0D900BEE786 /* main_m */,
+				4D19A95C1CE0F0D900BEE786 /* masterTOC.html */,
+				4D19A95D1CE0F0D900BEE786 /* MenuTableViewCell_h */,
+				4D19A95E1CE0F0D900BEE786 /* MenuTableViewCell_m */,
+				4D19A95F1CE0F0D900BEE786 /* NewIssueViewController_h */,
+				4D19A9601CE0F0D900BEE786 /* NewIssueViewController_m */,
+				4D19A9611CE0F0D900BEE786 /* NewProjectViewController_h */,
+				4D19A9621CE0F0D900BEE786 /* NewProjectViewController_m */,
+				4D19A9631CE0F0D900BEE786 /* ProjectDetailsViewController_h */,
+				4D19A9641CE0F0D900BEE786 /* ProjectDetailsViewController_m */,
+				4D19A9651CE0F0D900BEE786 /* ProjectModulesTableViewController_h */,
+				4D19A9661CE0F0D900BEE786 /* ProjectModulesTableViewController_m */,
+				4D19A9671CE0F0D900BEE786 /* ProjectsTableViewController_h */,
+				4D19A9681CE0F0D900BEE786 /* ProjectsTableViewController_m */,
+				4D19A9691CE0F0D900BEE786 /* RedmineServerLinkViewController_h */,
+				4D19A96A1CE0F0D900BEE786 /* RedmineServerLinkViewController_m */,
+				4D19A96B1CE0F0D900BEE786 /* SWRevealViewController_h */,
+				4D19A96C1CE0F0D900BEE786 /* SWRevealViewController_m */,
+				4D19A96D1CE0F0D900BEE786 /* ViewController_h */,
+				4D19A96E1CE0F0D900BEE786 /* ViewController_m */,
+			);
+			path = "Code documentation";
+			sourceTree = "<group>";
+		};
+		4D19A9191CE0F0D900BEE786 /* AppDelegate_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDelegate_h;
+			sourceTree = "<group>";
+		};
+		4D19A91A1CE0F0D900BEE786 /* AppDelegate_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDelegate_m;
+			sourceTree = "<group>";
+		};
+		4D19A91B1CE0F0D900BEE786 /* ASLoginViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ASLoginViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A91C1CE0F0D900BEE786 /* ASLoginViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ASLoginViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A91D1CE0F0D900BEE786 /* ASRESTAPI_h */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A91E1CE0F0D900BEE786 /* index.html */,
+				4D19A91F1CE0F0D900BEE786 /* toc.html */,
+			);
+			path = ASRESTAPI_h;
+			sourceTree = "<group>";
+		};
+		4D19A9201CE0F0D900BEE786 /* ASRESTAPI_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ASRESTAPI_m;
+			sourceTree = "<group>";
+		};
+		4D19A9211CE0F0D900BEE786 /* ASUserSingleton_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ASUserSingleton_h;
+			sourceTree = "<group>";
+		};
+		4D19A9221CE0F0D900BEE786 /* ASUserSingleton_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ASUserSingleton_m;
+			sourceTree = "<group>";
+		};
+		4D19A9231CE0F0D900BEE786 /* CustomActivityIndicatorViewObj_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomActivityIndicatorViewObj_h;
+			sourceTree = "<group>";
+		};
+		4D19A9241CE0F0D900BEE786 /* CustomActivityIndicatorViewObj_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomActivityIndicatorViewObj_m;
+			sourceTree = "<group>";
+		};
+		4D19A9251CE0F0D900BEE786 /* GanttChartViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9261CE0F0D900BEE786 /* Classes */,
+				4D19A92A1CE0F0D900BEE786 /* index.html */,
+				4D19A92B1CE0F0D900BEE786 /* toc.html */,
+			);
+			path = GanttChartViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9261CE0F0D900BEE786 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9271CE0F0D900BEE786 /* GanttChartViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4D19A9271CE0F0D900BEE786 /* GanttChartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9281CE0F0D900BEE786 /* index.html */,
+				4D19A9291CE0F0D900BEE786 /* toc.html */,
+			);
+			path = GanttChartViewController;
+			sourceTree = "<group>";
+		};
+		4D19A92C1CE0F0D900BEE786 /* GanttChartViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A92D1CE0F0D900BEE786 /* Classes */,
+				4D19A9311CE0F0D900BEE786 /* index.html */,
+				4D19A9321CE0F0D900BEE786 /* toc.html */,
+			);
+			path = GanttChartViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A92D1CE0F0D900BEE786 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A92E1CE0F0D900BEE786 /* CalendarEntry */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4D19A92E1CE0F0D900BEE786 /* CalendarEntry */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A92F1CE0F0D900BEE786 /* index.html */,
+				4D19A9301CE0F0D900BEE786 /* toc.html */,
+			);
+			path = CalendarEntry;
+			sourceTree = "<group>";
+		};
+		4D19A9331CE0F0D900BEE786 /* GLCalendarDateRange_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDateRange_h;
+			sourceTree = "<group>";
+		};
+		4D19A9341CE0F0D900BEE786 /* GLCalendarDateRange_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDateRange_m;
+			sourceTree = "<group>";
+		};
+		4D19A9351CE0F0D900BEE786 /* GLCalendarDayCell_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDayCell_h;
+			sourceTree = "<group>";
+		};
+		4D19A9361CE0F0D900BEE786 /* GLCalendarDayCell_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDayCell_m;
+			sourceTree = "<group>";
+		};
+		4D19A9371CE0F0D900BEE786 /* GLCalendarDayCellBackgroundCover_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDayCellBackgroundCover_h;
+			sourceTree = "<group>";
+		};
+		4D19A9381CE0F0D900BEE786 /* GLCalendarDayCellBackgroundCover_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarDayCellBackgroundCover_m;
+			sourceTree = "<group>";
+		};
+		4D19A9391CE0F0D900BEE786 /* GLCalendarMonthCoverView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarMonthCoverView_h;
+			sourceTree = "<group>";
+		};
+		4D19A93A1CE0F0D900BEE786 /* GLCalendarMonthCoverView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarMonthCoverView_m;
+			sourceTree = "<group>";
+		};
+		4D19A93B1CE0F0D900BEE786 /* GLCalendarView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarView_h;
+			sourceTree = "<group>";
+		};
+		4D19A93C1CE0F0D900BEE786 /* GLCalendarView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarView_m;
+			sourceTree = "<group>";
+		};
+		4D19A93D1CE0F0D900BEE786 /* GLCalendarViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A93E1CE0F0D900BEE786 /* GLCalendarViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLCalendarViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A93F1CE0F0D900BEE786 /* GLDateUtils_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLDateUtils_h;
+			sourceTree = "<group>";
+		};
+		4D19A9401CE0F0D900BEE786 /* GLDateUtils_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GLDateUtils_m;
+			sourceTree = "<group>";
+		};
+		4D19A9411CE0F0D900BEE786 /* HomeViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9421CE0F0D900BEE786 /* HomeViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9431CE0F0D900BEE786 /* IQCalendarDataSource_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQCalendarDataSource_h;
+			sourceTree = "<group>";
+		};
+		4D19A9441CE0F0D900BEE786 /* IQCalendarDataSource_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQCalendarDataSource_m;
+			sourceTree = "<group>";
+		};
+		4D19A9451CE0F0D900BEE786 /* IQCalendarHeaderView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQCalendarHeaderView_h;
+			sourceTree = "<group>";
+		};
+		4D19A9461CE0F0D900BEE786 /* IQCalendarHeaderView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQCalendarHeaderView_m;
+			sourceTree = "<group>";
+		};
+		4D19A9471CE0F0D900BEE786 /* IQGanttView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQGanttView_h;
+			sourceTree = "<group>";
+		};
+		4D19A9481CE0F0D900BEE786 /* IQGanttView_m */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A9491CE0F0D900BEE786 /* Classes */,
+				4D19A94D1CE0F0D900BEE786 /* index.html */,
+				4D19A94E1CE0F0D900BEE786 /* toc.html */,
+			);
+			path = IQGanttView_m;
+			sourceTree = "<group>";
+		};
+		4D19A9491CE0F0D900BEE786 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A94A1CE0F0D900BEE786 /* IQGanttHeaderView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4D19A94A1CE0F0D900BEE786 /* IQGanttHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				4D19A94B1CE0F0D900BEE786 /* index.html */,
+				4D19A94C1CE0F0D900BEE786 /* toc.html */,
+			);
+			path = IQGanttHeaderView;
+			sourceTree = "<group>";
+		};
+		4D19A94F1CE0F0D900BEE786 /* IQScheduleView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQScheduleView_h;
+			sourceTree = "<group>";
+		};
+		4D19A9501CE0F0D900BEE786 /* IQScheduleView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQScheduleView_m;
+			sourceTree = "<group>";
+		};
+		4D19A9511CE0F0D900BEE786 /* IQScrollView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQScrollView_h;
+			sourceTree = "<group>";
+		};
+		4D19A9521CE0F0D900BEE786 /* IQScrollView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IQScrollView_m;
+			sourceTree = "<group>";
+		};
+		4D19A9531CE0F0D900BEE786 /* IssueDetailsViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssueDetailsViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9541CE0F0D900BEE786 /* IssueDetailsViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssueDetailsViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9551CE0F0D900BEE786 /* IssuesObj_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssuesObj_h;
+			sourceTree = "<group>";
+		};
+		4D19A9561CE0F0D900BEE786 /* IssuesObj_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssuesObj_m;
+			sourceTree = "<group>";
+		};
+		4D19A9571CE0F0D900BEE786 /* IssuesTableViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssuesTableViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9581CE0F0D900BEE786 /* IssuesTableViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssuesTableViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9591CE0F0D900BEE786 /* LoadingView_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoadingView_h;
+			sourceTree = "<group>";
+		};
+		4D19A95A1CE0F0D900BEE786 /* LoadingView_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoadingView_m;
+			sourceTree = "<group>";
+		};
+		4D19A95B1CE0F0D900BEE786 /* main_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = main_m;
+			sourceTree = "<group>";
+		};
+		4D19A95D1CE0F0D900BEE786 /* MenuTableViewCell_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuTableViewCell_h;
+			sourceTree = "<group>";
+		};
+		4D19A95E1CE0F0D900BEE786 /* MenuTableViewCell_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuTableViewCell_m;
+			sourceTree = "<group>";
+		};
+		4D19A95F1CE0F0D900BEE786 /* NewIssueViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewIssueViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9601CE0F0D900BEE786 /* NewIssueViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewIssueViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9611CE0F0D900BEE786 /* NewProjectViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewProjectViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9621CE0F0D900BEE786 /* NewProjectViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewProjectViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9631CE0F0D900BEE786 /* ProjectDetailsViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectDetailsViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9641CE0F0D900BEE786 /* ProjectDetailsViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectDetailsViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9651CE0F0D900BEE786 /* ProjectModulesTableViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectModulesTableViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9661CE0F0D900BEE786 /* ProjectModulesTableViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectModulesTableViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9671CE0F0D900BEE786 /* ProjectsTableViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectsTableViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A9681CE0F0D900BEE786 /* ProjectsTableViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectsTableViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A9691CE0F0D900BEE786 /* RedmineServerLinkViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RedmineServerLinkViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A96A1CE0F0D900BEE786 /* RedmineServerLinkViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RedmineServerLinkViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A96B1CE0F0D900BEE786 /* SWRevealViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SWRevealViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A96C1CE0F0D900BEE786 /* SWRevealViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SWRevealViewController_m;
+			sourceTree = "<group>";
+		};
+		4D19A96D1CE0F0D900BEE786 /* ViewController_h */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController_h;
+			sourceTree = "<group>";
+		};
+		4D19A96E1CE0F0D900BEE786 /* ViewController_m */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController_m;
+			sourceTree = "<group>";
+		};
 		4D29C2091C6D2EFE00B34FD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +961,7 @@
 				4DE9DF791C4FEEF800FD9488 /* AutoSchedulerTests */,
 				4DE9DF841C4FEEF800FD9488 /* AutoSchedulerUITests */,
 				4DE9DF5B1C4FEEF800FD9488 /* Products */,
+				4D19A9161CE0F0D900BEE786 /* doc */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,19 +1122,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D19A9851CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.docx in Resources */,
+				4D19A97A1CE0F0D900BEE786 /* index.html in Resources */,
+				4D19A9741CE0F0D900BEE786 /* index.html in Resources */,
+				4D19A97C1CE0F0D900BEE786 /* index.html in Resources */,
+				4D19A9751CE0F0D900BEE786 /* toc.html in Resources */,
 				4DE9DF701C4FEEF800FD9488 /* LaunchScreen.storyboard in Resources */,
 				4D2E3A1D1CA1091300C727CC /* gl-calendar-magnify-glass.png in Resources */,
+				4D19A9731CE0F0D900BEE786 /* Auto-Scheduler Backlog.xlsx in Resources */,
+				4D19A9771CE0F0D900BEE786 /* toc.html in Resources */,
 				4D2E3A171CA1091300C727CC /* GLCalendarDayCell.xib in Resources */,
+				4D19A9841CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report - Final V.pdf in Resources */,
 				4D2E3A1E1CA1091300C727CC /* gl-calendar-magnify-glass@2x.png in Resources */,
+				4D19A97E1CE0F0D900BEE786 /* index.html in Resources */,
 				4D2E3A201CA1091300C727CC /* gl-calendar-shadow@2x.png in Resources */,
+				4D19A9801CE0F0D900BEE786 /* index.html in Resources */,
 				4DD5E3301C528077009350F4 /* reveal-icon@2x.png in Resources */,
+				4D19A9821CE0F0D900BEE786 /* masterTOC.html in Resources */,
+				4D19A9861CE0F0D900BEE786 /* Hind Almushigih - SmartGantt report.pdf in Resources */,
 				4D5596A41CC9D38F00CEE1C9 /* SmartGantt-Logo.png in Resources */,
 				4DE9DF6D1C4FEEF800FD9488 /* Assets.xcassets in Resources */,
+				4D19A9831CE0F0D900BEE786 /* Defense Presentation - Hind Almushigih v2.pptx in Resources */,
 				4D2E3A1F1CA1091300C727CC /* gl-calendar-shadow.png in Resources */,
+				4D19A9811CE0F0D900BEE786 /* toc.html in Resources */,
 				4D2E3A211CA1091300C727CC /* gl-calendar-shadow@3x.png in Resources */,
 				4D2E3A1B1CA1091300C727CC /* GLCalendarView.xib in Resources */,
+				4D19A97D1CE0F0D900BEE786 /* toc.html in Resources */,
 				4DE9DF681C4FEEF800FD9488 /* Main.storyboard in Resources */,
 				4DD5E32F1C528077009350F4 /* reveal-icon.png in Resources */,
+				4D19A9791CE0F0D900BEE786 /* toc.html in Resources */,
+				4D19A9781CE0F0D900BEE786 /* index.html in Resources */,
+				4D19A97F1CE0F0D900BEE786 /* toc.html in Resources */,
+				4D19A9761CE0F0D900BEE786 /* index.html in Resources */,
+				4D19A97B1CE0F0D900BEE786 /* toc.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
